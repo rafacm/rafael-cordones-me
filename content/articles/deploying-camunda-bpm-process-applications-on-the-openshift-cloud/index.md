@@ -15,7 +15,7 @@ image:
     caption: Cloud at dusk over the skyline of Alicante, Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---
 
-This post is a follow up from a previous article "<a href="http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" in which I wrote about deploying the camunda BPM <strong>engine</strong> on OpenShift. You should definitely have a look at it since it describes the quickstart project we will use in this article.
+This post is a follow up from a previous article "<a href="http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" in which I wrote about deploying the camunda BPM <strong>engine</strong> on OpenShift. You should definitely have a look at it since it describes the quickstart project we will use in this article.
 
 This post focuses on two things:
 1. how to initially deploy an <strong>existing application</strong> to camunda BPM running on JBoss EAP 6.x on OpenShift
@@ -23,11 +23,11 @@ This post focuses on two things:
 
 Note the word "proposal". This is how I do it and I would be very glad to hear about other approaches!
 
-The two main requirements I have are:
+The two main requirements I have are:
 1. keep the OpenShift deployment environment aspect orthogonal to the rest of my application codebase, i.e. I want to be in a position to keep deploying my app to my internally managed deployment environment or I might even want to have several OpenShift deployment environments (test, staging, production).
 2. whenever a new camunda BPM release is supported by the camunda BPM OpenShift quickstart, I would like to be able to easily upgrade
 
-In my humble opinion, the easiest way of doing fulfill these requirements, is to have a dedicated branch called "openshift" on which all the code/configuration related to camunda BPM on <strong>a given OpenShift deployment environment</strong> is kept</strong>.
+In my humble opinion, the easiest way of doing fulfill these requirements, is to have a dedicated branch called "openshift" on which all the code/configuration related to camunda BPM on <strong>a given OpenShift deployment environment</strong> is kept</strong>.
 
 We will follow the steps using <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> as an example. Please note that you will need to create a JBoss EAP 6.x application type on OpenShift and get its corresponding Git deployment repository.
 
@@ -50,7 +50,7 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 This is the purpose of each of those remotes is:
 * upstream: the canonical repository containing <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> project code</span>
 * origin: my personal fork of the project on which I do my development work which I later push to 'upstream'
-* quickstart: the repository containing a JBoss EAP 6.x distributions with the camunda BPM engine already configured (check article "<a href="http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" for background)
+* quickstart: the repository containing a JBoss EAP 6.x distributions with the camunda BPM engine already configured (check article "<a href="http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" for background)
 * opeshift: the OpenShift application deploymnet Git deployment repository to which we will push our application's code
 
 We create the aforementioned 'openshift' branch and switch to it with:
