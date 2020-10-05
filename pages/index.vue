@@ -3,7 +3,7 @@
     <TheHeader />
     <ul class="flex flex-wrap">
       <li
-        v-for="article of articles"
+        v-for="article of articlesWithFixedSlug"
         :key="article.slug"
         class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
       >
@@ -11,10 +11,11 @@
           :to="{ name: 'blog-slug', params: { slug: article.slug } }"
           class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
         >
-          <img
-            v-if="article.img"
+          <content-image
             class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
-            :src="article.img"
+            :dir="article.dir"
+            :src="article.image.path"
+            :alt="article.image.alt"
           />
 
           <div
@@ -51,12 +52,36 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'img', 'slug'])
-      .sortBy('createdAt', 'desc')
+    const articlePath = `/articles`
+    // eslint-disable-next-line
+    console.log('articlePath', articlePath)
+    const articles = await $content(articlePath, { deep: true })
+      .only(['title', 'description', 'image', 'dir', 'slug'])
+      .sortBy('date', 'desc')
       .fetch()
+    // eslint-disable-next-line
+    console.log('articles', JSON.stringify(articles, null, 2))
+
     return {
       articles
+    }
+  },
+  computed: {
+    // eslint-disable-next-line
+    articlesWithFixedSlug: function() {
+      /*
+       * Since we are using folders with an index.md file, we need to 'fix' the
+       * slug here!
+       */
+      const fixArticleSlug = (article) => {
+        const fixedSlug = article.path.split('/').slice(-2)[0]
+        return { ...article, slug: fixedSlug }
+      }
+      const articlesWithFixedSlug = this.articles.map(fixArticleSlug)
+      // eslint-disable-next-line
+      console.log('articlesWithFixedSlug', JSON.stringify(articlesWithFixedSlug, null, 2))
+
+      return articlesWithFixedSlug
     }
   }
 }

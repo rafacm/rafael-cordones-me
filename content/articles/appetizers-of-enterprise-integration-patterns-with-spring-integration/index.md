@@ -1,12 +1,19 @@
 ---
 title: Appetizers of Enterprise Integration Patterns with Spring Integration
 date: 2013-04-29
-permalink: http://rafael.cordones.me/2013/04/29/appetizers-of-enterprise-integration-patterns-with-spring-integration/
+legacyUrl: http://rafael.cordones.me/2013/04/29/appetizers-of-enterprise-integration-patterns-with-spring-integration/
 category: Blog
-tags: b2b, camunda BPM, eai, eip, integration, spring integration
-img: http://rafael.cordones.me/assets/2013-04-20-12.03.59.jpg
-alt: Sant Jordi
-caption: 
+tags: 
+    - b2b
+    - camunda BPM
+    - eai
+    - eip
+    - integration
+    - spring integration
+image:
+    path: /2013-04-20-12.03.59.jpg
+    alt: Sant Jordi
+    caption:  Sant Jordi at Plaça Sant Jaume. Barcelona. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---
  
 Since I was going to be in my hometown, Barcelona, this past week to enjoy <a href="http://en.wikipedia.org/wiki/Saint_George's_Day#Catalonia">Sant Jordi</a>, I took the opportunity offered by the <a href="http://www.barcelonajug.org/">Barcelona Java User Group</a> to make a talk about <a href="http://www.eaipatterns.com/">Enterprise Integration Patterns</a>.

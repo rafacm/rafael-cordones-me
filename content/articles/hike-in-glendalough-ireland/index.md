@@ -7,8 +7,7 @@ tags: photo, ireland, dublin
 image: 
     path: /images/img_2561.jpg
     alt: Between a rock and a hard place.
+    caption: Between a rock and a hard place. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---
-
-Hike in Glendalough (Ireland)
 
 
