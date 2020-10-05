@@ -15,7 +15,7 @@ image:
     caption: Cloud at dusk over the skyline of Alicante, Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---
 
-This post is a follow up from a previous article "<a href="http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" in which I wrote about deploying the camunda BPM <strong>engine</strong> on OpenShift. You should definitely have a look at it since it describes the quickstart project we will use in this article.
+This post is a follow up from a previous article "<a href="/blog/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" in which I wrote about deploying the camunda BPM <strong>engine</strong> on OpenShift. You should definitely have a look at it since it describes the quickstart project we will use in this article.
 
 This post focuses on two things:
 1. how to initially deploy an <strong>existing application</strong> to camunda BPM running on JBoss EAP 6.x on OpenShift

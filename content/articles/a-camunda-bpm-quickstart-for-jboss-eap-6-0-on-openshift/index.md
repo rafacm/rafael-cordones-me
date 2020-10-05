@@ -21,11 +21,11 @@ author:
     img: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
 ---
 
-This post is a follow up from a previous article "<a href="/2013/04/26/the-job-announcement-on-the-openshift-paas-cloud">The Job Announcement on the OpenShift PaaS cloud?</a>" and describes a quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on <a href="https://openshift.redhat.com/">OpenShift</a>. From the <a href="http://docs.camunda.org/guides/user-guide/#platform-process-engine">several deployment scenarios supported by the camunda BPM engine</a>, this post focuses on the <em>shared process engine</em> one.
+This post is a follow up from a previous article "<a href="/blog/the-job-announcement-on-the-openshift-paas-cloud">The Job Announcement on the OpenShift PaaS cloud?</a>" and describes a quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on <a href="https://openshift.redhat.com/">OpenShift</a>. From the <a href="http://docs.camunda.org/guides/user-guide/#platform-process-engine">several deployment scenarios supported by the camunda BPM engine</a>, this post focuses on the <em>shared process engine</em> one.
 
-But before getting in the technical details: this post is definitely not an introduction to OpenShift<i>.</i> For that, check the "<a href="https://access.redhat.com/site/documentation/en-US/OpenShift/2.0/html/User_Guide/">OpenShift User Guide</a>" as a starting point.
+But before getting in the technical details: this post is definitely not an introduction to OpenShift<i>.</i> For that, check the "<a href="https://access.redhat.com/site/documentation/en-US/OpenShift/2.0/html/User_Guide/">OpenShift User Guide</a>" as a starting point.
 
-In order to create the quickstart, we started from the "plain vanilla" Git repository that OpenShift creates when choosing the "JBoss Enterprise Application Platform 6.0" application and we followed <a href="http://docs.camunda.org/guides/installation-guide/jboss/#platform">the instructions on how to install the camunda BPM platform on a vanilla JBoss</a> (with the exception of creating a XA datasource). There result of that work can be found on this GitHub repo: <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart">https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart</a> on <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/tree/camunda-bpm-jboss-eap">the "camunda-bpm-jboss-eap" branch</a> (updated up to camunda BPM 7.0.0-alpha3).
+In order to create the quickstart, we started from the "plain vanilla" Git repository that OpenShift creates when choosing the "JBoss Enterprise Application Platform 6.0" application and we followed <a href="http://docs.camunda.org/guides/installation-guide/jboss/#platform">the instructions on how to install the camunda BPM platform on a vanilla JBoss</a> (with the exception of creating a XA datasource). There result of that work can be found on this GitHub repo: <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart">https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart</a> on <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/tree/camunda-bpm-jboss-eap">the "camunda-bpm-jboss-eap" branch</a> (updated up to camunda BPM 7.0.0-alpha3).
 
 <alert type="warning">
     DISCLAIMER: please note that the <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/">camunda BPM on OpenShift quickstart</a> is a personal project and is provided as is. At the same time, I would love to hear any feedback you may have and will do my best to be of any help.
@@ -44,7 +44,7 @@ remote: Total 39 (delta 1), reused 0 (delta 0)
 Receiving objects: 100% (39/39), 19.98 KiB, done.
 Resolving deltas: 100% (1/1), done.
 rafa@trane: ~/tmp$</div>
-Add the <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart">camunda-bpm-openshift-jboss-quickstart</a> GitHub repository as a remote called <code>quickstart</code>:
+Add the <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart">camunda-bpm-openshift-jboss-quickstart</a> GitHub repository as a remote called <code>quickstart</code>:
 <div id="terminal">rafa@trane: ~/tmp$ cd thejobannouncement/
 rafa@trane: ~/dev/thejobannouncement$ git remote add quickstart git@github.com:rafacm/camunda-bpm-openshift-jboss-quickstart.git
 rafa@trane: ~/dev/thejobannouncement$ git remote -v
@@ -77,7 +77,7 @@ Merge made by the 'recursive' strategy.
 rafa@trane: ~/dev/thejobannouncement$</div>
 ```
 
-Note that since we deleted all the code and the README file from the quickstart repository, you will (hopefully)  not get any merging conflict. You will need to manually add (and commit) the following to your <code>pom.xml</code>:
+Note that since we deleted all the code and the README file from the quickstart repository, you will (hopefully)  not get any merging conflict. You will need to manually add (and commit) the following to your <code>pom.xml</code>:
 
 ```xml
     <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
@@ -140,14 +140,14 @@ You can now login to your applications console to verify in the logs that the ca
 rafa@trane: ~/dev/thejobannouncement$
 ```
 
-Great! We now have the <strong>engine</strong> up and running on OpenShift. What about the rest of the awesome components that come with the camunda BPM <strong>platform</strong> like the <a href="http://docs.camunda.org/api-references/rest/#!/overview/introduction">REST API</a>, <a href="http://www.camunda.org/design/cycle-tutorial.html">Cycle</a>, <a href="http://www.camunda.org/implement/cockpit.html">Cockpit</a> and <a href="http://www.camunda.org/implement/tasklist.html">Tasklist</a>?! That's left (for now) as an exercise to the reader but with the the (also) awesome "<a href="http://docs.camunda.org/guides/installation-guide/jboss/#platform">camunda BPM Installation Guide (JBoss)</a>" it should not be that hard. ;-)
+Great! We now have the <strong>engine</strong> up and running on OpenShift. What about the rest of the awesome components that come with the camunda BPM <strong>platform</strong> like the <a href="http://docs.camunda.org/api-references/rest/#!/overview/introduction">REST API</a>, <a href="http://www.camunda.org/design/cycle-tutorial.html">Cycle</a>, <a href="http://www.camunda.org/implement/cockpit.html">Cockpit</a> and <a href="http://www.camunda.org/implement/tasklist.html">Tasklist</a>?! That's left (for now) as an exercise to the reader but with the the (also) awesome "<a href="http://docs.camunda.org/guides/installation-guide/jboss/#platform">camunda BPM Installation Guide (JBoss)</a>" it should not be that hard. ;-)
 
 ## Feedback welcome!
 
 You can reach me either via the comments section below or via any of the social coordinates you will find on the top right corner of this page.
 
 <alert type="info">
-    <strong>UPDATE (2013-05-14):</strong> there's now a follow up post focusing on how to bring the camunda BPM process engine into your <strong>existing</strong> process application: <a href="http://rafael.cordones.me/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/">Deploying camunda BPM process applications on the OpenShift cloud</a>.
+    <strong>UPDATE (2013-05-14):</strong> there's now a follow up post focusing on how to bring the camunda BPM process engine into your <strong>existing</strong> process application: <a href="/blog/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/">Deploying camunda BPM process applications on the OpenShift cloud</a>.
 </alert>
 
 [^1] ["Just the facts, ma'am"](https://www.youtube.com/watch?v=EkfKqwnGLr8&ab_channel=CBS)

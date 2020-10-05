@@ -31,7 +31,7 @@ OpenShift offers both JBoss AS 7.<strong><span style="text-decoration: underline
 <a href="http://the-job-announcement.com/">the-job-announcement.com</a> is now proudly served (though a bit slow due to the use of only 1 free gear!) by a JBoss EAP 6.0 running on OpenShift.
 
 The following two posts explain the details in case you would like to deploy your camunda BPM-based process application on OpenShift:
-* <a href="/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>
+* <a href="/blog/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>
 * <a href="http://rafael.cordones.me/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/">Deploying camunda BPM process applications on the OpenShift cloud</a>
 
 
