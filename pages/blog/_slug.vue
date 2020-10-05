@@ -3,10 +3,11 @@
     class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
   >
     <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
-      <img
-        :src="article.img"
-        :alt="article.alt"
+      <content-image
         class="absolute h-full w-full object-cover"
+        :dir="article.dir"
+        :src="article.image.path"
+        :alt="article.image.alt"
       />
       <div class="overlay"></div>
       <div class="absolute top-32 left-32 text-white">
@@ -29,18 +30,34 @@
   </article>
 </template>
 <script>
+import ContentImage from '@/components/global/ContentImage'
 export default {
-  async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
-    const [prev, next] = await $content('articles')
-      .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
-      .surround(params.slug)
-      .fetch()
-    return {
-      article,
-      prev,
-      next
+  components: { ContentImage },
+  scrollToTop: true,
+  async asyncData({ $content, error, params }) {
+    try {
+      const articlePath = `/articles/${params.slug}`
+      // eslint-disable-next-line
+      console.log('articlePath', articlePath)
+      const articles = await $content(articlePath, { deep: true }).fetch()
+      const article = articles[0]
+      // eslint-disable-next-line
+      console.log('article', JSON.stringify(article, null, 2))
+      const [prev, next] = await $content('articles')
+        .only(['title', 'slug'])
+        .sortBy('createdAt', 'asc')
+        .surround(params.slug)
+        .fetch()
+      return {
+        article,
+        prev,
+        next
+      }
+    } catch (err) {
+      error({
+        statusCode: 404,
+        message: 'Article could not be found'
+      })
     }
   },
   methods: {

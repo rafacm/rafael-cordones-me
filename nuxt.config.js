@@ -64,5 +64,13 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {
+    // See https://github.com/nuxt/content/issues/106#issuecomment-666283547
+    extend(config, { isDev, isClient }) {
+      config.module.rules.push({
+        test: /\.md$/i,
+        loader: 'ignore-loader'
+      })
+    }
+  }
 }
