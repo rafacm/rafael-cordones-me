@@ -3,7 +3,7 @@
     <TheHeader />
     <ul class="flex flex-wrap">
       <li
-        v-for="article of articlesWithFixedSlug"
+        v-for="article of articles"
         :key="article.slug"
         class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
       >
@@ -31,19 +31,12 @@
     </ul>
     <footer class="flex justify-center border-gray-500 border-t-2">
       <p class="mt-4">
-        Created by
+        © 2020 rafael cordones |
         <a
-          href="https://twitter.com/debs_obrien"
+          href="https://firmen.wko.at/rafael-cordones-marcos%2c-msc/wien/?firmaid=ea70a605-c16a-4275-be2d-06827fdae484&suchbegriff=rafael%20cordones"
           class="font-bold hover:underline"
-          >Debbie O'Brien</a
+          >Imprint</a
         >
-        at NuxtJS. See the
-        <a
-          href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content"
-          class="font-bold hover:underline"
-          >tutorial</a
-        >
-        for how to build it.
       </p>
     </footer>
   </div>
@@ -81,7 +74,7 @@ export default {
     console.log('articlesWithFixedSlug', JSON.stringify(articlesWithFixedSlug, null, 2))
 
     return {
-      articlesWithFixedSlug
+      articles: articlesWithFixedSlug
     }
   }
 }
