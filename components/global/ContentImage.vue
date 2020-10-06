@@ -20,12 +20,6 @@ export default {
   },
   methods: {
     imgSrc() {
-      // eslint-disable-next-line
-      console.log('dir: ', this.dir)
-      // eslint-disable-next-line
-      console.log('src: ', this.src)
-      // eslint-disable-next-line
-      console.log('alt: ', this.alt)
       try {
         return require(`~/content${this.dir}${this.src}`)
       } catch (error) {
