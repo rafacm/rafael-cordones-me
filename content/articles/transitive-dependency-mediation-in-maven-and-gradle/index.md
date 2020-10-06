@@ -26,36 +26,44 @@ Anyway, enough self-marketing and back to our topic! In the <a href="https://git
 I thought I just had to tell other developers to do just two things:
 1. Add the camunda BPM repository to your project
 ```xml
-        camunda-bpm-nexus
-        camunda-bpm-nexus
-        https://app.camunda.com/nexus/content/groups/public
-
-            always
+<repositories>
+    <repository>
+      <id>camunda.com.public</id>
+      <name>Camunda Repository</name>
+      <url>https://app.camunda.com/nexus/content/groups/public</url>
+    </repository>
+</repositories>
 ```
 2. Declare the fluent testing artifacts as a test scope dependency
 ```xml
-org.camunda.bpm.incubation
-    camunda-bpm-fluent-assertions
-    0.4-SNAPSHOT
-    test
-
-    org.camunda.bpm.incubation
-    camunda-bpm-fluent-engine-api
-    0.4-SNAPSHOT
-    test
+ <dependencies>
+    <dependency>
+      <groupId>org.camunda.bpm.incubation</groupId>
+      <artifactId>camunda-bpm-fluent-assertions</artifactId>
+      <version>0.4-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm.incubation</groupId>
+      <artifactId>camunda-bpm-fluent-engine-api</artifactId>
+      <version>0.4-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+</dependencies>
 ```
 
 But unfortunately, reality has subtle ways of slipping into a developer's life... it's actually called <a href="http://en.wikipedia.org/wiki/Complexity">complexity</a> and it's one of the main reasons why software projects get delayed, <a href="http://en.wikipedia.org/wiki/The_Mythical_Man-Month">one day at a time</a>.
 
 Anyway, I went off a tangent again. What's all of this got to do with Maven and Gradle?! Well, since I like to <a href="http://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you're_a_dog">eat my own dog food</a> as much as I can, I refactored <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> project to use the fluent testing library... and... got the unpleasant surprise of getting the following exception while <strong>executing</strong> the tests:
 
-```-------------------------------------------------------
+```bash
+-------------------------------------------------------
 T E S T S
 -------------------------------------------------------
 Running com.plexiti.camunda.bpm.showcase.jobannouncement.process.JobAnnouncementPublicationTest
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.043 sec &lt;&lt;&lt; FAILURE!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.043 sec <<< FAILURE!
 Running com.plexiti.camunda.bpm.showcase.jobannouncement.process.JobAnnouncementTest
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec &lt;&lt;&lt; FAILURE!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
 Running com.plexiti.camunda.bpm.showcase.jobannouncement.web.JobAnnouncementBeanTest
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.326 sec
 Results :
@@ -67,7 +75,8 @@ Tests run: 4, Failures: 0, Errors: 2, Skipped: 0
 
 After a bit of investigation I found the explanation: our library has a runtime dependency on <code>junit:junit:jar</code> version <strong>4.9</strong> whereas The Job Announcement <code>pom.xml</code> explicitly declares <code>junit:junit:jar:4.8</code>. The dependency on <code>4.9</code> is due to the use of the <a href="https://github.com/junit-team/junit/blob/master/src/main/java/org/junit/rules/TestRule.java">org.junit.rules.TestRule interface</a> introduced in JUnit 4.9. Given Maven's <a href="http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">default dependency conflict resolution strategy</a>, what is explicitly declared in your application's <code>pom.xml</code> ("nearest definition") overrides anything else. This is shown when using <code>mvn dependency:tree</code>:
 
-```rafa@trane: ~/dev/the-job-announcement$ mvn dependency:tree
+```bash
+rafa@trane: ~/dev/the-job-announcement$ mvn dependency:tree
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------------------------------------------------------------
@@ -100,9 +109,11 @@ To be honest, I would have expected at least a <code>[WARN]</code> entry while b
 
 Even using a dependency version range as indicated <a href="http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-project-dependencies.html#ex-dep-range-2">here</a> (thanks for the tip <a href="https://twitter.com/zziga">Ziga</a>!) in the fluent library's <code>pom.xml</code> like this:
 ```xml
-junit
-    junit
-    [4.9]
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>[4.9]</version>
+</dependency>    
 ```
 gives exactly the same results.
 
@@ -135,7 +146,7 @@ What I basically do in the file is:
 That's what I call succinctness.
 
 And now comes the moment of truth... drumroll please...
-```
+```bash
 rafa@miles: ~/tmp/deps-with-gradle$ gradle dependencies
 :dependencies
 ------------------------------------------------------------
@@ -147,7 +158,7 @@ No dependencies
 testRuntime - Runtime classpath for source set 'test'.
 testRuntime - Runtime classpath for source set 'test'.
 [...]
-+--- junit:junit:4.8 -&gt; 4.9
++--- junit:junit:4.8 -> 4.9
 | \--- org.hamcrest:hamcrest-core:1.1
 \--- org.camunda.bpm.incubation:camunda-bpm-fluent-assertions:0.4-SNAPSHOT
 +--- org.camunda.bpm.incubation:camunda-bpm-fluent-engine-api:0.4-SNAPSHOT
@@ -173,7 +184,7 @@ BUILD SUCCESSFUL
 Total time: 35.428 secs
 ```
 
-Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict resolution! The first one is the explicitly stated dependency on JUnit 4.8 (<code>junit:junit:4.8 -&gt; 4.9</code>) and the second is the transitive dependency (<code>junit:junit:4.9 (*)</code>). Gradle definitely passed the 10-minute test with flying colors!
+Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict resolution! The first one is the explicitly stated dependency on JUnit 4.8 (<code>junit:junit:4.8 -> 4.9</code>) and the second is the transitive dependency (<code>junit:junit:4.9 (*)</code>). Gradle definitely passed the 10-minute test with flying colors!
 
 ## Can I <em>handle</em> the Maven truth?
 
@@ -197,9 +208,9 @@ Maven: *You can't <em>handle</em> the truth!*
 
 [pauses]
 
-Maven: Son, we live in a world full of software projects that have dependencies, and those dependencies have to be resolved. Who's gonna do it? You, manually? You, Gradle? I have a greater responsibility than you can possibly fathom. You weep for your unresolved dependency and you curse Maven. You have that luxury. You have the luxury of not knowing what I know, that resolving that dependency my way, while tragic, probably saved projects. And my existence, while grotesque and incomprehensible to you, saves projects! You don't want the truth, because deep down in IT basements you don't talk about at release parties, you <em>want</em> me on your project. You <em>need</em> me on your project. We use words like <code>&lt;dependecy&gt;</code>, <code>&lt;version&gt;</code>, <code>&lt;scope&gt;</code>. We use these words as the backbone of a life spent building software. You use them as a punchline. I have neither the CPU cycles nor the disk space to explain myself to someone who develops and releases software under the blanket of the default configuration that I provide, and then questions the manner in which I provide it! I would rather you just said "thank you", and went on your way. Otherwise, I suggest you pick up a browser, and start manually downloading and managing all those dependencies. Either way, I don't give a damn what you think you are entitled to!
+Maven: Son, we live in a world full of software projects that have dependencies, and those dependencies have to be resolved. Who's gonna do it? You, manually? You, Gradle? I have a greater responsibility than you can possibly fathom. You weep for your unresolved dependency and you curse Maven. You have that luxury. You have the luxury of not knowing what I know, that resolving that dependency my way, while tragic, probably saved projects. And my existence, while grotesque and incomprehensible to you, saves projects! You don't want the truth, because deep down in IT basements you don't talk about at release parties, you <em>want</em> me on your project. You <em>need</em> me on your project. We use words like <code><dependecy></code>, <code><version></code>, <code><scope></code>. We use these words as the backbone of a life spent building software. You use them as a punchline. I have neither the CPU cycles nor the disk space to explain myself to someone who develops and releases software under the blanket of the default configuration that I provide, and then questions the manner in which I provide it! I would rather you just said "thank you", and went on your way. Otherwise, I suggest you pick up a browser, and start manually downloading and managing all those dependencies. Either way, I don't give a damn what you think you are entitled to!
 
-― From <a href="http://www.youtube.com/watch?v=5j2F4VcBmeo">"A Few Good Build Tools"</a></blockquote>
+― From <a href="http://www.youtube.com/watch?v=5j2F4VcBmeo">"A Few Good Build Tools"</a></blockquote>
 <h2>Postscript</h2>
 Please, do not read this post as mere Maven bashing! I definitely believe that <a href="http://www.nofluffjuststuff.com/blog/john_smart/2010/09/what_has_maven_ever_done_for_us_">Maven has done A LOT for us</a> (thanks to <a href="http://managing-java.blogspot.co.at">Sebastian Dietrich</a> for the link!).
 
