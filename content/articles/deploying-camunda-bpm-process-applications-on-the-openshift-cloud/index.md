@@ -156,7 +156,12 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 
 After OpenShift has built your application from source and deployed it, your application should be ready to rock at the OpenShift's provided URL:
 
-<img class="w-full rounded-md" src="http://rafael.cordones.me/assets/thejobannouncement-rafacm-openshift-981x1024.png" alt="The Job Announcement running on OpenShift"/>
+<content-image
+    class="w-full"
+    dir="/articles/deploying-camunda-bpm-process-applications-on-the-openshift-cloud"
+    src="/images/thejobannouncement-rafacm-openshift.png"
+    alt="The Job Announcement running on OpenShift">
+</content-image>
 
-<h2>Feedback welcome!</h2>
+## Feedback welcome!
 You can reach me either via the comments section below or via any of the social coordinates you will find on the top right corner of this page.
