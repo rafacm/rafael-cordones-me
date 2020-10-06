@@ -47,13 +47,13 @@ export default {
   async asyncData({ $content, params }) {
     const articlePath = `/articles`
     // eslint-disable-next-line
-    console.log('articlePath', articlePath)
+    //console.log('articlePath', articlePath)
     const articles = await $content(articlePath, { deep: true })
       .only(['title', 'description', 'image', 'dir', 'slug', 'path'])
       .sortBy('date', 'desc')
       .fetch()
     // eslint-disable-next-line
-    console.log('articles', JSON.stringify(articles, null, 2))
+    //console.log('articles', JSON.stringify(articles, null, 2))
 
     /*
      * Since we are using folders with an index.md file, we need to 'fix' the
@@ -61,17 +61,17 @@ export default {
      */
     const fixArticleSlug = (article) => {
       // eslint-disable-next-line
-      console.log('Fixing article: ', JSON.stringify(article, null, 2))
+      //console.log('Fixing article: ', JSON.stringify(article, null, 2))
       const fixedSlug = article.path.split('/').slice(-2)[0]
       return { ...article, slug: fixedSlug }
     }
     // eslint-disable-next-line
-    console.log('articles before map(): ', JSON.stringify(articles, null, 2))
+    //console.log('articles before map(): ', JSON.stringify(articles, null, 2))
 
     const articlesWithFixedSlug = articles.map(fixArticleSlug)
 
     // eslint-disable-next-line
-    console.log('articlesWithFixedSlug', JSON.stringify(articlesWithFixedSlug, null, 2))
+    //console.log('articlesWithFixedSlug', JSON.stringify(articlesWithFixedSlug, null, 2))
 
     return {
       articles: articlesWithFixedSlug

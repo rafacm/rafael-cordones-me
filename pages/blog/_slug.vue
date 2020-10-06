@@ -38,11 +38,11 @@ export default {
     try {
       const articlePath = `/articles/${params.slug}`
       // eslint-disable-next-line
-      console.log('articlePath', articlePath)
+      //console.log('articlePath', articlePath)
       const articles = await $content(articlePath, { deep: true }).fetch()
       const article = articles[0]
       // eslint-disable-next-line
-      console.log('article', JSON.stringify(article, null, 2))
+      //console.log('article', JSON.stringify(article, null, 2))
       const [prev, next] = await $content('articles')
         .only(['title', 'slug'])
         .sortBy('createdAt', 'asc')
