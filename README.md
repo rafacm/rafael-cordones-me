@@ -1,6 +1,6 @@
 Personal website implemented with [Nuxt.js Content Module](https://content.nuxtjs.org/).
 
-![website](<img src="rafael-cordones-me-screenshot.png" align="center" width="100%">)
+<img src="rafael-cordones-me-screenshot.png" align="center" width="100%">
 
 ## Build Setup
 
