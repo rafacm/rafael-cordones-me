@@ -14,7 +14,7 @@
         />
 
         <h2
-          class="absolute right-0 top-0 text-white text-right text-2xl tracking-wider font-extrabold p-4"
+          class="absolute right-0 top-0 text-white text-right text-lg tracking-wider font-extrabold p-4"
         >
           {{ article.title }}
         </h2>
