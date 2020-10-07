@@ -1,44 +1,26 @@
 <template>
-  <div class="m-8">
-    <TheHeader />
-    <ul class="flex flex-wrap">
-      <li
-        v-for="article of articles"
-        :key="article.slug"
-        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
-      >
-        <NuxtLink
-          :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-          class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
-        >
-          <content-image
-            class="h-48 xxlmin:w-1/2 xxlmax:w-full object-cover"
-            :dir="article.dir"
-            :src="article.image.path"
-            :alt="article.image.alt"
-          />
+  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3">
+    <NuxtLink
+      v-for="article of articles"
+      :key="article.slug"
+      :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+    >
+      <div class="rounded overflow-hidden shadow-lg">
+        <content-image
+          class="w-full h-64"
+          :dir="article.dir"
+          :src="article.image.path"
+          :alt="article.image.alt"
+        />
 
-          <div
-            class="p-6 flex flex-col justify-between xxlmin:w-1/2 xxlmax:w-full"
-          >
-            <h2 class="font-bold">{{ article.title }}</h2>
-            <p class="font-bold text-gray-600 text-sm">
-              {{ article.description }}
-            </p>
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
-    <footer class="flex justify-center border-gray-500 border-t-2">
-      <p class="mt-4">
-        © 2020 rafael cordones |
-        <a
-          href="https://firmen.wko.at/rafael-cordones-marcos%2c-msc/wien/?firmaid=ea70a605-c16a-4275-be2d-06827fdae484&suchbegriff=rafael%20cordones"
-          class="font-bold hover:underline"
-          >Imprint</a
-        >
-      </p>
-    </footer>
+        <div class="p-4 h-20">
+          <h2 class="font-bold">{{ article.title }}</h2>
+          <p class="font-bold text-gray-600 text-sm">
+            {{ article.description }}
+          </p>
+        </div>
+      </div>
+    </NuxtLink>
   </div>
 </template>
 
@@ -84,10 +66,12 @@ export default {
 .article-card {
   border-radius: 8px;
 }
+
 .article-card a {
   background-color: #fff;
   border-radius: 8px;
 }
+
 .article-card img div {
   border-radius: 8px 0 0 8px;
 }
