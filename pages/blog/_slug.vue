@@ -5,13 +5,14 @@
       <h3 class="mt-2 -mb-3 flex uppercase text-sm">
         {{ formatDate(article.date) }}
       </h3>
-      <figure>
+      <figure class="w-full">
         <content-image
-          class="w-full"
+          class="rounded shadow-lg"
           :dir="article.dir"
           :src="article.image.path"
           :alt="article.image.alt"
         />
+        <!-- eslint-disable-next-line -->
         <figcaption v-html="article.image.caption"></figcaption>
       </figure>
       <nuxt-content :document="article" />

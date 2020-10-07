@@ -6,9 +6,9 @@ category: Blog
 tags: 
     - talks
 image:
-    path: /composition-kandinsky.png
-    alt: Composition. Wassily Kandinsky. 1944.
-    caption: Composition. Wassily Kandinsky. 1944. Source <a href="https://artsandculture.google.com/asset/composition-kandinsky-vassily/2AGLIiSAmxZHGg">Google Arts & Culture</a>
+    path: /Dew_on_a_Spider_Web-_MET_DP351925-modified.jpg
+    alt: Dew on a Spider Web. Wilson Bentley. ca. 1910. The Metropolitan Museum of Art
+    caption: Dew on a Spider Web. Wilson Bentley. ca. 1910. <a href="https://www.metmuseum.org/art/collection/search/669363">The Metropolitan Museum of Art</a>.
 ---
 
 These are the slides of the workshop I gave at the <a href="https://www.wearedevelopers.com/events/world-congress/">We Are Developers</a> Vienna 2018 <br/>(<a href="https://speakerd.s3.amazonaws.com/presentations/c0af9815abff462abe97f992fd489b4f/jamming-with-gentics-mesh-react-static-and-amazon-s3.pdf">PDF with active hyperlinks</a>):

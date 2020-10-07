@@ -14,10 +14,7 @@
         />
 
         <div class="p-4 h-20">
-          <h2 class="font-bold">{{ article.title }}</h2>
-          <p class="font-bold text-gray-600 text-sm">
-            {{ article.description }}
-          </p>
+          <h2 class="font-hairline">{{ article.title }}</h2>
         </div>
       </div>
     </NuxtLink>

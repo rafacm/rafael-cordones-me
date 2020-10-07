@@ -189,6 +189,7 @@ Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict re
 ## Can I <em>handle</em> the Maven truth?
 
 <content-image
+    class="w-full"
     dir="/articles/transitive-dependency-mediation-in-maven-and-gradle"
     src="/a-few-good-men.png"
     alt="A Few Good Men.">
