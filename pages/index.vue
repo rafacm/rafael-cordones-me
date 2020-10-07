@@ -7,7 +7,7 @@
     >
       <div class="rounded overflow-hidden shadow-lg">
         <content-image
-          class="w-full h-64"
+          class="w-full h-56"
           :dir="article.dir"
           :src="article.image.path"
           :alt="article.image.alt"
