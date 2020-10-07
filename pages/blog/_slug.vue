@@ -1,8 +1,8 @@
 <template>
-  <article
+  <div
     class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
   >
-    <div class="relative lg:w-1/2 xs:w-full xs:h-84 lg:h-full post-left">
+    <div class="relative lg:w-1/3 xs:w-full xs:h-84 lg:h-full post-left">
       <content-image
         class="absolute h-full w-full object-cover"
         :dir="article.dir"
@@ -10,24 +10,22 @@
         :alt="article.image.alt"
       />
       <div class="overlay"></div>
-      <div class="absolute top-32 left-32 text-white">
+      <div class="absolute mt-4 mr-4 top-32 left-32 text-white">
         <NuxtLink to="/"><Logo /></NuxtLink>
-        <div class="mt-16 -mb-3 flex uppercase text-sm">
-          <p class="mr-3">
-            {{ formatDate(article.date) }}
-          </p>
-        </div>
-        <h1 class="text-6xl font-bold">{{ article.title }}</h1>
       </div>
     </div>
-    <div
-      class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
+    <article
+      class="prose relative xs:py-4 xs:px-8 lg:py-8 lg:px-16 lg:w-2/3 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
     >
+      <h1 class="text-4xl font-bold">{{ article.title }}</h1>
+      <h3 class="mt-2 -mb-3 flex uppercase text-sm">
+        {{ formatDate(article.date) }}
+      </h3>
       <nuxt-content :document="article" />
       <!-- prevNext component -->
       <PrevNext :prev="prev" :next="next" class="mt-8" />
-    </div>
-  </article>
+    </article>
+  </div>
 </template>
 <script>
 import ContentImage from '@/components/global/ContentImage'
@@ -68,23 +66,3 @@ export default {
   }
 }
 </script>
-<style>
-.nuxt-content p {
-  margin-bottom: 20px;
-}
-.nuxt-content h2 {
-  font-weight: bold;
-  font-size: 28px;
-}
-.nuxt-content h3 {
-  font-weight: bold;
-  font-size: 22px;
-}
-.icon.icon-link {
-  background-image: url('~assets/svg/icon-hashtag.svg');
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
-}
-</style>

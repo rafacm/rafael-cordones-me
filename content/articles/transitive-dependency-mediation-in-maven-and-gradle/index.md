@@ -194,24 +194,26 @@ Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict re
     alt="A Few Good Men.">
 </content-image>
 
-<blockquote>Developer: Maven, if a library declares a dependency on JUnit <code>[4.9]</code> which conflicts with an explicitly declared dependency to JUnit <code>4.8</code> in my project's <code>pom.xml</code>, why do you still resolve the conflict choosing JUnit <code>4.8</code>?! At least you should give me a warning!
+> Developer: Maven, if a library declares a dependency on JUnit <code>[4.9]</code> which conflicts with an explicitly declared dependency to JUnit <code>4.8</code> in my project's <code>pom.xml</code>, why do you still resolve the conflict choosing JUnit <code>4.8</code>?! At least you should give me a warning!
+>
+> Maven: You want answers?
+>
+> Developer: I think I'm entitled to.
+>
+> Maven: **You want answers?**
+>
+> Developer: **I want the truth!**
+>
+> Maven: **You can't <em>handle</em> the truth!**
+>
+> [pauses]
+>
+> Maven: Son, we live in a world full of software projects that have dependencies, and those dependencies have to be resolved. Who's gonna do it? You, manually? You, Gradle? I have a greater responsibility than you can possibly fathom. You weep for your unresolved dependency and you curse Maven. You have that luxury. You have the luxury of not knowing what I know, that resolving that dependency my way, while tragic, probably saved projects. And my existence, while grotesque and incomprehensible to you, saves projects! You don't want the truth, because deep down in IT basements you don't talk about at release parties, you <em>want</em> me on your project. You <em>need</em> me on your project. We use words like `<dependecy>`, `<version>`, `<scope>`. We use these words as the backbone of a life spent building software. You use them as a punchline. I have neither the CPU cycles nor the disk space to explain myself to someone who develops and releases software under the blanket of the default configuration that I provide, and then questions the manner in which I provide it! I would rather you just said "thank you", and went on your way. Otherwise, I suggest you pick up a browser, and start manually downloading and managing all those dependencies. Either way, I don't give a damn what you think you are entitled to!
+> 
+> ― From <a href="http://www.youtube.com/watch?v=5j2F4VcBmeo">"A Few Good Build Tools"</a></blockquote>
+>
+## Postscript
 
-Maven: You want answers?
-
-Developer: I think I'm entitled to.
-
-Maven: *You want answers?*
-
-Developer: *I want the truth!*
-
-Maven: *You can't <em>handle</em> the truth!*
-
-[pauses]
-
-Maven: Son, we live in a world full of software projects that have dependencies, and those dependencies have to be resolved. Who's gonna do it? You, manually? You, Gradle? I have a greater responsibility than you can possibly fathom. You weep for your unresolved dependency and you curse Maven. You have that luxury. You have the luxury of not knowing what I know, that resolving that dependency my way, while tragic, probably saved projects. And my existence, while grotesque and incomprehensible to you, saves projects! You don't want the truth, because deep down in IT basements you don't talk about at release parties, you <em>want</em> me on your project. You <em>need</em> me on your project. We use words like <code><dependecy></code>, <code><version></code>, <code><scope></code>. We use these words as the backbone of a life spent building software. You use them as a punchline. I have neither the CPU cycles nor the disk space to explain myself to someone who develops and releases software under the blanket of the default configuration that I provide, and then questions the manner in which I provide it! I would rather you just said "thank you", and went on your way. Otherwise, I suggest you pick up a browser, and start manually downloading and managing all those dependencies. Either way, I don't give a damn what you think you are entitled to!
-
-― From <a href="http://www.youtube.com/watch?v=5j2F4VcBmeo">"A Few Good Build Tools"</a></blockquote>
-<h2>Postscript</h2>
 Please, do not read this post as mere Maven bashing! I definitely believe that <a href="http://www.nofluffjuststuff.com/blog/john_smart/2010/09/what_has_maven_ever_done_for_us_">Maven has done A LOT for us</a> (thanks to <a href="http://managing-java.blogspot.co.at">Sebastian Dietrich</a> for the link!).
 
 Anyway, thank you Maven! I go on my way now.

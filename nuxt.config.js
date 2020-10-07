@@ -1,3 +1,5 @@
+import tailwindConfig from './tailwind.config'
+
 export default {
   /*
    ** Nuxt target
@@ -19,7 +21,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/css/main.css'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -39,7 +41,8 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts'
   ],
   /*
    ** Nuxt.js modules
@@ -59,6 +62,15 @@ export default {
       }
     },
     nestedProperties: ['author.name']
+  },
+  googleFonts: {
+    families: {
+      'DM+Sans': true,
+      'DM+Mono': true
+    }
+  },
+  tailwindcss: {
+    config: tailwindConfig
   },
   /*
    ** Build configuration
