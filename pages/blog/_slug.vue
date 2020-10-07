@@ -9,10 +9,6 @@
         :src="article.image.path"
         :alt="article.image.alt"
       />
-      <div class="overlay"></div>
-      <div class="absolute mt-4 mr-4 top-32 left-32 text-white">
-        <NuxtLink to="/"><Logo /></NuxtLink>
-      </div>
     </div>
     <article
       class="prose relative xs:py-4 xs:px-8 lg:py-8 lg:px-16 lg:w-2/3 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
