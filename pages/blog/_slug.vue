@@ -1,10 +1,12 @@
 <template>
   <div class="w-full mx-auto">
-    <article class="prose max-w-none lg:prose-lg xl:prose-xl">
-      <h1 class="text-4xl font-bold">{{ article.title }}</h1>
-      <h3 class="mt-2 -mb-3 flex uppercase text-sm">
+    <div class="mb-4">
+      <h1 class="text-2xl xl:text-4xl font-bold">{{ article.title }}</h1>
+      <h2 class="text-lg xl:text-xl">
         {{ formatDate(article.date) }}
-      </h3>
+      </h2>
+    </div>
+    <article class="prose max-w-none lg:prose-lg xl:prose-xl">
       <figure class="w-full">
         <content-image
           class="rounded shadow-lg"

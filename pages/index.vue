@@ -1,21 +1,21 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-2 lg:grid-cols-3">
+  <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     <NuxtLink
       v-for="article of articles"
       :key="article.slug"
       :to="{ name: 'blog-slug', params: { slug: article.slug } }"
     >
-      <div class="rounded overflow-hidden shadow-lg">
+      <div class="rounded overflow-hidden shadow-lg relative">
         <content-image
-          class="w-full h-56"
+          class="w-full h-64"
           :dir="article.dir"
           :src="article.image.path"
           :alt="article.image.alt"
         />
 
-        <div class="p-4 h-20">
-          <h2 class="font-hairline">{{ article.title }}</h2>
-        </div>
+        <h2 class="absolute bottom-0 text-white text-lg font-bold p-4">
+          {{ article.title }}
+        </h2>
       </div>
     </NuxtLink>
   </div>

@@ -4,7 +4,6 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
-const path = require('path')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -101,10 +100,10 @@ module.exports = {
     enabled: process.env.NODE_ENV === 'production',
     content: [
       'content/**/*.md',
-      path.join(__dirname, 'components/**/*.vue'),
-      path.join(__dirname, 'layouts/**/*.vue'),
-      path.join(__dirname, 'pages/**/*.vue'),
-      path.join(__dirname, 'plugins/**/*.js'),
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
       'nuxt.config.js'
     ],
     options: {
