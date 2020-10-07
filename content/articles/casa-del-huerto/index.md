@@ -2,7 +2,9 @@
 title: Casa del Huerto
 date: 2010-12-17
 permalink: http://rafael.cordones.me/2010/12/17/casa-del-huerto/
-categories: articles, photoblog
+tags:
+    - photoblog
+    - photography
 image:
     path: /images/img_0360.jpg
     alt: Casa del Huerto.

@@ -4,6 +4,8 @@ date: 2008-07-11
 permalink: http://rafael.cordones.me/2008/07/11/vienna/
 categories:
 tags: 
+    - photoblog
+    - photography
     - vienna
 image:
     path: /images/IMG_3330.jpg

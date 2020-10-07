@@ -2,7 +2,9 @@
 title: Call of the Wild
 date: 2011-01-04
 permalink: http://rafael.cordones.me/2011/01/04/call-of-the-wild/
-categories: life, photoblog
+tags:
+    - photoblog
+    - photography
 image:
     path: /IMG_0510.jpg
     alt: Lion on Schemerlbrücke in Vienna

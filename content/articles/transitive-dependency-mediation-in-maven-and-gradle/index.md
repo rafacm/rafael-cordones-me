@@ -3,7 +3,14 @@ title: Transitive Dependency Mediation in Maven and Gradle
 date: 2013-05-06
 permalink: http://rafael.cordones.me/2013/05/06/transitive-dependency-mediation-in-maven-and-gradle/
 category: Blog 
-tags: BPM, build tools, camunda BPM, fluent testing, gradle, maven, testing
+tags: 
+    - BPM
+    - build tools
+    - camunda BPM
+    - fluent testing
+    - gradle 
+    - maven
+    - testing
 image:
     path: /Nighthawks_by_Edward_Hopper_1942.jpg
     alt: Nighthawks by Edward Hopper. 1942.

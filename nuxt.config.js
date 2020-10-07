@@ -65,7 +65,7 @@ export default {
   },
   googleFonts: {
     families: {
-      'DM+Sans': true,
+      'Open+Sans': true,
       'DM+Mono': true
     }
   },

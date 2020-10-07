@@ -2,9 +2,18 @@
   <div class="w-full mx-auto">
     <div class="mb-4">
       <h1 class="text-2xl xl:text-4xl font-bold">{{ article.title }}</h1>
-      <h2 class="text-lg xl:text-xl">
+      <h2 class="uppercase tracking-wider my-2 text-lg xl:text-xl">
         {{ formatDate(article.date) }}
       </h2>
+      <div class="my-2 flex flex-row flex-wrap justify-start mb-2">
+        <div v-for="tag of article.tags" :key="tag">
+          <span
+            class="rounded-full border px-2 py-1 mr-2 mb-2 text-sm bg-gray-200 tracking-wider"
+          >
+            {{ tag }}
+          </span>
+        </div>
+      </div>
     </div>
     <article class="prose max-w-none lg:prose-lg xl:prose-xl">
       <figure class="w-full">
