@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <p>This is the footer</p>
-    <footer class="flex justify-center border-gray-500 border-t-2">
-      <p class="mt-4">
-        © 2020 rafael cordones |
-        <a
-          href="https://firmen.wko.at/rafael-cordones-marcos%2c-msc/wien/?firmaid=ea70a605-c16a-4275-be2d-06827fdae484&suchbegriff=rafael%20cordones"
-          class="font-bold hover:underline"
-          >Imprint</a
-        >
-      </p>
-    </footer>
-  </div>
+  <footer
+    class="mt-4 h-16 relative w-full border-t dark:border-gray-800 bg-white dark:bg-gray-900 z-20"
+  >
+    <div
+      class="h-full w-full container mx-auto px-4 lg:px-8 flex items-center justify-between"
+    >
+      <div class="flex items-end">
+        <a href="https://nuxtjs.org" target="_blank" rel="noopener">
+          <BuiltWithNuxtLight class="h-4 light-img" />
+        </a>
+      </div>
+    </div>
+  </footer>
 </template>
