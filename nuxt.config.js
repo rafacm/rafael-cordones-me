@@ -47,7 +47,9 @@ export default {
     '@nuxtjs/fontawesome',
     '@nuxtjs/google-fonts',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    // See https://github.com/nuxt-community/analytics-module
+    '@nuxtjs/google-analytics'
   ],
   /*
    ** Nuxt.js modules
@@ -78,6 +80,9 @@ export default {
       'Open+Sans': true,
       'DM+Mono': true
     }
+  },
+  googleAnalytics: {
+    id: 'UA-55232459-1'
   },
   tailwindcss: {
     config: tailwindConfig
