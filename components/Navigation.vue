@@ -6,7 +6,7 @@
       <div class="flex items-center justify-between h-16">
         <div class="">
           <h1
-            class="text-xl text-gray-600 tracking-wider font-bold hover:text-primary-500"
+            class="text-xl text-gray-600 tracking-wider font-mono font-bold hover:text-primary-500"
           >
             <nuxt-link to="/">rafael cordones</nuxt-link>
           </h1>

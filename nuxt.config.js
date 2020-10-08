@@ -81,10 +81,14 @@ export default {
     families: {
       'Open+Sans': true,
       'DM+Mono': true
-    }
+    },
+    download: true
   },
   googleAnalytics: {
     id: 'UA-55232459-1'
+  },
+  responsiveLoader: {
+    adapter: require('responsive-loader/sharp')
   },
   tailwindcss: {
     config: tailwindConfig
