@@ -2,7 +2,9 @@
   <div class="alert border-l-4 p-4 mb-4 mt-4" :class="`alert-${type}`">
     <div class="flex items-start">
       <div class="flex-shrink-0">
-        <component :is="icon" class="alert-icon mt-px w-6 h-6" />
+        <span class="alert-icon mt-px w-6 h-6">
+          <font-awesome-icon :icon="['fa', icon]" />
+        </span>
       </div>
       <div class="flex-grow ml-2 overflow-auto alert-content">
         <slot />
@@ -25,10 +27,10 @@ export default {
   computed: {
     icon() {
       return {
-        info: 'IconInformationCircle',
-        success: 'IconCheckCircle',
-        warning: 'IconExclamationCircle',
-        danger: 'IconXCircle'
+        info: 'info-circle',
+        success: 'check-circle',
+        warning: 'exclamation-circle',
+        danger: 'times-circle'
       }[this.type]
     }
   }

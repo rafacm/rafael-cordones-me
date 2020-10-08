@@ -2,8 +2,8 @@
   "name": "rafael-cordones-me",
   "version": "1.0.0",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/rafacm/rafael-cordones-me.git"
+    "type": "git",
+    "url": "https://github.com/rafacm/rafael-cordones-me.git"
   },
   "private": true,
   "scripts": {
@@ -16,7 +16,9 @@
     "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style"
   },
-  "engines" : { "node" : ">=12.0" },
+  "engines": {
+    "node": ">=12.0"
+  },
   "lint-staged": {
     "*.{js,vue}": "eslint",
     "*.{css,vue}": "stylelint"
@@ -32,9 +34,12 @@
     "prism-themes": "1.4.0"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@nuxt/types": "^2.14.6",
     "@nuxtjs/eslint-config": "3.1.0",
     "@nuxtjs/eslint-module": "2.0.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/google-fonts": "^1.0.3",
     "@nuxtjs/stylelint-module": "4.0.0",
     "@nuxtjs/tailwindcss": "3.1.0",

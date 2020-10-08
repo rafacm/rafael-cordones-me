@@ -43,6 +43,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
+    // See https://github.com/nuxt-community/fontawesome-module
+    '@nuxtjs/fontawesome',
     '@nuxtjs/google-fonts',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss'
@@ -63,6 +65,12 @@ export default {
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
+    }
+  },
+  fontawesome: {
+    icons: {
+      solid: ['faInfoCircle', 'faTimesCircle', 'faExclamationCircle', 'faCheckCircle'],
+      brands: ['faTwitter', 'faGithub', 'faLinkedin']
     }
   },
   googleFonts: {
