@@ -56,7 +56,9 @@ export default {
    */
   modules: [
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    // See https://github.com/geeogi/nuxt-responsive-loader
+    'nuxt-responsive-loader'
   ],
   /*
    ** Content module configuration
