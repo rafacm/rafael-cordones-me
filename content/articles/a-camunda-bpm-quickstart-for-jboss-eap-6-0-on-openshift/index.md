@@ -15,10 +15,6 @@ image:
     path: /images/gosaukam_panorama.jpg
     alt: Gosaukam panorama
     caption: Gosaukam. Austria. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
-author: 
-    name: Peter
-    bio: All about Peter and what he does and where he works
-    img: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
 ---
 
 This post is a follow up from a previous article "<a href="/blog/the-job-announcement-on-the-openshift-paas-cloud">The Job Announcement on the OpenShift PaaS cloud?</a>" and describes a quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on <a href="https://openshift.redhat.com/">OpenShift</a>. From the <a href="http://docs.camunda.org/guides/user-guide/#platform-process-engine">several deployment scenarios supported by the camunda BPM engine</a>, this post focuses on the <em>shared process engine</em> one.
