@@ -2,6 +2,7 @@
 title: Business Process Management & Eclipse
 date: 2013-06-28
 permalink: http://rafael.cordones.me/2013/06/28/business-process-management-eclipse/
+description: Slides for the talk I gave at the Eclipse DemoCamp Vienna.
 tags: 
     - BPM
     - Camunda BPM

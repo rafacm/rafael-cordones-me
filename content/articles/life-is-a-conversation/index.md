@@ -1,7 +1,8 @@
 ---
 title: Life's a Conversation
 date: 2013-05-12
-permalink: http://rafael.cordones.me/2013/05/12/life-is-a-conversation/
+description: Presentation of my new personal website.
+legacyUrl: http://rafael.cordones.me/2013/05/12/life-is-a-conversation/
 tags: 
     - blogging
 image:

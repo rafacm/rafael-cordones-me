@@ -1,8 +1,8 @@
 ---
 title: Vienna
 date: 2008-07-11
-permalink: http://rafael.cordones.me/2008/07/11/vienna/
-categories:
+description: Photos from Vienna, Austria.
+legacyUrl: http://rafael.cordones.me/2008/07/11/vienna/
 tags: 
     - photoblog
     - photography

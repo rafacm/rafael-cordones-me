@@ -1,8 +1,8 @@
 ---
 title: Transitive Dependency Mediation in Maven and Gradle
 date: 2013-05-06
-permalink: http://rafael.cordones.me/2013/05/06/transitive-dependency-mediation-in-maven-and-gradle/
-category: Blog 
+description: Troubleshooting a dependency resolution issue on Maven and comparison with Graddle. 
+legacyUrl: http://rafael.cordones.me/2013/05/06/transitive-dependency-mediation-in-maven-and-gradle/
 tags: 
     - BPM
     - build tools

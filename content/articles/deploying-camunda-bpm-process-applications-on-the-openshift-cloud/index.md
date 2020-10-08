@@ -2,7 +2,7 @@
 title: Deploying camunda BPM process applications on the OpenShift cloud
 date: 2013-05-14
 permalink: http://rafael.cordones.me/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/
-category: Blog
+description: How-to on deploying an **existing application** to camunda BPM running on JBoss EAP 6.x on OpenShift and a **a proposal** on how to manage the further development of the application and keep pushing new releases out to OpenShift.
 tags: 
     - BPM
     - Camunda BPM

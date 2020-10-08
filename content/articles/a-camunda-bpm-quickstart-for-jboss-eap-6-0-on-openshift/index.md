@@ -1,6 +1,7 @@
 ---
 title: A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?
 date: 2013-05-03
+description: A quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on OpenShift.
 legacyUrl: http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/
 tags: 
     - BPM
