@@ -1,5 +1,5 @@
 <template>
-  <img :srcset="imgSrc().srcSet" :alt="alt" />
+  <img :src="imgSrc().src" :srcset="imgSrc().srcSet" :alt="alt" />
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   methods: {
     imgSrc() {
       try {
-        return require(`~/content${this.dir}${this.src}`)
+        return require(`~/content${this.dir}${this.src}?resize`)
       } catch (error) {
         return null
       }

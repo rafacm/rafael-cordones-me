@@ -88,7 +88,7 @@ export default {
     id: 'UA-55232459-1'
   },
   responsiveLoader: {
-    adapter: require('responsive-loader/sharp')
+    name: 'images/[name]-[width].[ext]'
   },
   tailwindcss: {
     config: tailwindConfig
