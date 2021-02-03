@@ -19,45 +19,8 @@
   "engines": {
     "node": ">=12.0"
   },
-  "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
-    "@nuxt/content": "1.9.0",
-    "nuxt": "2.14.6",
-    "prism-themes": "1.4.0"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@nuxt/types": "^2.14.6",
-    "@nuxtjs/eslint-config": "3.1.0",
-    "@nuxtjs/eslint-module": "2.0.0",
-    "@nuxtjs/fontawesome": "^1.1.2",
-    "@nuxtjs/google-analytics": "^2.4.0",
-    "@nuxtjs/google-fonts": "^1.0.3",
-    "@nuxtjs/stylelint-module": "4.0.0",
-    "@nuxtjs/tailwindcss": "3.1.0",
-    "@tailwindcss/typography": "^0.2.0",
-    "babel-eslint": "10.1.0",
-    "eslint": "7.9.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-plugin-nuxt": "1.0.0",
-    "eslint-plugin-prettier": "3.1.4",
-    "husky": "4.3.0",
-    "ignore-loader": "^0.1.2",
-    "lint-staged": "10.4.0",
-    "nuxt-responsive-loader": "^2.0.1",
-    "prettier": "2.1.2",
-    "sharp": "^0.26.1",
-    "stylelint": "13.7.1",
-    "stylelint-config-prettier": "8.0.2",
-    "stylelint-config-standard": "20.0.0"
   }
 }
