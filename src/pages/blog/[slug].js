@@ -6,7 +6,8 @@ import {
   urlFor,
   PortableText
 } from '~/src/utils/sanity'
-import Logger from 'jet-logger'
+import anylogger from 'anylogger'
+const log = anylogger('BlogArticlePage')
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -32,24 +33,15 @@ const BlogArticlePage = ({ article }) => {
 
 export default BlogArticlePage
 
-export async function getStaticProps({ params }) {
-  Logger.Info('BlogArticlePage.getStaticProps()', params)
+export async function getServerSideProps({ params, preview = false }) {
+  const post = await getClient(preview).fetch(postQuery, {
+    slug: params.slug,
+  })
+  log.info('getServerSideProps()', post)
+
   return {
     props: {
-      article: {
-        title: 'Foo'
-      }
+      article: post
     }
-  }
-}
-
-export async function getStaticPaths() {
-  Logger.Info('BlogArticlePage.getStaticPaths()')
-  return {
-    paths: [
-      { params: {slug: 'jamming-with-graphcms-gatsbyjs-and-graphql'}},
-      { params: {slug: 'life-is-a-conversation'}}
-    ],
-    fallback: false
   }
 }

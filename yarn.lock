@@ -359,6 +359,11 @@ ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
+anylogger@^1.0.10, anylogger@^1.0.9:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/anylogger/-/anylogger-1.0.10.tgz#0a2df51403ecf76d58aec80579ce3e7514cae164"
+  integrity sha512-iZsA9nnDpeS6A19W6LcOKqAxk2pbc93rOl4KnfOItmqdvVktv1rNqqOsY7I2j8wjt0slmGnInapKnfmKAifFDw==
+
 anymatch@~3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-3.1.1.tgz#c55ecf02185e2469259399310c173ce31233b142"
@@ -751,11 +756,6 @@ colorette@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
-
-colors@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
-  integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
 
 commander@^2.20.0:
   version "2.20.3"
@@ -1602,13 +1602,6 @@ jest-worker@24.9.0:
     merge-stream "^2.0.0"
     supports-color "^6.1.0"
 
-jet-logger@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/jet-logger/-/jet-logger-1.0.4.tgz#2e9dcb0dfe5f78210b5894a276c514eff5f5a807"
-  integrity sha512-vvMb1d9XNpfAsnL+7VpYbkba+jNWWpn/0emm/wF3iD64gWiXXKVjBemnCDVox8M6XXAgzGcSdH3IEqkf5y63gA==
-  dependencies:
-    colors "^1.4.0"
-
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1629,6 +1622,13 @@ jsonfile@^6.0.1:
     universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
+
+kurly@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/kurly/-/kurly-1.0.1.tgz#eb92ca8f1908ff7e8f78d80ddc37059cb4f4aab4"
+  integrity sha512-w+WMQ9KdyUqUAw6g25lbnUkA/5q+LZtYzRWzP2Qb6bd8IQoOWmG13WJnXBJOl8JgHxfGH9+PAof6gO/fK7sQXA==
+  dependencies:
+    anylogger "^1.0.10"
 
 line-column@^1.0.2:
   version "1.0.2"
@@ -2907,6 +2907,14 @@ type-fest@^0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.7.1.tgz#8dda65feaf03ed78f0a3f9678f1869147f7c5c48"
   integrity sha512-Ne2YiiGN8bmrmJJEuTWTLJR32nh/JdL1+PSicowtNb0WFpn59GK8/lfD61bVtzguz7b3PBt74nxpv/Pw5po5Rg==
+
+ulog@^2.0.0-beta.11:
+  version "2.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/ulog/-/ulog-2.0.0-beta.11.tgz#ca05eccf19e228a5d97b2835760211873d6fe046"
+  integrity sha512-2KlC4Y0GEpzYnde9v/nip7XHqIyWZI9Pip8EiJ9W0IydAkTnRAlqwtr4Tt6MwIW7vcVKE9ZwetE2xxlOCbp6Ow==
+  dependencies:
+    anylogger "^1.0.9"
+    kurly "^1.0.1"
 
 uniq@^1.0.1:
   version "1.0.1"
