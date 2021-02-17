@@ -10,7 +10,7 @@ tags:
     - talks
 category: Blog
 image: 
-    path: /JupiterShadow_JunoGill_3535.jpg
+    path: JupiterShadow_JunoGill_3535.jpg
     alt: Io Eclipse Shadow on Jupiter from Juno
     caption: Io Eclipse Shadow on Jupiter from Juno. Image Credit <a href="https://apod.nasa.gov/apod/ap191007.html">NASA</a>.
 ---

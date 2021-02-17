@@ -4,33 +4,31 @@ import matter from 'gray-matter'
 
 const postsDirectory = join(process.cwd(), 'content/articles')
 
-export function getAllArticleSlugs() {
-  return fs.readdirSync(postsDirectory)
+export function getAllPostSlugs() {
+  const slugs =  fs.readdirSync(postsDirectory)
+  return slugs.map((slug) => slug.replace(/\.md$/, ''))
 }
 
-export function getAllArticles() {
-  const slugs = getAllArticleSlugs()
-  const articles = slugs.map((slug) => ({
-    slug: slug,
-    title: 'The title',
-    contents: 'The contents'
-  }))
-  return articles
+export function getAllPosts(fields = []) {
+  const slugs = getAllPostSlugs()
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  return posts
 }
 
 export function getPostBySlug(slug, fields = []) {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(postsDirectory, `${realSlug}/index.md`)
+  const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
-  const items = {}
+  const items = {
+    'slug': realSlug
+  }
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
-    }
     if (field === 'content') {
       items[field] = content
     }
@@ -40,5 +38,10 @@ export function getPostBySlug(slug, fields = []) {
     }
   })
 
+  // Adjust the path to the image
+  if (items['image']) {
+    const imgPath = items['image']['path']
+    items['image']['path'] = `/content/images/${realSlug}/${imgPath}`
+  }
   return items
 }

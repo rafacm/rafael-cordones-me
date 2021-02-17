@@ -13,7 +13,7 @@ tags:
     - quickstart
     - the job announcement
 image: 
-    path: /images/gosaukam_panorama.jpg
+    path: gosaukam_panorama.jpg
     alt: Gosaukam panorama
     caption: Gosaukam. Austria. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

@@ -8,7 +8,7 @@ tags:
     - photography
     - stockholm
 image:
-    path: /images/img_8311.jpg
+    path: img_8311.jpg
     alt: Sunset from Storön
     caption: Sunset from <a href="https://www.google.at/maps/place/Storon/@59.2114226,18.8393281,55317m/data=!3m1!1e3!4m5!3m4!1s0x46f57785fe747d5b:0x29e597f8202ecb20!8m2!3d59.2624483!4d18.7214525">Storön</a>. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

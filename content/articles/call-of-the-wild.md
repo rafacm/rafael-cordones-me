@@ -7,7 +7,7 @@ tags:
     - photoblog
     - photography
 image:
-    path: /IMG_0510.jpg
+    path: IMG_0510.jpg
     alt: Lion on Schemerlbrücke in Vienna
     caption: Lion on  <a href="https://www.wien.gv.at/verkehr/brueckenbau/kanalbruecken/schemerlbruecke.html">Schemerlbrücke</a> in Vienna. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

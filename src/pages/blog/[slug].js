@@ -1,5 +1,5 @@
 import Page from '~/src/layout/page'
-import { getAllArticleSlugs, getPostBySlug } from '~/src/utils/content-api'
+import { getAllPostSlugs, getPostBySlug } from '~/src/utils/content-api'
 import markdownToHtml from '~/src/utils/markdown-to-html'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
@@ -24,10 +24,8 @@ export async function getStaticProps({ params }) {
     'title',
     'date',
     'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage'
+    'image',
+    'content'
   ])
   const content = await markdownToHtml(post.content || '')
 
@@ -42,7 +40,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getAllArticleSlugs()
+  const slugs = await getAllPostSlugs()
 
   return {
     paths: slugs.map((slug) => {

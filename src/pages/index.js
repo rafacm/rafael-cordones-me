@@ -1,6 +1,6 @@
 import Page from '~/src/layout/page'
 import BlogCardGrid from '~/src/components/blog-card-grid'
-import { getAllArticles } from '~/src/utils/content-api'
+import { getAllPosts } from '~/src/utils/content-api'
 
 export default function Index({ posts }) {
   return (
@@ -12,7 +12,13 @@ export default function Index({ posts }) {
 
 
 export async function getStaticProps() {
-  const posts = await getAllArticles()
+  const posts = await getAllPosts([
+    'title',
+    'description',
+    'date',
+    'image',
+    'tags'
+  ])
 
   return {
     props: {

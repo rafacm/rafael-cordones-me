@@ -12,7 +12,7 @@ tags:
     - maven
     - testing
 image:
-    path: /Nighthawks_by_Edward_Hopper_1942.jpg
+    path: Nighthawks_by_Edward_Hopper_1942.jpg
     alt: Nighthawks by Edward Hopper. 1942.
     caption: Nighthawks by Edward Hopper. 1942. Source <a href="http://en.wikipedia.org/wiki/Nighthawks">Wikipedia</a>, <a href="http://www.googleartproject.com/collection/the-art-institute-of-chicago/artwork/nighthawks-edward-hopper/449258/">Google Art Project</a> and <a href="http://smarthistory.khanacademy.org/hoppers-nighthawks.html">Khan Academy</a>.
 ---
