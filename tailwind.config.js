@@ -4,7 +4,9 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Bariol', 'sans-serif']
+    },
   },
   variants: {
     extend: {},

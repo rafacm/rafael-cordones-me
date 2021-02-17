@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Bariol';
+    src: url('Bariol-Thin.woff2') format('woff2'),
+        url('Bariol-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('Bariol-Bold.woff2') format('woff2'),
+        url('Bariol-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('Bariol-Light.woff2') format('woff2'),
+        url('Bariol-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('Bariol-Regular.woff2') format('woff2'),
+        url('Bariol-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('BariolBold-Italic.woff2') format('woff2'),
+        url('BariolBold-Italic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('BariolRegular-Italic.woff2') format('woff2'),
+        url('BariolRegular-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('BariolThin-Italic.woff2') format('woff2'),
+        url('BariolThin-Italic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bariol';
+    src: url('BariolLight-Italic.woff2') format('woff2'),
+        url('BariolLight-Italic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
