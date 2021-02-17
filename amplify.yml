@@ -5,14 +5,15 @@ frontend:
       commands:
         - nvm use $VERSION_NODE_12
         - node -v
-        - yarn install
+        - npm ci
     build:
       commands:
         - nvm use $VERSION_NODE_12
         - node -v
-        - yarn generate
+        - npm run build
+        - npm run export
   artifacts:
-    baseDirectory: dist
+    baseDirectory: out
     files:
       - '**/*'
   cache:
