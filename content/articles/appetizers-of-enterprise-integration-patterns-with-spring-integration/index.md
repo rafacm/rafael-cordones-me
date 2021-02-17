@@ -1,6 +1,6 @@
 ---
 title: Appetizers of Enterprise Integration Patterns with Spring Integration
-date: 2013-04-29
+date: '2013-04-29'
 description: Quick notes and slides for a presentation about Enterprise Integration Patterns.
 legacyUrl: http://rafael.cordones.me/2013/04/29/appetizers-of-enterprise-integration-patterns-with-spring-integration/
 category: Blog

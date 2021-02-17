@@ -1,6 +1,6 @@
 ---
 title: JAMming with Gentics Mesh, React Static and Amazon S3
-date: 2018-05-20
+date: '2018-05-20'
 legacyUrl: http://rafael.cordones.me/2018/05/20/jamming-with-gentics-mesh-react-static-and-amazon-s3/
 description: Slides from a talk/workshop at the We Are Developers in Vienna.
 tags: 

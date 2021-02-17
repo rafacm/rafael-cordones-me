@@ -1,6 +1,6 @@
 ---
 title: JAMming with GraphCMS, GatsbyJS and GraphQL
-date: 2018-02-18
+date: '2018-02-18'
 legacyUrl: http://rafael.cordones.me/2018/02/05/956/
 description: Slides of the talk I gave at the GraphQL Vienna Meetup.
 tags: 

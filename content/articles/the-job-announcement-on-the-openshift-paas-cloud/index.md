@@ -1,6 +1,6 @@
 ---
 title: The Job Announcement on the OpenShift PaaS cloud?
-date: 2013-04-26
+date: '2013-04-26'
 description:  How to deploy The Job Announcement application on the OpenShift Cloud.
 legacyUrl: http://rafael.cordones.me/2013/04/26/the-job-announcement-on-the-openshift-paas-cloud/
 category: Blog 

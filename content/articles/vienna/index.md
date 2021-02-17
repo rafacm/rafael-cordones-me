@@ -1,6 +1,6 @@
 ---
 title: Vienna
-date: 2008-07-11
+date: '2008-07-11'
 description: Photos from Vienna, Austria.
 legacyUrl: http://rafael.cordones.me/2008/07/11/vienna/
 tags: 

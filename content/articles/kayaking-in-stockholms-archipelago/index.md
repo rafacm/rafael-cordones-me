@@ -1,6 +1,6 @@
 ---
 title: Kayaking in Stockholm’s Archipelago
-date: 2008-08-22
+date: '2008-08-22'
 description: Photos from a kayak trip in Stockholm’s Archipelago.
 legacyUrl: http://rafael.cordones.me/2008/08/22/kayaking-in-stockholms-archipelago/
 tags: 
