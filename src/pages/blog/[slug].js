@@ -1,33 +1,57 @@
 import Page from '~/src/layout/page'
-import BlogCardGrid from '~/src/components/blog-card-grid'
-import sanityClient from '~/src/utils/sanity-client'
-import anylogger from 'anylogger'
-const log = anylogger('BlogArticlePage')
+import { getAllArticleSlugs, getPostBySlug } from '~/src/utils/content-api'
+import markdownToHtml from '~/src/utils/markdown-to-html'
+import { useRouter } from 'next/router'
+import ErrorPage from 'next/error'
 
-const BlogArticlePage = ({ article }) => {
+export default function Post({ post }) {
+  const router = useRouter()
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />
+  }
+
   return (
-    <Page title={article.title}>
-      <h1>{article.title}</h1>
+    <Page title={post.title}>
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }}
+      />
     </Page>
   )
 }
 
-export default BlogArticlePage
-
-export async function getServerSideProps({ params }) {
-  log.info('getServerSideProps(): START', { params })
-  const postQuery = `*[_type == "post" && slug.current == "jamming-with-graphcms-gatsbyjs-and-graphql"][0]`
-  const response = await sanityClient.fetch(postQuery, {
-    slug: params.slug,
-  })
-
-  log.info('getServerSideProps()', { response })
+export async function getStaticProps({ params }) {
+  const post = getPostBySlug(params.slug, [
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage',
+    'coverImage'
+  ])
+  const content = await markdownToHtml(post.content || '')
 
   return {
     props: {
-      article: {
-        title: "foo"
+      post: {
+        ...post,
+        content
       }
     }
+  }
+}
+
+export async function getStaticPaths() {
+  const slugs = await getAllArticleSlugs()
+
+  return {
+    paths: slugs.map((slug) => {
+      return {
+        params: {
+          slug: slug
+        }
+      }
+    }),
+    fallback: false
   }
 }

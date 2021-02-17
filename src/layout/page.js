@@ -1,21 +1,23 @@
 import { Fragment } from 'react'
-import Head from "next/head";
+import Head from 'next/head'
 import Navigation from '~/src/components/navigation'
 
 const Page = ({ title, children }) => {
   return (
-    <Fragment>
+    <>
       {title && (
         <Head>
           <title>rafael cordones - {title}</title>
         </Head>
       )}
-      <Fragment>
+      <>
         <Navigation></Navigation>
-        {children}
-      </Fragment>
-    </Fragment>
+        <div className="container mx-auto px-5">
+          {children}
+        </div>
+      </>
+    </>
   )
 }
 
-export default Page;
+export default Page

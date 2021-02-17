@@ -1,22 +1,22 @@
 import Page from '~/src/layout/page'
 import BlogCardGrid from '~/src/components/blog-card-grid'
-import sanityClient from '~/src/utils/sanity-client'
+import { getAllArticles } from '~/src/utils/content-api'
 
-const Home = ({ articles }) => (
-  <Page>
-    <BlogCardGrid articles={articles} />
-  </Page>
-)
+export default function Index({ articles }) {
+  return (
+    <Page>
+      <BlogCardGrid articles={articles} />
+    </Page>
+  )
+}
 
-export default Home
 
-export async function getStaticProps(context) {
-  const query = `*[_type == "post" && defined(slug.current)] | order(publishedSt desc)`
-  const response = await sanityClient.fetch(query)
-  //console.log('getStaticProps: ', JSON.stringify(response, null, 2))
+export async function getStaticProps() {
+  const articles = await getAllArticles()
+
   return {
     props: {
-      articles: { response }
+      articles
     }
   }
 }
