@@ -1,54 +1,22 @@
 import Page from '~/src/layout/page'
 import BlogCardGrid from '~/src/components/blog-card-grid'
-import {groq} from 'next-sanity'
-import {
-  getClient,
-  urlFor,
-  PortableText
-} from '~/src/utils/sanity'
+import sanityClient from '~/src/utils/sanity-client'
 
-const postQuery = groq`
-  *[_type == "post" && slug.current == $slug][0] {
-    _id,
-    title,
-    body,
-    mainImage,
-    categories[]->{
-      _id,
-      title
-    },
-    "slug": slug.current
-  }
-`
+const Home = ({ articles }) => (
+  <Page>
+    <BlogCardGrid articles={articles} />
+  </Page>
+)
 
-export default function Home() {
-  return (
-    <Page>
-      <BlogCardGrid/>
-    </Page>
-  )
-}
+export default Home
 
-export async function getStaticProps({params, preview = false}) {
-  const post = await getClient(preview).fetch(postQuery, {
-    slug: params.slug,
-  })
-
+export async function getStaticProps(context) {
+  const query = `*[_type == "post" && defined(slug.current)] | order(publishedSt desc)`
+  const response = await sanityClient.fetch(query)
+  //console.log('getStaticProps: ', JSON.stringify(response, null, 2))
   return {
     props: {
-      preview,
-      data: {post},
-    },
-  }
-}
-
-export async function getStaticPaths() {
-  const paths = await getClient().fetch(
-    groq`*[_type == "post" && defined(slug.current)][].slug.current`
-  )
-
-  return {
-    paths: paths.map((slug) => ({params: {slug}})),
-    fallback: true,
+      articles: { response }
+    }
   }
 }
