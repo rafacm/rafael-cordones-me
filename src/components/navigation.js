@@ -37,7 +37,7 @@ export default function Navigation() {
             {items.map((item, index) => (
               <Link key={index} href={item.href}>
                 <a
-                  className="my-1 text-gray-700 leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0"
+                  className="my-2 text-xl md:text-base text-gray-700 leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0"
                   href={item.href}>
                   {item.text}
                 </a>
