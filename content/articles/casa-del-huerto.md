@@ -7,7 +7,7 @@ tags:
     - photoblog
     - photography
 image:
-    path: img_0360.jpg
+    path: img_0360-card.jpg
     alt: Casa del Huerto.
     caption: Casa del Huerto. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

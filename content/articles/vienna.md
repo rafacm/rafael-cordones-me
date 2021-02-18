@@ -8,7 +8,7 @@ tags:
     - photography
     - vienna
 image:
-    path: IMG_3330.jpg
+    path: IMG_3330-card.jpg
     alt: Optiker. Vienna.
     caption: Vienna.
 ---

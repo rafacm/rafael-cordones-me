@@ -13,7 +13,7 @@ tags:
     - openshift
     - paas
 image:
-    path: IMG_0993_0998_panorama_small.jpeg
+    path: IMG_0993_0998_panorama_small-card.jpeg
     alt: Night Falls over Ponts, Lleida. Spain.
     caption: Night Falls over Ponts, Lleida. Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 
