@@ -12,7 +12,8 @@ tags:
     - integration
     - spring integration
 image:
-    path: 2013-04-20-12.03.59-card.jpg
+    card: 2013-04-20-12.03.59-card.jpg
+    header: 2013-04-20-12.03.59.jpg
     alt: Sant Jordi
     caption:  Sant Jordi at Plaça Sant Jaume. Barcelona. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

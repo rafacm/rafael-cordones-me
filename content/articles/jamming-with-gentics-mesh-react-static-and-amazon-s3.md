@@ -6,7 +6,8 @@ description: Slides from a talk/workshop at the We Are Developers in Vienna.
 tags: 
     - talks
 image:
-    path: Dew_on_a_Spider_Web-_MET_DP351925-modified-card.jpg
+    card: Dew_on_a_Spider_Web-_MET_DP351925-modified-card.jpg
+    header: Dew_on_a_Spider_Web-_MET_DP351925-modified.jpg
     alt: Dew on a Spider Web. Wilson Bentley. ca. 1910. The Metropolitan Museum of Art
     caption: Dew on a Spider Web. Wilson Bentley. ca. 1910. <a href="https://www.metmuseum.org/art/collection/search/669363">The Metropolitan Museum of Art</a>.
 ---

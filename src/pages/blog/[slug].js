@@ -12,8 +12,13 @@ export default function Post({ post }) {
 
   return (
     <Page title={post.title}>
+      <h1 className="text-2xl xl:text-4xl font-bold">{post.title}</h1>
+      <p className="uppercase tracking-wider my-2 text-lg xl:text-xl">{post.date}</p>
       <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
-        <h2>{post.title}</h2>
+        <figure className="w-full">
+          <img src={post.image.header} alt={post.image.alt}/>
+          <figcaption dangerouslySetInnerHTML={{ __html: post.image.caption }}/>
+        </figure>
         <ReactMarkdownWithHtml children={post.content} allowDangerousHtml/>
       </article>
     </Page>

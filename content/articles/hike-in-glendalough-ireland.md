@@ -8,7 +8,8 @@ tags:
     - ireland
     - dublin
 image: 
-    path: img_2561-card.jpg
+    card: img_2561-card.jpg
+    header: img_2561.jpg
     alt: Between a rock and a hard place.
     caption: Between a rock and a hard place. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

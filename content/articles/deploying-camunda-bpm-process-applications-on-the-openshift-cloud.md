@@ -10,7 +10,8 @@ tags:
     - JBoss
     - OpenShift
 image:
-    path: IMG_4231-card.jpg
+    card: IMG_4231-card.jpg
+    header: IMG_4231.jpg
     alt: Cloud at dusk over the skyline of Alicante, Spain.
     caption: Cloud at dusk over the skyline of Alicante, Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
 ---

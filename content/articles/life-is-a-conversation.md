@@ -6,7 +6,8 @@ legacyUrl: http://rafael.cordones.me/2013/05/12/life-is-a-conversation/
 tags: 
     - blogging
 image:
-    path: img_1205-card.jpg
+    card: img_1205-card.jpg
+    header: img_1205.jpg
     alt: Newborn baby turtle on the way to the vastness of the Pacific Ocean. Manuel Antonio National Park. Costa Rica
     caption: Newborn baby turtle on the way to the vastness of the Pacific Ocean. <a href="http://en.wikipedia.org/wiki/Manuel_Antonio_National_Park">Manuel Antonio National Park</a>. Costa Rica.<br/>Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>
 ---
