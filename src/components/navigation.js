@@ -1,69 +1,51 @@
-import { Fragment } from 'react'
+import { useState } from 'react'
+import Link from 'next/link'
 
 const items = [
-  { href: "https://github.com/rafacm", text: "GitHub" },
-  { href: "https://www.linkedin.com/in/rafaelcordones/", text: "LinkedIn" },
-  { href: "https://twitter.com/rafacm", text: "Twitter" },
-  { href: "https://speakerdeck.com/rafacm/", text: "Talks" },
-];
+  { href: 'https://www.linkedin.com/in/rafaelcordones/', text: 'LinkedIn' },
+  { href: 'https://github.com/rafacm', text: 'GitHub' },
+  { href: 'https://twitter.com/rafacm', text: 'Twitter' },
+  { href: 'https://speakerdeck.com/rafacm/', text: 'Talks' }
+]
 
-const Navigation = () => {
+export default function Navigation() {
+  const [isExpanded, toggleExpansion] = useState(false)
   return (
-    <nav className="relative px-6 py-6 flex justify-between items-center bg-white">
-      <a className="text-3xl font-bold leading-none" href="#"><img className="h-12"
-                                                                   src="atis-assets/logo/atis/atis-mono-black.svg"
-                                                                   alt="" width="auto" /></a>
-      <div className="lg:hidden">
-        <button className="navbar-burger flex items-center text-green-600 p-3">
-          <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <title>Mobile menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-          </svg>
-        </button>
+    <nav className="container mx-auto px-6 py-3">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <Link href={`/`}>
+              <a><span className="font-semibold text-2xl tracking-tight">rafael cordones</span></a>
+            </Link>
+          </div>
+          { /* Mobile menu button */}
+          <div className="flex md:hidden">
+            <button onClick={() => toggleExpansion(!isExpanded)}
+                    className="navbar-burger flex items-center text-green-600 p-3">
+              <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        { /* Mobile Menu open: "block", Menu closed: "hidden" */}
+        <div
+          className={`md:flex items-center ${isExpanded ? `block` : `hidden`}`}>
+          <div className="flex flex-col mt-2 md:flex-row md:mt-0 md:mx-1">
+            {items.map((item, index) => (
+              <Link key={index} href={item.href}>
+                <a
+                  className="my-1 text-gray-700 leading-5 hover:text-blue-600 hover:underline md:mx-4 md:my-0"
+                  href={item.href}>
+                  {item.text}
+                </a>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
-      <ul
-        className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-        <li><a className="text-sm text-gray-400 hover:text-gray-500" href="#">Start</a></li>
-        <li className="text-gray-300">
-          <svg className="w-4 h-4 current-fill" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-          </svg>
-        </li>
-        <li><a className="text-sm text-green-600 font-bold" href="#">About Us</a></li>
-        <li className="text-gray-300">
-          <svg className="w-4 h-4 current-fill" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-          </svg>
-        </li>
-        <li><a className="text-sm text-gray-400 hover:text-gray-500" href="#">Services</a></li>
-        <li className="text-gray-300">
-          <svg className="w-4 h-4 current-fill" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-          </svg>
-        </li>
-        <li><a className="text-sm text-gray-400 hover:text-gray-500" href="#">Platform</a></li>
-        <li className="text-gray-300">
-          <svg className="w-4 h-4 current-fill" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-          </svg>
-        </li>
-        <li><a className="text-sm text-gray-400 hover:text-gray-500" href="#">Testimonials</a></li>
-      </ul>
-      <a
-        className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-l-xl rounded-t-xl transition duration-200"
-        href="#">Sign In</a><a
-      className="hidden lg:inline-block py-2 px-6 bg-green-500 hover:bg-green-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
-      href="#">Sign up</a>
     </nav>
   )
 }
-
-export default Navigation
