@@ -12,7 +12,7 @@ const Page = ({ title, children }) => {
       )}
       <>
         <Navigation></Navigation>
-        <div className="container mx-auto px-5">
+        <div className="container mx-auto px-5 mt-4">
           {children}
         </div>
       </>
