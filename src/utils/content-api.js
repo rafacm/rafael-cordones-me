@@ -40,10 +40,19 @@ export function getPostBySlug(slug, fields = []) {
 
   // Adjust the path to the image
   if (items['image']) {
-    const cardImgPath = items['image']['card']
-    const headerImgPath = items['image']['header']
-    items['image']['card'] = `/content/images/${realSlug}/${cardImgPath}`
-    items['image']['header'] = `/content/images/${realSlug}/${headerImgPath}`
+    items['image']['card'] =
+      adjustImagePathIfNeeded(items['image']['card'], realSlug)
+    items['image']['header'] =
+      adjustImagePathIfNeeded(items['image']['header'], realSlug)
   }
+
   return items
+}
+
+function adjustImagePathIfNeeded(imgPath, slug) {
+  if (!imgPath.startsWith('/content/images')) {
+    return `/content/images/${slug}/${imgPath}`
+  }
+
+  return imgPath
 }

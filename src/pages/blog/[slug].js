@@ -1,4 +1,5 @@
 import Page from '~/src/layout/page'
+import ContentImage from '~/src/components/content-image'
 import { getAllPostSlugs, getPostBySlug } from '~/src/utils/content-api'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
@@ -16,7 +17,7 @@ export default function Post({ post }) {
       <p className="uppercase tracking-wider my-2 text-lg xl:text-xl">{post.date}</p>
       <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
         <figure className="w-full">
-          <img src={post.image.header} alt={post.image.alt}/>
+          <ContentImage src={post.image.header} alt={post.image.alt} />
           <figcaption dangerouslySetInnerHTML={{ __html: post.image.caption }}/>
         </figure>
         <ReactMarkdownWithHtml children={post.content} allowDangerousHtml/>
