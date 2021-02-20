@@ -14,8 +14,9 @@ image:
     header: JupiterShadow_JunoGill_3535.jpg
     alt: Io Eclipse Shadow on Jupiter from Juno
     caption: Io Eclipse Shadow on Jupiter from Juno. Image Credit <a href="https://apod.nasa.gov/apod/ap191007.html">NASA</a>.
+talk:
+  slidesId: a037c4d0c3ec0130d56c3e03b440dae5
+  slidesRatio: '1.77777777777778'
 ---
 
 These are the slides of the talk I gave at the Eclipse DemoCamp Vienna June 2013 (<a href="https://speakerd.s3.amazonaws.com/presentations/a037c4d0c3ec0130d56c3e03b440dae5/bpm-and-eclipse-eclipse-democamp-kepler-vienna-2013.pdf">PDF with active hyperlinks</a>):
-
-<script async class="speakerdeck-embed" data-id="a037c4d0c3ec0130d56c3e03b440dae5" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>

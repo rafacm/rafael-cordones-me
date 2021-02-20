@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
-import Navigation from '~/src/components/navigation'
+import Navigation from '~/src/layout/navigation'
+import Footer from '~/src/layout/footer'
 
 const Page = ({ title, children }) => {
   return (
@@ -12,9 +13,10 @@ const Page = ({ title, children }) => {
       )}
       <>
         <Navigation></Navigation>
-        <div className="container mx-auto px-5 mt-4">
+        <div className="container mx-auto px-5 mt-2 mb-2">
           {children}
         </div>
+        <Footer></Footer>
       </>
     </>
   )

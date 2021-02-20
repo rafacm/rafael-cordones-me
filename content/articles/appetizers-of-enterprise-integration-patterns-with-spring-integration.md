@@ -16,6 +16,9 @@ image:
     header: 2013-04-20-12.03.59.jpg
     alt: Sant Jordi
     caption:  Sant Jordi at Plaça Sant Jaume. Barcelona. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
+talk:
+  slidesId: 9daeac4090740130a9c8529790d16483
+  slidesRatio: '1.33333333333333'
 ---
  
 Since I was going to be in my hometown, Barcelona, this past week to enjoy <a href="http://en.wikipedia.org/wiki/Saint_George's_Day#Catalonia">Sant Jordi</a>, I took the opportunity offered by the <a href="http://www.barcelonajug.org/">Barcelona Java User Group</a> to make a talk about <a href="http://www.eaipatterns.com/">Enterprise Integration Patterns</a>.
@@ -30,5 +33,3 @@ These are some of the main points/ideas I wanted to bring across during the talk
 During the talk I also demoed, <a href="https://github.com/rafacm/tapas2go">Tapas2Go</a>, a small project I built with <a href="http://www.springsource.org/sts">STS</a> in a few hours and that I intend to further develop so it can be used as an implementation of the <a href="http://www.eaipatterns.com/Chapter1.html">Widgets & Gadgets ‘R Us example</a> appearing in the <a href="http://www.enterpriseintegrationpatterns.com/">Enterprise Integration Patterns</a> book.
 
 These are the slides of the talk (<a href="https://speakerd.s3.amazonaws.com/presentations/9daeac4090740130a9c8529790d16483/appetizers-of-enterprise-integration-patterns-with-spring-integration-barcelonajug-barcelona-2013.pdf">PDF with active hyperlinks</a>):
-
-<script async class="speakerdeck-embed" data-id="9daeac4090740130a9c8529790d16483" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
