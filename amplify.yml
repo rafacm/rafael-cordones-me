@@ -10,7 +10,9 @@ frontend:
       commands:
         - nvm use $VERSION_NODE_12
         - node -v
-        - aws sts get-caller-identity
+        - npm run build
+        - npm run export
+
   artifacts:
     baseDirectory: out
     files:
