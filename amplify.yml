@@ -10,7 +10,7 @@ frontend:
       commands:
         - nvm use $VERSION_NODE_12
         - node -v
-        - npx serverless
+        - aws sts get-caller-identity
   artifacts:
     baseDirectory: out
     files:
