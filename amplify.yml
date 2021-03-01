@@ -10,8 +10,7 @@ frontend:
       commands:
         - nvm use $VERSION_NODE_12
         - node -v
-        - npm run build
-        - npm run export
+        - npx serverless
   artifacts:
     baseDirectory: out
     files:

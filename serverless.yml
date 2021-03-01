@@ -1,0 +1,7 @@
+rafaelCordonesMe:
+  component: "@sls-next/serverless-component@1.19.0-alpha.32"
+  inputs:
+    bucketRegion: eu-central-1
+    bucketName: 'rafael-cordones-me-develop'
+    domain: ['rafael-develop', 'cordones.me']
+
