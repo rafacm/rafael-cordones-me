@@ -1,8 +1,8 @@
 export const SITE = {
   website: "https://rafael.cordones.me/",
   author: "Rafael Cordones",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  profile: "https://rafael.cordones.me/about/",
+  desc: "Rafael Cordones's personal blog.",
   title: "rafael.cordones.me",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -14,10 +14,10 @@ export const SITE = {
   editPost: {
     enabled: false,
     text: "Edit page",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    url: "https://github.com/rafacm/rafael-cordones-me/edit/main/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
   lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timezone: "Europe/Vienna", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;
