@@ -52,7 +52,7 @@ Inside of AstroPaper, you'll see the following folders and files:
 ├── src/
 │   ├── assets/
 │   │   └── icons/
-│   │   └── images/
+│   │   └── posts/
 │   ├── components/
 │   ├── data/
 │   │   └── blog/

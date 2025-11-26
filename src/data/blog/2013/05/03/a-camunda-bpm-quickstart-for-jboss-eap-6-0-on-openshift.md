@@ -1,23 +1,32 @@
 ---
+author: Rafael Cordones
+pubDatetime: 2013-05-03T12:00:00Z
+modDatetime:  2013-05-03T12:00:00Z
 title: A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?
-date: '2013-05-03'
-description: A quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on OpenShift.
-legacyUrl: http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/
-tags: 
-    - BPM
-    - BPMN
-    - camunda BPM
-    - jboss
-    - openshift
-    - paas
-    - quickstart
-    - the job announcement
-image: 
-    card: gosaukam_panorama-card.jpg
-    header: gosaukam_panorama.jpg
-    alt: Gosaukam panorama
-    caption: Gosaukam. Austria. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
+slug: uniting-javascript-and-python-in-the-browser-with-pyscript
+featured: true
+ogImage: ../../../../../assets/images/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/gosaukam_panorama-card.jpg
+draft: false
+tags:
+  - BPM
+  - BPMN
+  - camunda BPM
+  - jboss
+  - openshift
+  - paas
+  - quickstart
+  - the job announcement
+description:
+  A quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on OpenShift.
 ---
+
+<figure>
+  <img src="../../../../../assets/images/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/gosaukam_panorama-card.jpg" alt="Gosaukam. Austria"
+  />
+    <figcaption class="text-center">
+    Gosaukam. Austria. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
 
 This post is a follow up from a previous article "<a href="/blog/the-job-announcement-on-the-openshift-paas-cloud">The Job Announcement on the OpenShift PaaS cloud?</a>" and describes a quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on <a href="https://openshift.redhat.com/">OpenShift</a>. From the <a href="http://docs.camunda.org/guides/user-guide/#platform-process-engine">several deployment scenarios supported by the camunda BPM engine</a>, this post focuses on the <em>shared process engine</em> one.
 
@@ -25,15 +34,13 @@ But before getting in the technical details: this post is definitely not an intr
 
 In order to create the quickstart, we started from the "plain vanilla" Git repository that OpenShift creates when choosing the "JBoss Enterprise Application Platform 6.0" application and we followed <a href="http://docs.camunda.org/guides/installation-guide/jboss/#platform">the instructions on how to install the camunda BPM platform on a vanilla JBoss</a> (with the exception of creating a XA datasource). There result of that work can be found on this GitHub repo: <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart">https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart</a> on <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/tree/camunda-bpm-jboss-eap">the "camunda-bpm-jboss-eap" branch</a> (updated up to camunda BPM 7.0.0-alpha3).
 
-<alert type="warning">
-    DISCLAIMER: please note that the <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/">camunda BPM on OpenShift quickstart</a> is a personal project and is provided as is. At the same time, I would love to hear any feedback you may have and will do my best to be of any help.
-</alert>
+> DISCLAIMER: please note that the <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/">camunda BPM on OpenShift quickstart</a> is a personal project and is provided as is. At the same time, I would love to hear any feedback you may have and will do my best to be of any help.
 
 ## Just the steps, ma'am[^1]. Just the steps
 
 Create a "JBoss Enterprise Application Platform 6.0" and clone its corresponding Git Repository:
 
-```
+```bash
 rafa@trane: ~/tmp$ git clone ssh://5187fdcae0b8cde750000001@thejobannouncement-plexiti.rhcloud.com/~/git/thejobannouncement.git/
 Cloning into 'thejobannouncement'...
 remote: Counting objects: 39, done.
@@ -68,7 +75,8 @@ rafa@trane: ~/dev/thejobannouncement$
 Note that this will create some tags like <code>camunda-bpm-jboss-as-7.0.0-alpha3</code> which we will use to merge a specific camunda BPM release.
 
 Merge the <a href="https://github.com/rafacm/camunda-bpm-openshift-jboss-quickstart/tree/camunda-bpm-jboss-as-7.0.0-alpha3">tag <code>camunda-bpm-jboss-as-7.0.0-alpha3</code></a> into your local master branch:
-```rafa@trane: ~/dev/thejobannouncement$ git merge -s recursive -X theirs camunda-bpm-jboss-as-7.0.0-alpha3
+```bash
+rafa@trane: ~/dev/thejobannouncement$ git merge -s recursive -X theirs camunda-bpm-jboss-as-7.0.0-alpha3
 Auto-merging .openshift/config/standalone.xml
 Merge made by the 'recursive' strategy.
 [...]
@@ -102,7 +110,7 @@ Note that since we deleted all the code and the README file from the quickstart 
 
 Now you can push you freshly minted camunda BPM engine to OpenShift!
 
-```
+```bash
 rafa@trane: ~/dev/thejobannouncement$ git push origin master
 […]
 remote: [INFO] WEB-INF/web.xml already added, skipping
@@ -126,7 +134,8 @@ rafa@trane: ~/dev/thejobannouncement$
 
 You can now login to your applications console to verify in the logs that the camunda BPM engine is running:
 
-```rafa@trane: ~/dev/thejobannouncement$ ssh 5187fdcae0b8cde750000001@thejobannouncement-plexiti.rhcloud.com
+```bash
+rafa@trane: ~/dev/thejobannouncement$ ssh 5187fdcae0b8cde750000001@thejobannouncement-plexiti.rhcloud.com
 [...]
 [thejobannouncement-plexiti.rhcloud.com 5187fdcae0b8cde750000001]\&gt; egrep "camunda" jbosseap-6.0/logs/server.log
 2013/05/09 05:01:18,054 INFO [org.camunda.bpm.engine.impl.jobexecutor.JobExecutor] (MSC service thread 1-2) Starting up the JobExecutor[org.camunda.bpm.container.impl.jboss.service.MscRuntimeContainerJobExecutor].

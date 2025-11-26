@@ -101,6 +101,7 @@ With the help of Claude, let's first set the playground by creating a row of squ
         </div>
     </div>
 </div>
+
 <script>
     // Color mapping for the squares
     const COLORS = {
@@ -232,32 +233,21 @@ to change the colors of the squares. For example, you can change the color of th
 squareRow.changeSquareColor(0, COLORS.ORANGE)
 ```
 
-Using the [REPL example](https://pyscript.com/@examples/repl/latest) from the [PyScripts Examples page](https://pyscript.com/@examples) (and using the [Option 1: mini-coi](https://docs.pyscript.net/2025.11.1/user-guide/workers/#option-1-mini-coi)) we can now embed a PyScript REPL below:
+Using the [REPL example](https://pyscript.com/@examples/repl/latest) from the [PyScripts Examples page](https://pyscript.com/@examples), adapting script and CSS URLs to the [2025.11.1 release](https://pyscript.net/releases/2025.11.1/) and choosing the [Option 1: mini-coi](https://docs.pyscript.net/2025.11.1/user-guide/workers/#option-1-mini-coi)) we can now embed a Python REPL on this page!👇🏻
 
 <!-- PyScript -->
 <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.1/core.css">
 <script type="module" src="https://pyscript.net/releases/2025.11.1/core.js"></script>
 
-<!-- custom CSS -->
-<style>
-    body, html, mpy-terminal, py-terminal {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        height: 25dvh;
-        background-color: rgb(25, 26, 25);
-    }
-</style>
-
-<script type="py" terminal worker>
+<script type="mpy" terminal worker>
 import code
 
 code.interact()
 </script>
 
-> 💡 Tip: You can press Ctrl+L in the REPL to clear the previous output.
-
 We can now try the same examples as before but now in Python! 
+
+> 💡 Tip: You can press Ctrl+L in the REPL to clear the previous output.
 
 For example, we can change the color of the first square to orange with the following Python code:
 ```python
