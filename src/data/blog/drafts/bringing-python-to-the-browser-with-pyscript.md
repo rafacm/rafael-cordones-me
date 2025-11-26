@@ -2,16 +2,17 @@
 author: Rafael Cordones
 pubDatetime: 2025-11-24T12:00:00Z
 modDatetime:  2025-11-24T12:00:00Z
-title: Uniting JavaScript and Python in the browser with PyScript
-slug: uniting-javascript-and-python-in-the-browser-with-pyscript
+title: Bringing Python to the browser with PyScript
+slug: bringing-python-to-the-browser-with-pyscript
 featured: true
 draft: false
 tags:
   - python
   - javascript
   - web
+  - pyscript
 description:
-  How to use Pyscript to have Python code running on the browser to provide interactive content.
+  Using Pyscript to have Python code running in the browser to manipulate elements of the page and integrate with existing JavaScript logic
 ---
 
 <figure>
