@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/*" # you can configure the correct paths here
+  [headers.values]
+    cross-origin-resource-policy = "cross-origin" # see a list of allowed values here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Resource-Policy
