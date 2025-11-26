@@ -3,9 +3,8 @@ author: Rafael Cordones
 pubDatetime: 2013-05-03T12:00:00Z
 modDatetime:  2013-05-03T12:00:00Z
 title: A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?
-slug: uniting-javascript-and-python-in-the-browser-with-pyscript
-featured: true
-ogImage: ../../../../../assets/images/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/gosaukam_panorama-card.jpg
+slug: a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift
+featured: false
 draft: false
 tags:
   - BPM
@@ -21,7 +20,7 @@ description:
 ---
 
 <figure>
-  <img src="../../../../../assets/images/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/gosaukam_panorama-card.jpg" alt="Gosaukam. Austria"
+  <img src="/assets/images/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/gosaukam_panorama.jpg" alt="Gosaukam. Austria"
   />
     <figcaption class="text-center">
     Gosaukam. Austria. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
