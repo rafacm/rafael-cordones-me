@@ -6,6 +6,7 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 
@@ -110,6 +111,16 @@ const isActive = (path: string) => {
             >
               <IconSearch />
               <span class="sr-only">Search</span>
+            </LinkButton>
+          </li>
+          <li class="col-span-1 flex items-center justify-center">
+            <LinkButton
+              href="/rss.xml"
+              ariaLabel="rss"
+              title="RSS Feed"
+            >
+              <IconRss />
+              <span class="sr-only">RSS Feed</span>
             </LinkButton>
           </li>
           {
