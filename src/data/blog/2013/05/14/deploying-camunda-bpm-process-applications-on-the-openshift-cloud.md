@@ -1,22 +1,31 @@
 ---
+author: Rafael Cordones
+pubDatetime: 2013-05-14T12:00:00Z
+modDatetime:  2013-05-14T12:00:00Z
 title: Deploying camunda BPM process applications on the OpenShift cloud
-date: '2013-05-14'
-permalink: http://rafael.cordones.me/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/
-description: How-to on deploying an **existing application** to camunda BPM running on JBoss EAP 6.x on OpenShift and a **a proposal** on how to manage the further development of the application and keep pushing new releases out to OpenShift.
-tags: 
-    - BPM
-    - Camunda BPM
-    - Eclipse
-    - JBoss
-    - OpenShift
-image:
-    card: IMG_4231-card.jpg
-    header: IMG_4231.jpg
-    alt: Cloud at dusk over the skyline of Alicante, Spain.
-    caption: Cloud at dusk over the skyline of Alicante, Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
+slug: deploying-camunda-bpm-process-applications-on-the-openshift-cloud
+featured: false
+draft: false
+tags:
+  - BPM
+  - Camunda BPM
+  - Eclipse
+  - JBoss
+  - OpenShift
+  - talks
+description:
+  How-to on deploying an **existing application** to camunda BPM running on JBoss EAP 6.x on OpenShift and a **a proposal** on how to manage the further development of the application and keep pushing new releases out to OpenShift.
 ---
 
-This post is a follow up from a previous article "<a href="/blog/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" in which I wrote about deploying the camunda BPM <strong>engine</strong> on OpenShift. You should definitely have a look at it since it describes the quickstart project we will use in this article.
+<figure>
+  <img src="/assets/images/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/IMG_4231.jpg" alt="Cloud at dusk over the skyline of Alicante, Spain."
+  />
+    <figcaption class="text-center">
+       caption: Cloud at dusk over the skyline of Alicante, Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
+
+This post is a follow up from a previous article "<a href="/posts/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" in which I wrote about deploying the camunda BPM <strong>engine</strong> on OpenShift. You should definitely have a look at it since it describes the quickstart project we will use in this article.
 
 This post focuses on two things:
 1. how to initially deploy an <strong>existing application</strong> to camunda BPM running on JBoss EAP 6.x on OpenShift
@@ -34,7 +43,8 @@ We will follow the steps using <a href="https://github.com/plexiti/the-job-annou
 
 We first need to add both the 'quickstart' and the 'openshift' Git deployment repository remotes:
 
-```rafa@trane: ~/dev/vc/the-job-announcement$ git remote add openshift ssh://518cfa465973cab9d500002c@thejobannouncement-rafacm.rhcloud.com/~/git/thejobannouncement.git/
+```bash
+rafa@trane: ~/dev/vc/the-job-announcement$ git remote add openshift ssh://518cfa465973cab9d500002c@thejobannouncement-rafacm.rhcloud.com/~/git/thejobannouncement.git/
 rafa@trane: ~/dev/vc/the-job-announcement$ git remote add quickstart git@github.com:rafacm/camunda-bpm-openshift-jboss-quickstart.git
 rafa@trane: ~/dev/vc/the-job-announcement$ git remote -v
 openshift ssh://518cfa465973cab9d500002c@thejobannouncement-rafacm.rhcloud.com/~/git/thejobannouncement.git/ (push)
@@ -56,14 +66,16 @@ This is the purpose of each of those remotes is:
 
 We create the aforementioned 'openshift' branch and switch to it with:
 
-```rafa@trane: ~/dev/vc/the-job-announcement$ git checkout -b openshift
+```bash
+rafa@trane: ~/dev/vc/the-job-announcement$ git checkout -b openshift
 Switched to a new branch 'openshift'
 rafa@trane: ~/dev/vc/the-job-announcement$
 ```
 
 We pull in the 'camunda-bpm-jboss-as-7.0.0-alpha3' tag from the 'quickstart' repository:
 
-```rafa@trane: ~/dev/vc/the-job-announcement$ git pull quickstart camunda-bpm-jboss-as-7.0.0-alpha3
+```bash
+rafa@trane: ~/dev/vc/the-job-announcement$ git pull quickstart camunda-bpm-jboss-as-7.0.0-alpha3
 remote: Counting objects: 103, done.
 remote: Compressing objects: 100% (44/44), done.
 remote: Total 98 (delta 43), reused 98 (delta 43)
@@ -99,7 +111,7 @@ The reason you (most probably) did not get any merge conflicts in the previous s
 </profile>
 ```
 
-```
+```bash
 rafa@trane: ~/dev/vc/the-job-announcement$ git ci -m "Added needed &lt;profile&gt; for OpenShift"
 [openshift 8f9895d] Added needed &lt;profile&gt; for OpenShift
 1 file changed, 20 insertions(+)
@@ -108,7 +120,8 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 
 We are now in a position to <strong>fetch</strong> the contents of the 'master' branch at OpenShift Git deployment repository with:
 
-```rafa@trane: ~/dev/vc/the-job-announcement$ git fetch openshift
+```bash
+rafa@trane: ~/dev/vc/the-job-announcement$ git fetch openshift
 From ssh://thejobannouncement-rafacm.rhcloud.com/~/git/thejobannouncement
  * [new branch]      master     -> openshift/master
 rafa@trane: ~/dev/vc/the-job-announcement$ 
@@ -116,7 +129,7 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 
 And now, before we can <strong>replace</strong> the contents of the 'master' branch on the 'openshift' remote with the contents of our local 'openshift' branch we need to merge that branch into ours using the 'ours' strategy to make sure that any merging conflict is resolved by choosing the code from the 'quickstart' repository we pulled from before:
 
-```
+```bash
 rafa@trane: ~/dev/vc/the-job-announcement$ git merge -s ours openshift/master
 Merge made by the 'ours' strategy.
 rafa@trane: ~/dev/vc/the-job-announcement$ 
@@ -124,7 +137,7 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 
 You can also push now the 'openshift' branch to OpenShift for deployment (the 'master' branch on the 'openshift' remote):
 
-```
+```bash
 rafa@trane: ~/dev/vc/the-job-announcement$ git push openshift openshift:master
 Counting objects: 2288, done.
 Delta compression using up to 8 threads.
