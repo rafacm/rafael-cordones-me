@@ -1,31 +1,38 @@
 ---
+author: Rafael Cordones
+pubDatetime: 2013-05-06T12:00:00Z
+modDatetime:  2013-05-06T12:00:00Z
 title: Transitive Dependency Mediation in Maven and Gradle
-date: '2013-05-06'
-description: Troubleshooting a dependency resolution issue on Maven and comparison with Graddle. 
-legacyUrl: http://rafael.cordones.me/2013/05/06/transitive-dependency-mediation-in-maven-and-gradle/
-tags: 
-    - BPM
-    - build tools
-    - camunda BPM
-    - fluent testing
-    - gradle 
-    - maven
-    - testing
-image:
-    card: Nighthawks_by_Edward_Hopper_1942-card.jpg
-    header: Nighthawks_by_Edward_Hopper_1942.jpg
-    alt: Nighthawks by Edward Hopper. 1942.
-    caption: Nighthawks by Edward Hopper. 1942. Source <a href="http://en.wikipedia.org/wiki/Nighthawks">Wikipedia</a>, <a href="http://www.googleartproject.com/collection/the-art-institute-of-chicago/artwork/nighthawks-edward-hopper/449258/">Google Art Project</a> and <a href="http://smarthistory.khanacademy.org/hoppers-nighthawks.html">Khan Academy</a>.
+slug: transitive-dependency-mediation-in-maven-and-gradle
+featured: false
+draft: false
+tags:
+  - BPM
+  - build tools
+  - camunda BPM
+  - fluent testing
+  - gradle
+  - maven
+  - testing
+description:
+  Troubleshooting a dependency resolution issue on Maven and comparison with Graddle. 
 ---
+
+<figure>
+  <img src="/assets/images/transitive-dependency-mediation-in-maven-and-gradle/Nighthawks_by_Edward_Hopper_1942.jpg" alt="Nighthawks by Edward Hopper. 1942."/>
+    <figcaption class="text-center">
+    Nighthawks by Edward Hopper. 1942. Source <a href="https://en.wikipedia.org/wiki/Nighthawks_(Hopper)">Wikipedia</a>, <a href="http://www.googleartproject.com/collection/the-art-institute-of-chicago/artwork/nighthawks-edward-hopper/449258/">Google Art Project</a> and <a href="https://www.khanacademy.org/humanities/art-1010/american-art-to-wwii/social-realism/v/edward-hopper-nighthawks-1942">Khan Academy</a>.
+  </figcaption>
+</figure>
 
 Maven and Gradle walk into a bar:
 
-> Maven: I'd like a coffee, please.<br/>
-> Gradle: I'd like a coffee too, please.<br/>
-> Bartender: Here's your coffee, Maven.<br/>
-> Bartender: And here's your coffee with a <em>croissant</em>, Gradle.<br/>
-> Maven: Why don't I get a <em>croissant</em> too?!<br/>
-> Bartender: For you Maven? Just the nearest explicitly stated dependency.</blockquote>
+> Maven: I'd like a coffee, please./
+> Gradle: I'd like a coffee too, please./
+> Bartender: Here's your coffee, Maven./
+> Bartender: And here's your coffee with a <em>croissant</em>, Gradle./
+> Maven: Why don't I get a <em>croissant</em> too?!/
+> Bartender: For you Maven? Just the nearest explicitly stated dependency.
 
 I recently contributed a <a href="https://github.com/camunda/camunda-bpm-fluent-testing">fluent testing</a> library together with <a href="http://plexiti.com/">Martin Schimak</a> to the <a href="http://camunda.org">camunda BPM</a> <a href="http://camundabpm.blogspot.co.at/2013/04/camunda-bpm-incubation-space-launched.html">incubation space</a>. The aim of the project is to improve test creation <strong>and maintenance</strong> when developing business process applications based on the <a href="http://camunda.org/">camunda BPM platform</a>. One of the long term objectives of the <a href="https://github.com/camunda/camunda-bpm-fluent-testing">camunda BPM fluent testing library</a> would be to have tests to which one can come back after a while and still see the wood for the trees, i.e. understand the business logic and not get lost on the technical details of how to use the <a href="http://camunda.org/javadocs/org/camunda/bpm/engine/package-summary.html">camunda BPM engine API</a>.
 
@@ -196,12 +203,12 @@ Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict re
 
 ## Can I <em>handle</em> the Maven truth?
 
-<content-image
-    class="w-full"
-    dir="/articles/transitive-dependency-mediation-in-maven-and-gradle"
-    src="/a-few-good-men.png"
-    alt="A Few Good Men.">
-</content-image>
+<figure>
+  <img src="/assets/images/transitive-dependency-mediation-in-maven-and-gradle/a-few-good-men.png" alt="Scene from 'A Few Good Men' movie"/>
+    <figcaption class="text-center">
+    From <a href="http://www.youtube.com/watch?v=5j2F4VcBmeo">"A Few Good Men"</a>.
+  </figcaption>
+</figure>
 
 > Developer: Maven, if a library declares a dependency on JUnit <code>[4.9]</code> which conflicts with an explicitly declared dependency to JUnit <code>4.8</code> in my project's <code>pom.xml</code>, why do you still resolve the conflict choosing JUnit <code>4.8</code>?! At least you should give me a warning!
 >
