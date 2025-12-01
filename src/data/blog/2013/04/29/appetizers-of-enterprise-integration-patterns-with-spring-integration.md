@@ -13,6 +13,7 @@ tags:
   - eip
   - integration
   - spring integration
+  - talks
 description:
   Quick notes and slides for a presentation about Enterprise Integration Patterns.
 ---
@@ -39,5 +40,5 @@ During the talk I also demoed, <a href="https://github.com/rafacm/tapas2go">Tapa
 These are the slides of the talk (<a href="https://speakerd.s3.amazonaws.com/presentations/9daeac4090740130a9c8529790d16483/appetizers-of-enterprise-integration-patterns-with-spring-integration-barcelonajug-barcelona-2013.pdf">PDF with active hyperlinks</a>):
 
 <div class="deck-embed js-deck-embed" style="aspect-ratio:1024/576;" data-ratio="1.7777777777777777" data-state="processed">
-    <div class="speakerdeck-embed" data-title="false" data-skip-resize="true" data-id="c0af9815abff462abe97f992fd489b4f" data-name="JAMming with Gentics Mesh, React Static and Amazon S3" data-ratio="1.7777777777777777" data-host="speakerdeck.com"></div>
+    <div class="speakerdeck-embed" data-title="false" data-skip-resize="true" data-id="c0af9815abff462abe97f992fd489b4f" data-name="Appetizers of Enterprise Integration Patterns with Spring Integration" data-ratio="1.7777777777777777" data-host="speakerdeck.com"></div>
 </div>
