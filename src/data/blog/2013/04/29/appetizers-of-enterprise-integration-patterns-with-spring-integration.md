@@ -37,8 +37,11 @@ These are some of the main points/ideas I wanted to bring across during the talk
 
 During the talk I also demoed, <a href="https://github.com/rafacm/tapas2go">Tapas2Go</a>, a small project I built with <a href="http://www.springsource.org/sts">STS</a> in a few hours and that I intend to further develop so it can be used as an implementation of the <a href="http://www.eaipatterns.com/Chapter1.html">Widgets & Gadgets ‘R Us example</a> appearing in the <a href="http://www.enterpriseintegrationpatterns.com/">Enterprise Integration Patterns</a> book.
 
-These are the slides of the talk (<a href="https://speakerd.s3.amazonaws.com/presentations/9daeac4090740130a9c8529790d16483/appetizers-of-enterprise-integration-patterns-with-spring-integration-barcelonajug-barcelona-2013.pdf">PDF with active hyperlinks</a>):
+These are the slides of the talk:
 
-<div class="deck-embed js-deck-embed" style="aspect-ratio:1024/576;" data-ratio="1.7777777777777777" data-state="processed">
-    <div class="speakerdeck-embed" data-title="false" data-skip-resize="true" data-id="c0af9815abff462abe97f992fd489b4f" data-name="Appetizers of Enterprise Integration Patterns with Spring Integration" data-ratio="1.7777777777777777" data-host="speakerdeck.com"></div>
-</div>
+<figure>
+  <img src="/assets/images/appetizers-of-enterprise-integration-patterns-with-spring-integration/slides.png" alt="Slides"/>
+    <figcaption class="text-center">
+    Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/appetizers-of-enterprise-integration-patterns-with-spring-integration">here</a> and in PDF with active hyperlinks <a href="https://speakerd.s3.amazonaws.com/presentations/9daeac4090740130a9c8529790d16483/appetizers-of-enterprise-integration-patterns-with-spring-integration-barcelonajug-barcelona-2013.pdf">here</a>.
+  </figcaption>
+</figure>

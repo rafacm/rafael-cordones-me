@@ -22,8 +22,11 @@ description:
   </figcaption>
 </figure>
 
-These are the slides of the talk I gave at the Eclipse DemoCamp Vienna June 2013 (<a href="https://speakerd.s3.amazonaws.com/presentations/a037c4d0c3ec0130d56c3e03b440dae5/bpm-and-eclipse-eclipse-democamp-kepler-vienna-2013.pdf">PDF with active hyperlinks</a>):
+These are the slides of the talk I gave at the Eclipse DemoCamp Vienna June 2013 :
 
-<div class="deck-embed js-deck-embed" style="aspect-ratio:1024/576;" data-ratio="1.7777777777777777" data-state="processed">
-    <div class="speakerdeck-embed" data-title="false" data-skip-resize="true" data-id="a037c4d0c3ec0130d56c3e03b440dae5" data-name="Business Process Management & Eclipse" data-ratio="1.7777777777777777" data-host="speakerdeck.com"></div>
-</div>
+<figure>
+  <img src="/assets/images/business-process-management-eclipse/slides.png" alt="Slides"/>
+    <figcaption class="text-center">
+    Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/business-process-management-bpm-and-the-eclipse-ecosystem">here</a> and in PDF with active hyperlinks <a href="https://speakerd.s3.amazonaws.com/presentations/a037c4d0c3ec0130d56c3e03b440dae5/bpm-and-eclipse-eclipse-democamp-kepler-vienna-2013.pdf">here</a>.
+  </figcaption>
+</figure>

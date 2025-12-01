@@ -25,4 +25,11 @@ description:
 
 > UPDATE (2017-12-06): there's now a guest blog post on the GraphCMS blog about the GraphCMS Source plugin for GatsbyJS I mention in the talk: <a href="https://graphcms.com/blog/gatsby-graphcms-plugin">Gatsby & GraphCMS, Sittin in a Recursive Tree</a>.
 
-These are the slides of the talk I gave at the <a hef="https://www.meetup.com/GraphQL-Vienna/">GraphQL Vienna Meetup</a> (<a href="https://speakerd.s3.amazonaws.com/presentations/97c469eb70b24f09bdaeae1bb49aa018/graphql-vienna-jamming-with-graphcms-gatsbyjs-and-graphql.pdf">PDF with active hyperlinks</a>):
+These are the slides of the talk I gave at the <a hef="https://www.meetup.com/GraphQL-Vienna/">GraphQL Vienna Meetup</a>:
+
+<figure>
+  <img src="/assets/images/jamming-with-graphcms-gatsbyjs-and-graphql/slides.png" alt="Slides"/>
+    <figcaption class="text-center">
+    Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/jamming-with-graphcms-gatsbyjs-and-graphql">here</a> and in PDF with active hyperlinks <a href="https://speakerd.s3.amazonaws.com/presentations/97c469eb70b24f09bdaeae1bb49aa018/graphql-vienna-jamming-with-graphcms-gatsbyjs-and-graphql.pdf">here</a>.
+  </figcaption>
+</figure>
