@@ -24,10 +24,12 @@ description:
   </figcaption>
 </figure>
 
-> I've seen things you people wouldn't believe. Attack ships on fire off the shoulder of Orion. 
-> I watched C-beams glitter in the dark near the Tannhäuser Gate. 
-> All those moments will be lost in time, like tears in rain. 
-> Time to die.
+> I've seen things you people wouldn't believe.\
+> Attack ships on fire off the shoulder of Orion.\
+> I watched C-beams glitter in the dark near the Tannhäuser Gate.\
+> All those moments will be lost in time, like tears in rain.\
+> Time to die.\
+> \
 > -- ["Tears in Rain"](https://en.wikipedia.org/wiki/Tears_in_rain_monologue) by Roy Batty in ["Blade Runner"](https://en.wikipedia.org/wiki/Blade_Runner)
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2LxEIWrZkzfc55c3rk05DH?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
