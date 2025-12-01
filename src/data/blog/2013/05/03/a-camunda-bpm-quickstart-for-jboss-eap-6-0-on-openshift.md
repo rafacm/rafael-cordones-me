@@ -27,7 +27,7 @@ description:
   </figcaption>
 </figure>
 
-This post is a follow up from a previous article "<a href="/blog/the-job-announcement-on-the-openshift-paas-cloud">The Job Announcement on the OpenShift PaaS cloud?</a>" and describes a quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on <a href="https://openshift.redhat.com/">OpenShift</a>. From the <a href="http://docs.camunda.org/guides/user-guide/#platform-process-engine">several deployment scenarios supported by the camunda BPM engine</a>, this post focuses on the <em>shared process engine</em> one.
+This post is a follow up from a previous article "<a href="/posts/2013/04/26/the-job-announcement-on-the-openshift-paas-cloud">The Job Announcement on the OpenShift PaaS cloud?</a>" and describes a quickstart you can use in order to deploy a process application based on camunda BPM to JBoss EAP 6.x on <a href="https://openshift.redhat.com/">OpenShift</a>. From the <a href="http://docs.camunda.org/guides/user-guide/#platform-process-engine">several deployment scenarios supported by the camunda BPM engine</a>, this post focuses on the <em>shared process engine</em> one.
 
 But before getting in the technical details: this post is definitely not an introduction to OpenShift<i>.</i> For that, check the "<a href="https://access.redhat.com/site/documentation/en-US/OpenShift/2.0/html/User_Guide/">OpenShift User Guide</a>" as a starting point.
 

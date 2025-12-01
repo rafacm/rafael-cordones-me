@@ -14,6 +14,7 @@ tags:
   - jboss
   - openshift
   - paas
+  - the job announcement
 description:
   How to deploy The Job Announcement application on the OpenShift Cloud.
 ---
