@@ -152,8 +152,6 @@ Great! We now have the <strong>engine</strong> up and running on OpenShift. What
 
 You can reach me either via the comments section below or via any of the social coordinates you will find on the top right corner of this page.
 
-<alert type="info">
-    <strong>UPDATE (2013-05-14):</strong> there's now a follow up post focusing on how to bring the camunda BPM process engine into your <strong>existing</strong> process application: <a href="/blog/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/">Deploying camunda BPM process applications on the OpenShift cloud</a>.
-</alert>
+> UPDATE (2013-05-14): there's now a follow-up post focusing on how to bring the camunda BPM process engine into your <strong>existing</strong> process application: <a href="/posts/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/">Deploying camunda BPM process applications on the OpenShift cloud</a>.
 
 [^1] ["Just the facts, ma'am"](https://www.youtube.com/watch?v=EkfKqwnGLr8&ab_channel=CBS)
