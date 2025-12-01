@@ -1,24 +1,29 @@
 ---
+author: Rafael Cordones
+pubDatetime: 2013-04-26T12:00:00Z
+modDatetime:  2013-04-26T12:00:00Z
 title: The Job Announcement on the OpenShift PaaS cloud?
-date: '2013-04-26'
-description:  How to deploy The Job Announcement application on the OpenShift Cloud.
-legacyUrl: http://rafael.cordones.me/2013/04/26/the-job-announcement-on-the-openshift-paas-cloud/
-category: Blog 
-tags: 
-    - BPM
-    - BPMN
-    - camunda BPM
-    - cloud
-    - jboss 
-    - openshift
-    - paas
-image:
-    card: IMG_0993_0998_panorama_small-card.jpeg
-    header: IMG_0993_0998_panorama_small.jpeg
-    alt: Night Falls over Ponts, Lleida. Spain.
-    caption: Night Falls over Ponts, Lleida. Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
-
+slug: the-job-announcement-on-the-openshift-paas-cloud
+featured: false
+draft: false
+tags:
+  - BPM
+  - BPMN
+  - camunda BPM
+  - cloud
+  - jboss
+  - openshift
+  - paas
+description:
+  How to deploy The Job Announcement application on the OpenShift Cloud.
 ---
+
+<figure>
+  <img src="/assets/images/the-job-announcement-on-the-openshift-paas-cloud/IMG_0993_0998_panorama_small.jpeg" alt="Night Falls over Ponts, Lleida. Spain."/>
+    <figcaption class="text-center">
+    Night Falls over Ponts, Lleida. Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
 
 Last year <a href="http://plexiti.com/">Martin Schimak</a> and me, came up with the idea to develop a showcase in order to have an application which we could use to demonstrate the advantages of developing business applications on <a href="http://camunda.org"><strong>a platform where business process are first-class citizens</strong></a>. That showcase eventually grew up to become <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> and we even ended up presenting it at the <a href="http://www.bpmcon.de/impressionen-2012/">BPMCon 2012</a> in Berlin!
 
@@ -33,13 +38,9 @@ OpenShift offers both JBoss AS 7.<strong><span style="text-decoration: underline
 <a href="http://the-job-announcement.com/">the-job-announcement.com</a> is now proudly served (though a bit slow due to the use of only 1 free gear!) by a JBoss EAP 6.0 running on OpenShift.
 
 The following two posts explain the details in case you would like to deploy your camunda BPM-based process application on OpenShift:
-* <a href="/blog/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>
-* <a href="http://rafael.cordones.me/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/">Deploying camunda BPM process applications on the OpenShift cloud</a>
+* <a href="/posts/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>
+* <a href="/posts/2013/05/14/deploying-camunda-bpm-process-applications-on-the-openshift-cloud">Deploying camunda BPM process applications on the OpenShift cloud</a>
 
+> UPDATE (2013-05-03): added link to follow up post.
 
-<alert type="info">
-  UPDATE (2013-05-03): added link to follow up post.
-</alert>
-<alert type="info">
-    UPDATE (2013-05-14): added link to follow up post.
-</alert>
+> UPDATE (2013-05-14): added link to follow up post.
