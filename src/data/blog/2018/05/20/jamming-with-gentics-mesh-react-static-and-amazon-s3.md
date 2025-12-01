@@ -1,7 +1,7 @@
 ---
 author: Rafael Cordones
-pubDatetime: 2013-06-28T12:00:00Z
-modDatetime:  2013-06-28T12:00:00Z
+pubDatetime: 2018-05-20T12:00:00Z
+modDatetime:  2018-05-20T12:00:00Z
 title: JAMming with Gentics Mesh, React Static and Amazon S3
 slug: jamming-with-gentics-mesh-react-static-and-amazon-s3
 featured: false
