@@ -23,7 +23,7 @@ description:
 </figure>
 
 I was recently visiting my mom back in Spain and besides going out for a walk with her and enjoying the amazing sunsets I also took some time to go through some old boxes.
-In one of the boxes I happened to find a folder labelled "INFORMÁTICA" in Spanish containing several papers and printouts. And much to my surprise I found one of my first
+In one of the boxes I happened to find a folder labelled "INFORMÁTICA" containing several papers and printouts. Much to my surprise I found one of my first
 computer programs! It's a program I wrote to learn the capitals, currency and spoken language(s) in countries across the world... and to learn [MSX BASIC](https://en.wikipedia.org/wiki/MSX_BASIC) programming, of course!
 
 My first computer was a gift from my mom. Thanks mom! It was a Hit-Bit Sony HB-75P MSX computer:
@@ -46,7 +46,7 @@ I actually found three versions of the program:
 
 I took some pictures of the third version and with the help of Claude I got the text version of the program in no time which is amazing come to think of it!
 
-[BASIC](https://en.wikipedia.org/wiki/BASIC) programs had line numbers and the trick was to use line numbers using tens (10, 20, 30) so in case one wanted to add additional logic later there were available numbers to use.
+[BASIC](https://en.wikipedia.org/wiki/BASIC) programs had line numbers and one of the things I remember to this day was the need to use line numbers with increments in tens (10, 20, 30) so that there were numbers left in case one wanted to add additional logic afterwards and not having to review all the program logic.
 
 This is the start of the program where we show the main menu for the user to choose which continent:
 ```vb
@@ -138,7 +138,7 @@ there are no matches in line `295` we jump back to line `220`.  If the user ente
 ```
 
 Here we follow the exact same pattern as before but we show European countries. We nevertheless use the a different variable name to store user input `P$`.
-I we would enter `G` for France we would the jump to line `2500` where we define several global variables and then we use `GOSUB` to jump to different parts of the program:
+I we would enter `G` for France we would the jump to line `2500` where we define several global variables and then we use `GOSUB` to jump to different parts or "subroutines" of the program:
 ```vb
 2500 N$="FRANCIA":Q$="Francés":G=4:Z=15:K=9:I=1:C$="Paris":M$="Franco francés":GOSUB 10110:GOSUB 20240:GOSUB 20290:GOSUB 20260:GOSUB 20200
 ```
@@ -177,7 +177,7 @@ This one would display the country name on the top of the screen:
 20280 RETURN
 ```
 
-And finally this one would wait for use input:
+And finally this one would wait for user input:
 ```vb
 20200 IF INKEY$="" THEN GOTO 20200 ELSE GOTO 20600
 20230 RETURN
