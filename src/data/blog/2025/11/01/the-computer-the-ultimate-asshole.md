@@ -21,7 +21,7 @@ description:
 
 From “Chapter 3 - Constant Frustration and Bursts of Joy” in the book <a href="https://www.goodreads.com/book/show/40406806-coders">“Coders: The Making of a New Tribe and the Remaking of the World”</a> by Clive Thompson:
 
-_What type of personality, what type of psychology, makes someone good at programming? Some traits are the obvious ones. Coders tend to be good at thinking logically, systematically. All day long you’re having to think about *if-then* statements or ponder wickedly complex ontologies, groups that are subgroups of subgroups. (Philosophy students, it seems, make excellent coders: I met philosophy majors employed at Kickstarter, start-ups, and oodles of other firms.) Coders are curious, relentlessly so, about how things work._
+_**What type of personality, what type of psychology, makes someone good at programming?** Some traits are the obvious ones. Coders tend to be good at thinking logically, systematically. All day long you’re having to think about *if-then* statements or ponder wickedly complex ontologies, groups that are subgroups of subgroups. (Philosophy students, it seems, make excellent coders: I met philosophy majors employed at Kickstarter, start-ups, and oodles of other firms.) Coders are curious, relentlessly so, about how things work._
  
 _[…]_
 
@@ -31,7 +31,7 @@ _**It’s a boundless, nigh masochistic ability to endure brutal, grinding frust
 
 _That’s because even though they’re called “programmers,” when they’re sitting at the keyboard, they’re quite rarely writing new lines of code. What are they actually doing, most of the time? Finding bugs._
 
-_What exactly is a bug? A bug is an error in your code, something mistyped or miscreated, that throws a wrench into the flow of a program. They’re often incredibly tiny, picky details. They’re often incredibly tiny, picky details. One sunny day in Brooklyn, I met in a café with Rob Spectre, a lightly grizzled coder who whipped out his laptop to show me a snippet of code written in the language Python. It contained, he said, a single fatal bug. This was the code:_
+_What exactly is a bug? A bug is an error in your code, something mistyped or miscreated, that throws a wrench into the flow of a program. They’re often incredibly tiny, picky details. One sunny day in Brooklyn, I met in a café with [Rob Spectre](https://brooklynhacker.com/), a lightly grizzled coder who whipped out his laptop to show me a snippet of code written in the language Python. It contained, he said, a single fatal bug. This was the code:_
 
 ```python
 stringo = [rsa,rsa1,lorem,text]
@@ -67,7 +67,7 @@ _[…]_
 
 _This explains a lot about the mental style of those who endure in the field. “The default state of everything that you’re working on is fucking broken. Right? Everything is broken,” he says with a laugh. “The type of people who end up being programmers are self-selected by the people who can endure that agony. That’s a special kind of crazy. You’ve got to be a little nuts to do it.”_
 
-_Nearly every coder who works on big, complex software will tell you a version of this. The dictates of working with ultraprecise machines, so brutally intolerant of error, can wind up rubbing off on the coder._
+_Nearly every coder who works on big, complex software will tell you a version of this. **The dictates of working with ultraprecise machines, so brutally intolerant of error, can wind up rubbing off on the coder.**_
 
 <figure>
   <img src="/assets/images/the-computer-the-ultimate-asshole/hal-9000-i-m-sorry-dave.png" alt="HAL 9000 in '2001: Space Odyssey'"/>
@@ -85,8 +85,8 @@ _[…]_
 _**There’s a flip side to dealing with the agonizing precision of code and the grind of constant, bug-ridden failure. When a bug is finally quashed, the sense of accomplishment is electric.** You are now Sherlock Holmes in his moment of cerebral triumph, patiently tracing back the evidence and uncovering the murderer, illuminating the crime scene using nothing but the arc light of your incandescent mind._
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/lawrence-of-arabia-the-trick-william-potter-is-not-minding-that-it-hurts.jpg" alt="Lawrence of Arabia: the trick is not minding that it hurts"/>
-    <figcaption class="text-center">
-    <a href="https://youtu.be/xe3hAyooenk?si=Yfe7ejiA55PjG-vE">"The trick William Potter is not minding that it hurts."</a> <br/> Scene from <a href="https://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)">"Lawrence of Arabia (1962)"</a>.
+  <img src="/assets/images/the-computer-the-ultimate-asshole/sherlock-holmes-it-had-to-be-done.gif" alt="Sherlock Holmes: it had to be done."/>
+  <figcaption class="text-center">
+    <a href="https://youtu.be/qy6Kh5dkTeo?si=fiGU19EoOskrLJ-b">"It had to be done."</a> <br/> Scene from <a href="https://en.wikipedia.org/wiki/Sherlock_Holmes:_A_Game_of_Shadows">"Sherlock Holmes: Game of Shadows (2011)"</a>.
   </figcaption>
 </figure>
