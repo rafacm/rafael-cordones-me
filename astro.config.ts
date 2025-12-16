@@ -13,6 +13,8 @@ import { SITE } from "./src/config";
 
 import netlify from "@astrojs/netlify";
 
+import remarkGfm from "remark-gfm";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -24,7 +26,11 @@ export default defineConfig({
   ],
 
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [
+      remarkToc,
+      [remarkCollapse, { test: "Table of contents" }],
+      remarkGfm, // footnotes, tables, strikethrough, autolinks, task lists
+    ],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
