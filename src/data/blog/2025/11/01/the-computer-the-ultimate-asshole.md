@@ -1,0 +1,159 @@
+---
+author: Rafael Cordones
+pubDatetime: 2025-11-01T12:00:00Z
+modDatetime:  2025-11-01T12:00:00Z
+title: The Computer - the ultimate asshole?
+slug: the-computer-the-ultimate-asshole
+featured: true
+draft: false
+tags:
+  - books
+  - programming
+  - software development
+description:
+  What type of personality, what type of psychology, makes someone good at programming?
+---
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/coders-book-cover.jpg" alt="'Coders' book cover"/>
+</figure>
+
+I found myself recently reading "Chapter 3 - Constant Frustration and Bursts of Joy" in the book [“Coders: The Making of a New Tribe and the Remaking of the World”](https://www.goodreads.com/book/show/40406806-coders) by [Clive Thompson](https://www.clivethompson.net/) and nodding along saying "Yes! Yes!" very much like Meg Ryan playing Sally Albright in the restaurant scene in the 1989 movie ["When Harry Met Sally"](https://en.wikipedia.org/wiki/When_Harry_Met_Sally...):
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene.jpg" alt="Restaurant scene from 'When Harry Met Sally'"/>
+  <figcaption class="text-center">
+    <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">Restaurant scene from 'When Harry Met Sally'</a>.
+  </figcaption>
+</figure>
+
+Why? Because the chapter perfectly articulates something every experienced developer intuitively knows but rarely can put into words: **the computer is, fundamentally, an asshole**.
+
+As a personal example, in one of my previous projects, I implemented a CSV file import feature in a Java-based web application using an external open-source library to handle CSV files. After the feature was implemented, during the QA phase several bugs were found. Great!! I fixed them, and eventually we deployed the feature to the LIVE environment. Soon after that, bug reports started coming in from customers that the import was failing. Additionally, there was no clear error message indicating what the problem was. 
+
+I looked at [the file](/assets/files/people.csv) in the terminal:
+```bash
+$ cat people.csv
+name,surname
+Sherlock,Holmes
+John,Watson
+```
+Everything looked fine. I created a unit test to consistently reproduce the issue and be able to iterate quickly. The import logic was failing consistently with that file but working perfectly fine with almost identical files already used in the unit tests I wrote during the implementation. I could not **see** what the problem was! Having been bitten by similar issues in the past and coincidentally having recently read [an article on Hacker News on how to hide messages in emojis and hack the US Treasury](https://news.ycombinator.com/item?id=43023508), I thought that maybe the problem was that the tool I was using to inspect the CSV file was not showing all the contents of [the file](/assets/files/people.csv). 
+
+Maybe if I changed the tool, the light I was using to observe the contents of the file, something would appear out of the shadows? I asked [Claude](https://claude.ai/) "which tool can I use on the command-line to show all the contents of a text file on macOS?" and one of the proposals was [hexdump](https://en.wikipedia.org/wiki/Hex_dump):
+
+```bash
+$ hexdump -C people.csv
+00000000  ef bb bf 6e 61 6d 65 2c  73 75 72 6e 61 6d 65 0a  |...name,surname.|
+00000010  53 68 65 72 6c 6f 63 6b  2c 48 6f 6c 6d 65 73 0a  |Sherlock,Holmes.|
+00000020  4a 6f 68 6e 2c 57 61 74  73 6f 6e 0a              |John,Watson.|
+0000002c
+```
+
+What were these three dots `...` and the corresponding hex values `ef bb bf` at the beginning of the file? A quick Google search revealed that they are [the BOM (Byte Order Mark)](https://en.wikipedia.org/wiki/Byte_order_mark):
+> `EF BB BF` is the Byte Order Mark (BOM) for the UTF-8 character encoding, a special sequence of three bytes placed at the beginning of a text file to tell software that the file is encoded in UTF-8.
+
+Digging a bit more, I found out that when Excel saves a CSV file as UTF-8 in some platforms like Windows, it automatically adds the BOM at the beginning of the file! I also found out that the external library I was using had no support for the BOM. I had found the root cause: I had been BOMbed by Excel! Unfortunately, I could not change the library since it was used extensively in other parts of the application. I then decided to add logic to check if the BOM was present and remove it before handing it off to the library to process the CSV file.
+
+I share this story not because it's extraordinary, but because it's quite the opposite ordinary. Every developer has plenty of similar stories. Tiny bugs or issues that mushroom and end up eating hours or days, and above all, a ton of your mental energy. What I love about Thompson's chapter is how he captures similar stories by told by well-known developers themselves and often at a much larger scale. What follows are excerpts from that chapter interspersed with songs and movie references that came to my mind while reading the book.
+
+> _**What type of personality, what type of psychology, makes someone good at programming?** Some traits are the obvious ones. Coders tend to be good at thinking logically, systematically. All day long you’re having to think about *if-then* statements or ponder wickedly complex ontologies, groups that are subgroups of subgroups. (Philosophy students, it seems, make excellent coders: I met philosophy majors employed at Kickstarter, start-ups, and oodles of other firms.) Coders are curious, relentlessly so, about how things work._
+> 
+> _[…]_
+> 
+> _But if you had to pick the central plank of coder psychology, the one common thread in nearly everyone who gravitates to this weird craft?_
+> 
+> _**It’s a boundless, nigh masochistic ability to endure brutal, grinding frustration.**_
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/andrew-bird-sysyphus.jpg" alt="Andrew Bird: Sysyphus"/>
+  <figcaption class="text-center">
+    From <a href="https://youtu.be/zug1B8DSkWw?si=6tXIE5yXrJWSYeFy">Andrew Bird: Sysyphus</a>.
+  </figcaption>
+</figure>
+
+> _That’s because even though they’re called “programmers,” when they’re sitting at the keyboard, they’re quite rarely writing new lines of code. What are they actually doing, most of the time? Finding bugs._
+>
+> _What exactly is a bug? A bug is an error in your code, something mistyped or miscreated, that throws a wrench into the flow of a program. They’re often incredibly tiny, picky details. One sunny day in Brooklyn, I met in a café with [Rob Spectre](https://brooklynhacker.com/), a lightly grizzled coder who whipped out his laptop to show me a snippet of code written in the language Python. It contained, he said, a single fatal bug. This was the code:_
+>
+> ```python
+> stringo = [rsa,rsa1,lorem,text]
+> _output_ = “backdoor.py”
+> _byte_ = (_output_) + “c”
+> if (sys.platform.startswith(“linux”))
+>   if (commands.getoutput(“whoami”)) != “root”:
+>     print(“run it as root”)
+>     sys.exit() #exit
+> ```
+>
+> _The bug? It’s on the fourth line. The fourth line is an `if` statement—if the program detects that (`sys.platform.startswith (“linux”))` is “true,” it’ll continue on with executing the commands on line five and onward._
+>
+> _The thing is, in the language Python, any “if” line has to end with a colon. So line 4 should have been written like this..._
+>
+> ```python
+> if (sys.platform.startswith(“linux”)):
+> ```
+>
+> _That one tiny missing colon breaks the program._
+>
+> _“See, this is what I’m talking about,” Spectre says, slapping his laptop shut with a grimace. **“The distance between looking like a genius and looking like an idiot in programming? It’s one character wide.”**_
+>
+> _**In reality, though, bugs are rarely an accident of happenstance. They are the fault of the programmers themselves.** The joy and magic of the machine is that it does precisely what you tell it to, but like all magic, it can quickly flip into monkey’s-paw horror: When a coder’s instructions are in error, the machine will obediently commit the error. And when you’re coding, there are a lot of ways to screw up the commands. Perhaps you made a simple typo. Perhaps you didn’t think through the instructions in your algorithm very clearly. Maybe you referred to the variable numberOfCars as NumberOfCars—you screwed up a single capital letter. **Or maybe you were writing your code by taking a “library” — a piece of code written by someone else — and incorporating it into your own software, and that code contained some hidden flaw.** Or maybe your software has a problem of timing, a “race condition”: The code needs Thing A to take place before Thing B, but for some reason Thing B goes first, and all hell breaks loose. **There are literally uncountable ways for errors to occur, particularly as code grows longer and longer and has chunks written by scores of different people, with remote parts of the software communicating with each other in unpredictable ways.** In situations like this, the bugs proliferate until they blanket the earth like Moses’s locusts. The truly complex bugs might only emerge after years of coding, when your team suddenly realizes that a mistake they made on the first few weeks of work is now interfering with more recent programming._
+>
+> _As [Michael Lopp](https://randsinrepose.com/), the vice president of engineering at Slack, once noted: **“You are punished swiftly for obvious errors. You are punished more subtly for the less obvious ones.”**_
+>
+> _[…]_
+> 
+> _This explains a lot about the mental style of those who endure in the field. **“The default state of everything that you’re working on is fucking broken. Right? Everything is broken,”** he says with a laugh. “The type of people who end up being programmers are self-selected by the people who can endure that agony. That’s a special kind of crazy. You’ve got to be a little nuts to do it.”_
+> 
+> _Nearly every coder who works on big, complex software will tell you a version of this. **The dictates of working with ultraprecise machines, so brutally intolerant of error, can wind up rubbing off on the coder.**_
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/hal-9000-i-m-sorry-dave.jpg" alt="HAL 9000 in '2001: Space Odyssey'"/>
+    <figcaption class="text-center">
+    <a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">I'm sorry, Dave. I'm afraid I can't do that.</a> <br/> HAL 9000 to Dr. David Bowman in <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey">"2001: Space Odyssey" (1968)</a>.
+  </figcaption>
+</figure>
+
+> _**Why can coders be so snippy?** [Jeff Atwood](https://blog.codinghorror.com/) asks, rhetorically. He thinks it’s **because working with computers all day long is like being forced to share an office with a toxic, abusive colleague**. “If you go to work and everyone around you is an asshole, you’re going to become like that,” Atwood says. **“And the computer is the ultimate asshole. It will fail completely and spectacularly if you make the tiniest errors.** ‘I forgot a semicolon.’ Well guess what, your spaceship is a complete ball of fire because you forgot a fucking semicolon.” (He’s not speaking metaphorically here: In one of the most famous bugs in history, <a href="https://www.nasa.gov/history/60-years-ago-mariner-1-launch-attempt-to-venus/">NASA was forced to blow up its Mariner 1 spacecraft only minutes after launch</a> when it became clear that a bug was causing it to veer off course and possibly crash in a populated area. The bug itself was caused by a single incorrect character.)_
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/computer-programmers-at-nasa.jpg" alt="NASA's Mariner Missions: programmers at work"/>
+  <figcaption class="text-center">
+    Computer programmers at work at NASA.
+    Source: <a href="https://youtu.be/Qjx3u9_FZHo?si=8pse3qU3DrGS6O2e&t=2160">"NASA's Mariner Missions"</a>.
+  </figcaption>
+</figure>
+
+> _**“The computer is a complete asshole. It doesn’t help you out at all,”** Atwood explains. Sure, your compiler will spit out an error message when things go wrong, but such messages can be Delphic in their inscrutability. When wrestling with a bug, you are brutally on your own; the computer sits there coolly, paring its nails, waiting for you to express what you want with greater clarity. **“The reason a programmer is pedantic,” Atwood says, “is because they work *with* the ultimate pedant. All this libertarianism, all this ‘meritocracy,’ it comes from the computer.** I don’t think it’s actually healthy for people to have that mind-set. It’s an occupational hazard! It’s why you get the stereotype of the computer programmer who’s being as pedantic as a computer. Not everyone is like this. But on average it’s correct.”_
+> 
+> _[…]_
+>  
+> _**There’s a flip side to dealing with the agonizing precision of code and the grind of constant, bug-ridden failure. When a bug is finally quashed, the sense of accomplishment is electric.**_
+> 
+> _**You are now Sherlock Holmes** in his moment of cerebral triumph, patiently tracing back the evidence and uncovering the murderer, illuminating the crime scene using nothing but the arc light of your incandescent mind._
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/sherlock-holmes-do-you-need-me-to-elaborate.gif" alt="Sherlock Holmes: now, do you need me to elaborate... or can we just crack on?"/>
+  <figcaption class="text-center">
+    <a href="https://youtu.be/qy6Kh5dkTeo?si=fiGU19EoOskrLJ-b">"Now, do you need me to elaborate... or can we just crack on?"</a> <br/>Scene from <a href="https://en.wikipedia.org/wiki/Sherlock_Holmes:_A_Game_of_Shadows">"Sherlock Holmes: Game of Shadows (2011)"</a>.
+  </figcaption>
+</figure>
+
+Using AI and especially LLMs more and more in the last couple of years for my day-to-day work has helped a lot when dealing with the kind of development issues and bugs I described above so I cannot help but wonder if the new generation of developers, the LLM-native ones, will develop the same kind of tolerance towards frustration or if AI will smooth the daily development work so much that they will no longer need to be so pedantic.
+
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/starship-troopers-would-you-like-to-know-more.jpg" alt="Starship Troopers: Would you like to know more?"/>
+  <figcaption class="text-center">
+    <a href="https://www.youtube.com/watch?v=qjxof3MM7l4">"Would you like to know more about killing bugs?"</a> <br/>Scene from <a href="https://en.wikipedia.org/wiki/Starship_Troopers_(film)">"Starship Troopers (1997)"</a>.
+  </figcaption>
+</figure>
+
+I hope that by now I have already convinced you that you need to read this book! In case I haven't, here's a talk by the author himself introducing the book:
+<figure>
+  <img src="/assets/images/the-computer-the-ultimate-asshole/youtube-clive-thompson-coders.jpg" alt="YouTube: Clive Thompson: Coders - The Making of a New Tribe and the Remaking of the World"/>
+  <figcaption class="text-center">
+    <a href="https://youtu.be/mt-jKk9xUEc?si=A1XKmbMo4NxAFo6e">Clive Thompson: Coders - The Making of a New Tribe and the Remaking of the World</a>.
+  </figcaption>
+</figure>
+
