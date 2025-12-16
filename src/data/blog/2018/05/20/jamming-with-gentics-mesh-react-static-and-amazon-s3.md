@@ -1,0 +1,32 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-05-20T12:00:00Z
+modDatetime:  2018-05-20T12:00:00Z
+title: JAMming with Gentics Mesh, React Static and Amazon S3
+slug: jamming-with-gentics-mesh-react-static-and-amazon-s3
+featured: false
+draft: false
+tags:
+  - talks
+  - Headless CMS
+  - React
+  - AWS
+description:
+  Slides from a talk/workshop at the We Are Developers in Vienna.
+---
+
+<figure>
+  <img src="/assets/images/jamming-with-gentics-mesh-react-static-and-amazon-s3/Dew_on_a_Spider_Web-_MET_DP351925-modified.jpg" alt="Dew on a Spider Web. Wilson Bentley. ca. 1910. The Metropolitan Museum of Art"/>
+    <figcaption class="text-center">
+    Dew on a Spider Web. Wilson Bentley. ca. 1910. <a href="https://www.metmuseum.org/art/collection/search/669363">The Metropolitan Museum of Art</a>.
+  </figcaption>
+</figure>
+
+These are the slides of the workshop I gave at the <a href="https://www.wearedevelopers.com/events/world-congress/">We Are Developers</a> Vienna 2018:
+
+<figure>
+  <img src="/assets/images/jamming-with-gentics-mesh-react-static-and-amazon-s3/slides.png" alt="Slides"/>
+    <figcaption class="text-center">
+    Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/jamming-with-gentics-mesh-react-static-and-amazon-s3">here</a> and in PDF with active hyperlinks <a href="https://speakerd.s3.amazonaws.com/presentations/c0af9815abff462abe97f992fd489b4f/jamming-with-gentics-mesh-react-static-and-amazon-s3.pdf">here</a>.
+  </figcaption>
+</figure>
