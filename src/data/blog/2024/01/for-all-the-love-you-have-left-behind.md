@@ -1,0 +1,35 @@
+---
+author: Rafael Cordones
+pubDatetime: 2024-01-13T12:00:00Z
+modDatetime:  2024-01-13T12:00:00Z
+title: For all the love you’ve left behind
+slug: for-all-the-love-you-have-left-behind
+location: Stetteldorf am Wagram, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - music
+description:
+  Where the sun isn’t only sinking fast
+---
+
+<figure>
+  <img src="/assets/images/photoblog/for-all-the-love-you-have-left-behind.jpg" alt="Shot take from a train on the way to Vienna"/>
+    <figcaption class="text-center">
+    Shot taken from a train on the way to Vienna. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
+
+> Where the sun isn’t only sinking fast\
+> Every night knows how long it’s supposed to last\
+> Where the time of our lives is all we have\
+> And we get a chance to say\
+> Before we ease away\
+> For all the love you’ve left behind\
+> You can have mine”\
+> \
+> — “Call It Dreaming” by Iron & Wine
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1MxHIIzcTeFnaNsDGY3pfj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
