@@ -1,0 +1,35 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-02-18T12:00:00Z
+modDatetime:  2018-02-18T12:00:00Z
+title: JAMming with GraphCMS, GatsbyJS and GraphQL
+slug: jamming-with-graphcms-gatsbyjs-and-graphql
+featured: false
+draft: false
+tags:
+  - talks
+  - Headless CMS
+  - GraphCMS
+  - GatsbyJS
+  - GraphQL
+description:
+  Slides of the talk I gave at the GraphQL Vienna Meetup.
+---
+
+<figure>
+  <img src="/assets/images/jamming-with-graphcms-gatsbyjs-and-graphql/1554_Koeing2.jpg" alt="The City of Königsberg (nowadays called Kaliningrad)"/>
+    <figcaption class="text-center">
+    The City of <a href="https://en.wikipedia.org/wiki/K%C3%B6nigsberg">Königsberg</a> (nowadays called <a href="https://en.wikipedia.org/wiki/Kaliningrad">Kaliningrad</a>) with a view of the <a href="https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg">seven bridges</a>. Image credit <a href="http://visualhistory.livejournal.com/39249.html">Historic Cities Research Project</a>.
+  </figcaption>
+</figure>
+
+> UPDATE (2017-12-06): there's now a guest blog post on the GraphCMS blog about the GraphCMS Source plugin for GatsbyJS I mention in the talk: <a href="https://graphcms.com/blog/gatsby-graphcms-plugin">Gatsby & GraphCMS, Sittin in a Recursive Tree</a>.
+
+These are the slides of the talk I gave at the <a hef="https://www.meetup.com/GraphQL-Vienna/">GraphQL Vienna Meetup</a>:
+
+<figure>
+  <img src="/assets/images/jamming-with-graphcms-gatsbyjs-and-graphql/slides.png" alt="Slides"/>
+    <figcaption class="text-center">
+    Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/jamming-with-graphcms-gatsbyjs-and-graphql">here</a> and in PDF with active hyperlinks <a href="https://speakerd.s3.amazonaws.com/presentations/97c469eb70b24f09bdaeae1bb49aa018/graphql-vienna-jamming-with-graphcms-gatsbyjs-and-graphql.pdf">here</a>.
+  </figcaption>
+</figure>
