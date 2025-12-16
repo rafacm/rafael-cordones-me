@@ -3,7 +3,7 @@ export const SITE = {
   author: "Rafael Cordones",
   profile: "https://rafael.cordones.me/about/",
   desc: "Rafael Cordones's personal blog.",
-  title: "rafael.cordones.me",
+  title: "rafael cordones",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
