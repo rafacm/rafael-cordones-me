@@ -1,0 +1,31 @@
+---
+author: Rafael Cordones
+pubDatetime: 2012-11-10T12:00:00Z
+modDatetime:  2012-11-10T12:00:00Z
+title: Introducing Activiti - A Glimpse and [Hopefully] a Hook
+slug: introducing-activiti-a-glimpse-and-hopefully-a-hook
+featured: false
+draft: false
+tags:
+  - talks
+  - BPM
+  - Activiti
+description:
+  Slides for the talk I gave at the Vienna DevFest 2012.
+---
+
+<figure>
+  <img src="/assets/images/introducing-activiti-a-glimpse-and-hopefully-a-hook/engine-structure.jpg" alt="Io Eclipse Shadow on Jupiter from Juno"/>
+    <figcaption class="text-center">
+    Charles Babbage's blueprint for the Analytical Engine. Source <a href="https://computerhistory.org/blog/the-analytical-engine-28-plans-and-counting/">Computer History Museum</a>.
+  </figcaption>
+</figure>
+
+These are the slides of the talk I gave at the Vienna DevFest 2012:
+
+<figure>
+  <img src="/assets/images/introducing-activiti-a-glimpse-and-hopefully-a-hook/slides.png" alt="Slides"/>
+    <figcaption class="text-center">
+    Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/introducing-activiti-a-glimpse-and-hopefully-a-hook">here</a> and in PDF with active hyperlinks <a href="https://files.speakerdeck.com/presentations/67af96c090750130a9c8529790d16483/introducing-activiti-devfest-vienna-2012.pdf">here</a>.
+  </figcaption>
+</figure>
