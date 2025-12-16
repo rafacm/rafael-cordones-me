@@ -99,6 +99,9 @@ const nextPost =
     >
       {title}
     </h1>
+    <ul class="">
+      {tags.map(tag => <Tag tag={slugifyStr(tag)} tagName={tag} />)}
+    </ul>
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
       <span
