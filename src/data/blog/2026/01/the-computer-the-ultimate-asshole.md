@@ -183,7 +183,7 @@ So it's up to each and every one of us, especially while we're enduring constant
   <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-3.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
   <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-4.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
   <figcaption class="text-center">
-    Roony Mara playing <strong>Erica Albright</strong> with Jesse Eisenberg playing Mark Zuckerberg in<br/>the <a href="https://youtu.be/xcecQSajtwM?si=CXrOgjSGKWCYtRWw">restaurant scene from "The Social Network"</a>.
+    Rooney Mara playing <strong>Erica Albright</strong> with Jesse Eisenberg playing Mark Zuckerberg in<br/>the <a href="https://youtu.be/xcecQSajtwM?si=CXrOgjSGKWCYtRWw">restaurant scene from "The Social Network"</a>.
   </figcaption>
 </figure>
 
