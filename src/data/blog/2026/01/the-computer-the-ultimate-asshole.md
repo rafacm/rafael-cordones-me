@@ -12,7 +12,7 @@ tags:
   - coding
   - software development
 description:
-  What type of personality, what type of psychology, makes someone good at programming?
+  Is the Computer the Ultimate Asshole? Coding, Bugs, and the Psychology of Developers
 ---
 
 <figure>
@@ -160,7 +160,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 
 In the past couple of years, having used AI and especially LLMs more and more for my day-to-day work has helped a lot when dealing with the kind of development issues and bugs I described above. So I cannot help but wonder: will the new generation of AI-native coders develop the same kind of tolerance for frustration, or will AI smooth out the daily development work so much that they will no longer need to be so... pedantic.
 
-<strong>Is the computer the ultimate asshole? I don't think so.</strong> A computer is just a tool. Maybe even the ultimate tool and with the introduction of AI, this tool is evolving from a very complex but deterministic to a very complex but probabilistic/non-deterministic one. 
+<strong>Is the computer the ultimate asshole? I don't think so.</strong> A computer is just a tool. Maybe even the ultimate tool and with the introduction of AI, this tool is evolving from a very complex but deterministic to a very complex but probabilistic (non-deterministic) one. 
 
 In any case, as Scott McCloud's says in his book/comic <a href="https://en.wikipedia.org/wiki/Understanding_Comics">"Understanding Comics"</a>: we humans see ourselves in everything and assign behaviors where none exist.
 
@@ -175,7 +175,7 @@ In any case, as Scott McCloud's says in his book/comic <a href="https://en.wikip
   </figcaption>
 </figure>
 
-So it's up to each and every one of us, especially while we're enduring constant frustration, to choose whether we want to behave as an asshole or not.
+So it is up to each and every one of us, especially while enduring constant frustration, to make a conscious choice of whether we want to behave like assholes or not.
 
 <figure>
   <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-1.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
