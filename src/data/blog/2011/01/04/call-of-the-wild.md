@@ -1,0 +1,30 @@
+---
+author: Rafael Cordones
+pubDatetime: 2011-01-04T12:00:00Z
+modDatetime:  2011-01-04T12:00:00Z
+title: Call of the Wild
+slug: call-of-the-wild
+location: Döbling
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - books
+  - architecture
+  - vienna
+description:
+  Into the Primitive
+---
+
+<figure>
+  <img src="/assets/images/photoblog/call-of-the-wild.jpg" alt="Lion on Schemerlbrücke in Vienna."/>
+    <figcaption class="text-center">
+    Lion on <a href="https://www.geschichtewiki.wien.gv.at/Schemerlbr%C3%BCcke">Schemerlbrücke</a> in Vienna. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
+
+> Buck did not read the newspapers, or he would have known that trouble was brewing, not alone for himself, but for every tide-water dog, strong of muscle and with warm, long hair, from Puget Sound to San Diego. Because men, groping in the Arctic darkness, had found a yellow metal, and because steamship and transportation companies were booming the find, thousands of men were rushing into the Northland. These men wanted dogs, and the dogs they wanted were heavy dogs, with strong muscles by which to toil, and furry coats to protect them from the frost.
+
+From the book <a href="https://www.gutenberg.org/files/215/215-h/215-h.htm#2HCH0001">"The Call of the Wild"</a> by Jack London.
+
