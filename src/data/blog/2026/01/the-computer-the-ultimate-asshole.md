@@ -12,7 +12,7 @@ tags:
   - coding
   - software development
 description:
-  Is the Computer the Ultimate Asshole? Coding, Bugs, and the Psychology of Developers
+  Coding, Bugs, and the Psychology of Developers
 ---
 
 <figure>
