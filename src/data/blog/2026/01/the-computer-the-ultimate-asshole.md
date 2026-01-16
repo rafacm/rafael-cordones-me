@@ -24,11 +24,11 @@ I recently found myself reading "Chapter 3 – Constant Frustration and Bursts o
 <figure>
   <img src="/assets/images/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene-yes-yes-yes.jpg" alt="Restaurant scene from 'When Harry Met Sally'"/>
   <figcaption class="text-center">
-    Meg Ryan playing <strong>Sally Albright</strong> and Billy Crystal in<br/>the <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">restaurant scene from 'When Harry Met Sally'</a>.
+    Meg Ryan playing Sally Albright and Billy Crystal in<br/>the <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">restaurant scene from 'When Harry Met Sally'</a>.
   </figcaption>
 </figure>
 
-Noooo... just kidding! Actually, after finishing the chapter, I felt like the customer sitting next to them in that scene and telling "I'm having what they are having!" to myself:
+Noooo... just kidding! Since by now I am a senior software developer, I felt more like the senior customer sitting in the next table in that scene and telling myself "I'm having what they are having!"
 
 <figure>
   <img src="/assets/images/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene-i-will-have-what-she-is-having.jpg" alt="Restaurant scene from 'When Harry Met Sally'"/>
@@ -37,7 +37,7 @@ Noooo... just kidding! Actually, after finishing the chapter, I felt like the cu
   </figcaption>
 </figure>
 
-Why? Because the chapter perfectly articulates something every working developer experiences when building software in a professional context: **a considerable part of our time and energy goes into troubleshooting issues, finding the root cause of bugs, and implementing workarounds rather than actually writing code for new features**.
+Why? Because the chapter perfectly articulates something every software developer experiences sooner or later when building software in a professional context: **a considerable part of our time and energy goes into troubleshooting issues/bugs, finding their root cause and implementing fixes or workarounds for them rather than actually writing code for new features**.
 
 As a personal example, in one of my previous projects, I implemented a CSV file import feature in a Java-based web application using an external open-source library to handle CSV files. After the feature was implemented, during the QA phase several bugs were found. Great! I fixed them, and eventually we deployed the feature to the LIVE environment. Soon after that, bug reports started coming in from customers that the import was failing. Additionally, there was no clear error message indicating what the problem was. 
 
@@ -112,7 +112,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > if (sys.platform.startswith(“linux”)):
 > ```
 >
-> _That one tiny missing colon breaks the program._
+> **That one tiny missing colon breaks the program.**
 >
 > _“See, this is what I’m talking about,” Spectre says, slapping his laptop shut with a grimace. **“The distance between looking like a genius and looking like an idiot in programming? It’s one character wide.”**_
 >
@@ -183,7 +183,7 @@ So it is up to each and every one of us, especially while enduring constant frus
   <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-3.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
   <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-4.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
   <figcaption class="text-center">
-    Rooney Mara playing <strong>Erica Albright</strong> with Jesse Eisenberg playing Mark Zuckerberg in<br/>the <a href="https://youtu.be/xcecQSajtwM?si=CXrOgjSGKWCYtRWw">restaurant scene from "The Social Network"</a>.
+    Rooney Mara playing Erica Albright with Jesse Eisenberg playing Mark Zuckerberg in<br/>the <a href="https://youtu.be/xcecQSajtwM?si=CXrOgjSGKWCYtRWw">restaurant scene from "The Social Network"</a>.
   </figcaption>
 </figure>
 
