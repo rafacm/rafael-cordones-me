@@ -188,3 +188,5 @@ So it is up to each and every one of us, especially while enduring constant frus
 </figure>
 
 Even if we decide to interpret the computer's behavior as that of "the ultimate asshole," <strong>the only behavior we’re truly responsible for is our own</strong>. Being a nerd and being an asshole are not the same thing, and we shouldn’t use one as an excuse for the other.
+
+*<small>This article was created by me. Claude and Gemini were used to proofread and provide initial feedback.</small>*
