@@ -48,9 +48,9 @@ name,surname
 Sherlock,Holmes
 John,Watson
 ```
-Everything looked fine. I created a unit test to consistently reproduce the issue and be able to iterate quickly. The import logic was failing consistently with that file but working perfectly fine with almost identical files already used in the unit tests I wrote during the implementation. I could not **see** what the problem was! Having been bitten by similar issues in the past and coincidentally having recently read [an article on Hacker News on how to hide messages in emojis](https://news.ycombinator.com/item?id=43023508) and [hack the US Treasury](https://news.ycombinator.com/item?id=43359264), I wondered if the problem was that the tool I was using to inspect the CSV file wasn’t showing all the contents of [the file](/assets/files/people.csv). 
+Everything looked fine. I created a unit test to consistently reproduce the issue and be able to iterate quickly. The import logic was failing consistently with that file but working perfectly fine with almost identical files already used in the unit tests I wrote during the implementation. I could not **see** what the problem was! Having been bitten by similar issues in the past and coincidentally having recently read [an article on Hacker News on how to hide messages in emojis](https://news.ycombinator.com/item?id=43023508) and [hack the US Treasury](https://news.ycombinator.com/item?id=43359264), I wondered if the problem was that the tool I was using to inspect the CSV file wasn’t actually showing all the contents of [the file](/assets/files/people.csv). 
 
-Maybe if I changed the tool, the light I was using to observe the contents of the file, something would appear out of the shadows? I asked [Claude](https://claude.ai/) "which tool can I use on the command-line to show all the contents of a text file on macOS?" and one of the proposals was [hexdump](https://en.wikipedia.org/wiki/Hex_dump):
+Suspecting the tool, the magnifying glass I was using to observe the contents of the file was not good enough to uncover the real contents of the file, I asked [Claude](https://claude.ai/) as if my own personal Dr. Watson "which tool can I use on the command-line to show all the contents of a text file on macOS?" and one of the proposals was [hexdump](https://en.wikipedia.org/wiki/Hex_dump):
 
 ```bash
 $ hexdump -C people.csv
@@ -149,7 +149,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 >  
 > _**There’s a flip side to dealing with the agonizing precision of code and the grind of constant, bug-ridden failure. When a bug is finally quashed, the sense of accomplishment is electric.**_
 > 
-> _**You are now Sherlock Holmes** in his moment of cerebral triumph, patiently tracing back the evidence and uncovering the murderer, illuminating the crime scene using nothing but the arc light of your incandescent mind._
+> _**You are now Sherlock Holmes in his moment of cerebral triumph**, patiently tracing back the evidence and uncovering the murderer, illuminating the crime scene using nothing but the arc light of your incandescent mind._
 
 <figure>
   <img src="/assets/images/the-computer-the-ultimate-asshole/sherlock-holmes-do-you-need-me-to-elaborate.gif" alt="Sherlock Holmes: now, do you need me to elaborate... or can we just crack on?"/>
@@ -169,7 +169,6 @@ In any case, as Scott McCloud's says in his book/comic <a href="https://en.wikip
   <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-2.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
   <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-3.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
   <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-4.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
-  
   <figcaption class="text-center">
     Panels from pages 32 and 33 from Scott McCloud's <a href="https://en.wikipedia.org/wiki/Understanding_Comics">"Understanding Comics"</a>.
   </figcaption>
