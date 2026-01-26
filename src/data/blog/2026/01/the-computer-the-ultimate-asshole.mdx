@@ -13,16 +13,33 @@ tags:
   - software development
 description:
   Coding, Bugs, and the Psychology of Developers
+ogImage: "@/assets/images/blog/the-computer-the-ultimate-asshole/hal-9000-i-m-sorry-dave.jpg"
 ---
+import { Image } from 'astro:assets';
+import bookCover from '@/assets/images/blog/the-computer-the-ultimate-asshole/coders-book-cover-reduced.jpg';
+import harryAndSallyYesYesYes from '@/assets/images/blog/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene-yes-yes-yes.jpg';
+import harryAndSallyIllHaveShesHaving from '@/assets/images/blog/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene-i-will-have-what-she-is-having.jpg';
+import sysyphus from '@/assets/images/blog/the-computer-the-ultimate-asshole/andrew-bird-sysyphus.jpg';
+import hal9000 from '@/assets/images/blog/the-computer-the-ultimate-asshole/hal-9000-i-m-sorry-dave.jpg';
+import nasaComputerProgrammers from '@/assets/images/blog/the-computer-the-ultimate-asshole/computer-programmers-at-nasa.jpg'
+import sherlockHolmesDoYouNeedMeToElaborate from '@/assets/images/blog/the-computer-the-ultimate-asshole/sherlock-holmes-do-you-need-me-to-elaborate.gif';
+import understandingComicsPanel1 from '@/assets/images/blog/the-computer-the-ultimate-asshole/understanding-comics-1.jpg';
+import understandingComicsPanel2 from '@/assets/images/blog/the-computer-the-ultimate-asshole/understanding-comics-2.jpg';
+import understandingComicsPanel3 from '@/assets/images/blog/the-computer-the-ultimate-asshole/understanding-comics-3.jpg';
+import understandingComicsPanel4 from '@/assets/images/blog/the-computer-the-ultimate-asshole/understanding-comics-4.jpg';
+import theSocialNetwork1 from '@/assets/images/blog/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-1.jpg';
+import theSocialNetwork2 from '@/assets/images/blog/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-2.jpg';
+import theSocialNetwork3 from '@/assets/images/blog/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-3.jpg';
+import theSocialNetwork4 from '@/assets/images/blog/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-4.jpg';
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/coders-book-cover-reduced.jpg" alt="'Coders' book cover"/>
+  <Image src={bookCover} alt="'Coders' book cover"/>
 </figure>
 
 I recently found myself reading "Chapter 3 – Constant Frustration and Bursts of Joy" in the book [“Coders: The Making of a New Tribe and the Remaking of the World”](https://www.goodreads.com/book/show/40406806-coders) by [Clive Thompson](https://www.clivethompson.net/) and nodding along saying "Yes! Yes! Yes!" very much like Meg Ryan playing Sally Albright in the restaurant scene in the 1989 movie ["When Harry Met Sally"](https://en.wikipedia.org/wiki/When_Harry_Met_Sally...):
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene-yes-yes-yes.jpg" alt="Restaurant scene from 'When Harry Met Sally'"/>
+  <Image src={harryAndSallyYesYesYes} alt="Restaurant scene from 'When Harry Met Sally'"/>
   <figcaption class="text-center">
     Meg Ryan playing Sally Albright and Billy Crystal in<br/>the <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">restaurant scene from 'When Harry Met Sally'</a>.
   </figcaption>
@@ -31,7 +48,7 @@ I recently found myself reading "Chapter 3 – Constant Frustration and Bursts o
 Noooo... just kidding! Since by now I am a senior software developer, I felt more like the senior customer sitting in the next table in that scene and telling myself "I'm having what they are having!"
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/when-harry-met-sally-restaurant-scene-i-will-have-what-she-is-having.jpg" alt="Restaurant scene from 'When Harry Met Sally'"/>
+  <Image src={harryAndSallyIllHaveShesHaving} alt="Restaurant scene from 'When Harry Met Sally'"/>
   <figcaption class="text-center">
     Estelle Reiner (film director Rob Reiner's mother) as nearby customer in<br/>the <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">restaurant scene from 'When Harry Met Sally'</a>.
   </figcaption>
@@ -84,7 +101,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _**It’s a boundless, nigh masochistic ability to endure brutal, grinding frustration.**_
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/andrew-bird-sysyphus.jpg" alt="Andrew Bird: Sysyphus"/>
+  <Image src={sysyphus} alt="Andrew Bird: Sysyphus"/>
   <figcaption class="text-center">
     From <a href="https://youtu.be/zug1B8DSkWw?si=6tXIE5yXrJWSYeFy">Andrew Bird: Sysyphus</a>.
   </figcaption>
@@ -127,7 +144,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _Nearly every coder who works on big, complex software will tell you a version of this. **The dictates of working with ultraprecise machines, so brutally intolerant of error, can wind up rubbing off on the coder.**_
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/hal-9000-i-m-sorry-dave.jpg" alt="HAL 9000 in '2001: Space Odyssey'"/>
+  <Image src={hal9000} alt="HAL 9000 in '2001: Space Odyssey'"/>
     <figcaption class="text-center">
     <a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">I'm sorry, Dave. I'm afraid I can't do that.</a> <br/> HAL 9000 to Dr. David Bowman in <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey">"2001: Space Odyssey" (1968)</a>.
   </figcaption>
@@ -136,7 +153,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _**Why can coders be so snippy?** [Jeff Atwood](https://blog.codinghorror.com/) asks, rhetorically. He thinks it’s **because working with computers all day long is like being forced to share an office with a toxic, abusive colleague**. “If you go to work and everyone around you is an asshole, you’re going to become like that,” Atwood says. **“And the computer is the ultimate asshole. It will fail completely and spectacularly if you make the tiniest errors.** ‘I forgot a semicolon.’ Well guess what, your spaceship is a complete ball of fire because you forgot a fucking semicolon.” (He’s not speaking metaphorically here: In one of the most famous bugs in history, <a href="https://www.nasa.gov/history/60-years-ago-mariner-1-launch-attempt-to-venus/">NASA was forced to blow up its Mariner 1 spacecraft only minutes after launch</a> when it became clear that a bug was causing it to veer off course and possibly crash in a populated area. The bug itself was caused by a single incorrect character.)_
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/computer-programmers-at-nasa.jpg" alt="NASA's Mariner Missions: programmers at work"/>
+  <Image src={nasaComputerProgrammers} alt="NASA's Mariner Missions: programmers at work"/>
   <figcaption class="text-center">
     Computer programmers at work at NASA.
     Source: <a href="https://youtu.be/Qjx3u9_FZHo?si=8pse3qU3DrGS6O2e&t=2160">"NASA's Mariner Missions"</a>.
@@ -152,7 +169,7 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _**You are now Sherlock Holmes in his moment of cerebral triumph**, patiently tracing back the evidence and uncovering the murderer, illuminating the crime scene using nothing but the arc light of your incandescent mind._
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/sherlock-holmes-do-you-need-me-to-elaborate.gif" alt="Sherlock Holmes: now, do you need me to elaborate... or can we just crack on?"/>
+  <Image src={sherlockHolmesDoYouNeedMeToElaborate} alt="Sherlock Holmes: now, do you need me to elaborate... or can we just crack on?"/>
   <figcaption class="text-center">
     "Now, do you need me to elaborate... or can we just crack on?". <br/>Scene from <a href="https://youtu.be/qy6Kh5dkTeo?si=fiGU19EoOskrLJ-b">"Sherlock Holmes: Game of Shadows (2011)"</a>.
   </figcaption>
@@ -165,10 +182,10 @@ In the past couple of years, having used AI and especially LLMs more and more fo
 In any case, as Scott McCloud's says in his book/comic <a href="https://en.wikipedia.org/wiki/Understanding_Comics">"Understanding Comics"</a>: we humans see ourselves in everything and assign behaviors where none exist.
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-1.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-2.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-3.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/understanding-comics-4.jpg" alt="Panel from Scott McCloud's 'Understanding Comics'"/>
+  <Image src={understandingComicsPanel1} alt="Panel from Scott McCloud's 'Understanding Comics'"/>
+  <Image src={understandingComicsPanel2} alt="Panel from Scott McCloud's 'Understanding Comics'"/>
+  <Image src={understandingComicsPanel3} alt="Panel from Scott McCloud's 'Understanding Comics'"/>
+  <Image src={understandingComicsPanel4} alt="Panel from Scott McCloud's 'Understanding Comics'"/>
   <figcaption class="text-center">
     Panels from pages 32 and 33 from Scott McCloud's <a href="https://en.wikipedia.org/wiki/Understanding_Comics">"Understanding Comics"</a>.
   </figcaption>
@@ -177,10 +194,10 @@ In any case, as Scott McCloud's says in his book/comic <a href="https://en.wikip
 So it is up to each and every one of us, especially while enduring constant frustration, to make a conscious choice of whether we want to behave like assholes or not.
 
 <figure>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-1.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-2.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-3.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
-  <img src="/assets/images/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-4.jpg" alt="Restaurant scene from movile 'The Social Network'"/>
+  <Image src={theSocialNetwork1} alt="Restaurant scene from movile 'The Social Network'"/>
+  <Image src={theSocialNetwork2} alt="Restaurant scene from movile 'The Social Network'"/>
+  <Image src={theSocialNetwork3} alt="Restaurant scene from movile 'The Social Network'"/>
+  <Image src={theSocialNetwork4} alt="Restaurant scene from movile 'The Social Network'"/>
   <figcaption class="text-center">
     Rooney Mara playing Erica Albright with Jesse Eisenberg playing Mark Zuckerberg in<br/>the <a href="https://youtu.be/xcecQSajtwM?si=CXrOgjSGKWCYtRWw">restaurant scene from "The Social Network"</a>.
   </figcaption>
