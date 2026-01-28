@@ -1,0 +1,241 @@
+---
+author: Rafael Cordones
+pubDatetime: 2026-01-28T12:00:00Z
+modDatetime: 2026-01-28T12:00:00Z
+title: Back to BASICs with one of my first computer programs
+slug: back-to-basics-with-one-of-my-first-computer-programs
+featured: true
+draft: false
+tags:
+  - coding
+  - programming
+  - software development
+  - basic
+description:
+  Going back to the future in programming
+ogImage: "@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/2025-12-06-sunset-at-la-alqueria.jpg"
+---
+
+import { Image } from 'astro:assets';
+import nightFalls from '@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/2025-12-06-sunset-at-la-alqueria.jpg';
+import hitBitSony from '@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/SONY-HB-75P.png';
+import programAllVersions from '@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/paises-all-versions-reduced.jpg';
+import countriesFrance from '@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/paises-europa-francia.gif';
+import bretVictor from '@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/the-future-of-programming-bret-victor.jpg';
+import yoda from '@/assets/images/blog/back-to-basics-with-one-of-my-first-computer-programs/yoda-you-must-unlearn-what-you-have-learned.jpg';
+
+<figure>
+  <Image src={nightFalls} alt="Sunset at La Alqueria"/>
+    <figcaption class="text-center">
+    Sunset at La Alquería, Jumilla (Murcia). Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
+
+<hr/>
+
+Back in December I visited [my mom](https://www.carmen-marcos.art/) back in Spain, and besides going out walks with her and enjoying the amazing sunsets I also took some time to go through some old boxes.
+In one of the boxes I happened to find a folder labelled "INFORMÁTICA" in Spanish containing several papers and printouts. And much to my surprise I found one of my first
+computer programs! It's a program I wrote to learn the capitals, currency and spoken language(s) in countries across the world... and to learn [MSX BASIC](https://en.wikipedia.org/wiki/MSX_BASIC) programming, of course!
+
+My first computer was a gift from my mom. Thanks mom! It was a Hit-Bit Sony HB-75P MSX computer and it had 64KB of RAM which was very short of [the 640 KBs Bill Gates said ought to be enough for anybody](https://www.computerworld.com/article/1563853/the-640k-quote-won-t-go-away-but-did-gates-really-say-it.html). Here is a picture of it:
+<figure>
+  <Image src={hitBitSony} alt="Sony HB-75P"/>
+    <figcaption class="text-center">
+    A MSX Hit-Bit Sony HB-75P. Image source: <a href="https://www.homecomputermuseum.nl/en/collectie/sony/sony-hb-75p-2/">HomeComputer Museum</a>.
+  </figcaption>
+</figure>
+
+The Sony Hit Bit HB-75 came out in 1984 so I probably wrote this program around 1985. That's 40 years ago!
+
+I actually found three versions of the program:
+<figure>
+  <Image src={programAllVersions} alt="Three versions of the program"/>
+    <figcaption class="text-center">
+    Three versions of the program printed in <a href="https://www.youtube.com/watch?v=inhZC75_mdU">perforated dot matrix printing paper</a>.
+  </figcaption>
+</figure>
+
+I took some pictures of the third version and with the help of Claude I got the text version of the program in no time which is amazing come to think of it!
+
+[BASIC](https://en.wikipedia.org/wiki/BASIC) programs had line numbers and the trick was to use line numbers using tens (10, 20, 30) so in case one wanted to add additional logic later there were available numbers to use.
+
+This is the start of the program where we show the main menu for the user to choose which continent:
+```vb
+1 SCREEN 0:MAXFILES=4:OPEN "GRP:" FOR OUTPUT AS#1:GOTO 10
+8 RETURN
+10 WIDTH 39:KEY OFF:CLS:COLOR 15,1,1:PRINT:PRINT
+20 PRINT"                ----------"
+30 PRINT"               | OPCIONES |"
+40 PRINT"                ----------"
+50 PRINT:PRINT
+60 PRINT"                ------------"
+70 PRINT"               | A. EUROPA  |"
+80 PRINT"                ------------"
+90 PRINT"               | B. AFRICA  |"
+100 PRINT"               ------------"
+110 PRINT"               | C. AMERICA |"
+120 PRINT"                ------------"
+130 PRINT"               | D. ASIA    |"
+140 PRINT"                ------------"
+150 PRINT"               | E. OCEANIA |"
+160 PRINT"                ------------"
+170 PRINT"               | F. TEST    |"
+180 PRINT"                ------------"
+190 PRINT"               | G. BASIC   |"
+200 PRINT"                ------------"
+210 PRINT:PRINT"                   ¿CUAL?";
+220 A$=INPUT$(1)
+230 IF A$="A" THEN 20600
+240 IF A$="B" THEN 20850
+250 IF A$="C" THEN 21100
+260 IF A$="D" THEN 21350
+270 IF A$="E" THEN 21600
+280 IF A$="F" THEN 21850
+290 IF A$="G" THEN 22100
+295 GOTO 220
+300 END
+```
+
+As we can see above, in BASIC there were no named functions. We would use `GOTO` and line numbers to jump back and forth in the program.
+In line `220` we read one character from user input and in lines `230` to `290` we compare that character to each of the options and if
+there are no matches in line `295` we jump back to line `220`.  If the user enters `A` (Europe) then we jump to line `20600`:
+
+```vb
+20600 SCREEN 0:CLS:COLOR 15,1,1
+20610 PRINT" ┌────────────────────────────────┐"
+20620 PRINT" │          EUROPA                │"
+20630 PRINT" └────────────────────────────────┘"
+20650 PRINT" ┌──────────────┬─────────────────┐"
+20655 PRINT" │ A. ALEMANIAS │ J. IRLANDA      │"
+20660 PRINT" ├──────────────┼─────────────────┤"
+20665 PRINT" │ B. ANDORRA   │ K. ITALIA       │"
+20670 PRINT" ├──────────────┼─────────────────┤"
+20675 PRINT" │ C. AUSTRIA   │ L. YUGOSLAVIA   │"
+20676 PRINT" ├──────────────┼─────────────────┤"
+20680 PRINT" │ D. BELGICA   │ M. LIECHTENSTEIN│"
+20690 PRINT" ├──────────────┼─────────────────┤"
+20700 PRINT" │ E. BULGARIA  │ N. LUXEMBURGO   │"
+20710 PRINT" ├──────────────┼─────────────────┤"
+20715 PRINT" │ G. FRANCIA   │ P. POLONIA      │"
+20720 PRINT" ├──────────────┼─────────────────┤"
+20725 PRINT" │ H. HOLANDA   │ Q. RUMANIA      │"
+20730 PRINT" ├──────────────┼─────────────────┤"
+20735 PRINT" │ I. HUNGRIA   │ R. SAN MARINO   │"
+20740 PRINT" └──────────────┴─────────────────┘"
+20745 PRINT:PRINT"      ¿QUE PAIS QUIERES VER?";
+20747 P$=INPUT$(1)
+20750 IF P$="A" THEN 8000
+20755 IF P$="B" THEN 9510
+20760 IF P$="C" THEN 9560
+20765 IF P$="D" THEN 4000
+20770 IF P$="E" THEN 6010
+20775 IF P$="F" THEN 7000
+20780 IF P$="G" THEN 2500
+20785 IF P$="H" THEN 8500
+20790 IF P$="I" THEN 5500
+20795 IF P$="J" THEN 3000
+20800 IF P$="K" THEN 7500
+20805 IF P$="L" THEN 6020
+20810 IF P$="M" THEN 6030
+20815 IF P$="N" THEN 6040
+20820 IF P$="O" THEN 9000
+20825 IF P$="P" THEN 4500
+20830 IF P$="Q" THEN 9600
+20835 IF P$="R" THEN GOTO 9610
+20836 IF P$=CHR$(27) THEN GOTO 10
+20837 IF P$=CHR$(24) THEN GOTO 21243
+20838 GOTO 20747
+20840 END
+```
+
+Here we follow the exact same pattern as before but we show European countries. We nevertheless use the a different variable name to store user input `P$`.
+I would enter `G` for France we would the jump to line `2500` where we define several global variables and then we use `GOSUB` to jump to different parts of the program:
+```vb
+2500 N$="FRANCIA":Q$="Francés":G=4:Z=15:K=9:I=1:C$="Paris":M$="Franco francés":GOSUB 10110:GOSUB 20240:GOSUB 20290:GOSUB 20260:GOSUB 20200
+```
+
+This subroutine would paint the three colored bars of the flag using the colors defined in variables `G`, `Z` and `K` and
+then jump back to where the subroutine was called from. Note that this subroutine is specifically for countries which had the same
+shape as the French flag. There were different subroutines for
+```vb
+10110 COLOR 1,14,14:SCREEN 2
+10120 LINE(80,60)-(107,120),G,BF
+10125 LINE(107,120)-(134,60),Z,BF
+10138 LINE(134,60)-(161,120),K,BF
+10140 RETURN
+```
+
+This one would paint the border around the flag:
+```vb
+20240 LINE(79,59)-(161,121),1,B
+20250 RETURN
+```
+
+This one would display the country information:
+```vb
+20290 DRAW"BM20,140"
+20300 PRINT#1,"CAPITAL: ";C$
+20310 DRAW"BM20,160"
+20320 PRINT#1,"MONEDA: ";M$
+20322 DRAW"BM20,180"
+20324 PRINT#1,"IDIOMA: ";Q$
+20330 RETURN
+```
+
+This one would display the country name on the top of the screen:
+```vb
+20260 DRAW"BM100,20"
+20265 PRINT#1,N$
+20280 RETURN
+```
+
+And finally this one would wait for use input:
+```vb
+20200 IF INKEY$="" THEN GOTO 20200 ELSE GOTO 20600
+20230 RETURN
+```
+
+Thanks to [WebMSX](https://webmsx.org/) I was able to get the code running again!
+
+<figure>
+  <Image src={countriesFrance} alt="Europe > Francia"/>
+</figure>
+
+You can even run the program yourself on your browser with MSXPen [here](https://msxpen.com/codes/-Og6EIJiKNXoAByT1Rhb)!
+
+Just make sure that you
+1. wait around 30 seconds until the program automatically loads and the main menu is displayed
+2. use the `[SHIFT]` key to enter a character in the menus since the program logic does not handle lowercase letters
+
+Yes, I already found some bugs after playing with it a bit! Enjoy!
+
+## Some final thoughts
+
+From today's point of view these are the main points that jump at me
+1. the way to structure logic flow in the program was exclusively with the use of `IF`, `GOTO`, `GOSUB` and `RETURN`
+which is very close to assembler and how the computer
+2. variable names would specify the types of values stored in those variables
+
+> The most dangerous thought that you can have as a creative person is to think that you know what you’re doing.
+> Because once you think you know what you’re doing, you stop looking around for other ways of doing things...
+> -- Bret Victor in ["The Future of Programming"](https://www.youtube.com/watch?v=8pTEmbeENF4)
+
+
+<figure>
+    <a href="https://www.youtube.com/watch?v=8pTEmbeENF4">
+        <Image class="mb-0" src={bretVictor} alt="Bret Victor The Future of Programming"/>
+    </a>
+    <figcaption class="text-center">
+        Bret Victor's talk ["The Future of Programming"](https://www.youtube.com/watch?v=8pTEmbeENF4).
+    </figcaption>
+</figure>
+
+<figure>
+    <a href="https://www.youtube.com/watch?v=7fw49NqiTQw">
+        <Image class="mb-0" src={yoda} alt="Yoda - You must unlearn what you have learned"/>
+    </a>
+    <figcaption class="text-center">
+    Yoda: "You must unlearn what you have learned". <a href="https://www.youtube.com/watch?v=7fw49NqiTQw">YouTube</a>.
+  </figcaption>
+</figure>
+
