@@ -35,13 +35,23 @@ import theSocialNetwork3 from '@/assets/images/blog/the-computer-the-ultimate-as
 import theSocialNetwork4 from '@/assets/images/blog/the-computer-the-ultimate-asshole/the-social-network-restaurant-scene-4.jpg';
 
 <figure>
-  <Image src={bookCover} alt="'Coders' book cover"/>
+    <Image src={bookCover} alt="'Coders' book cover"/>
+    <figcaption class="text-center">
+        Cover of [“Coders: The Making of a New Tribe and the Remaking of the World”](https://www.goodreads.com/book/show/40406806-coders)
+        by [Clive Thompson](https://www.clivethompson.net/).
+    </figcaption>
 </figure>
+
+Software development is most often portrayed as a creative craft of building new things, but the reality is frequently a battle against bugs, invisible bytes, and machines brutally intolerant of error. Inspired by [Clive Thompson](https://www.clivethompson.net/)’s book "[Coders](https://www.goodreads.com/book/show/40406806-coders)," I reflect on the daily reality of software development in a professional context and why the way computers "behave" to us shouldn't dictate how we behave towards other fellow humans.
+
+<hr/>
 
 I recently found myself reading "Chapter 3 – Constant Frustration and Bursts of Joy" in the book [“Coders: The Making of a New Tribe and the Remaking of the World”](https://www.goodreads.com/book/show/40406806-coders) by [Clive Thompson](https://www.clivethompson.net/) and nodding along saying "Yes! Yes! Yes!" very much like Meg Ryan playing Sally Albright in the restaurant scene in the 1989 movie ["When Harry Met Sally"](https://en.wikipedia.org/wiki/When_Harry_Met_Sally...):
 
 <figure>
-  <Image src={harryAndSallyYesYesYes} alt="Restaurant scene from 'When Harry Met Sally'"/>
+    <a href="https://www.youtube.com/watch?v=6pQgbEEFPq0">
+        <Image class="mb-0" src={harryAndSallyYesYesYes} alt="Restaurant scene from 'When Harry Met Sally'"/>
+    </a>
   <figcaption class="text-center">
     Meg Ryan playing Sally Albright and Billy Crystal in<br/>the <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">restaurant scene from 'When Harry Met Sally'</a>.
   </figcaption>
@@ -50,7 +60,9 @@ I recently found myself reading "Chapter 3 – Constant Frustration and Bursts o
 Noooo... just kidding! Since by now I am a senior software developer, I felt more like the senior customer sitting in the next table in that scene and telling myself "I'm having what they are having!"
 
 <figure>
-  <Image src={harryAndSallyIllHaveShesHaving} alt="Restaurant scene from 'When Harry Met Sally'"/>
+  <a href="https://www.youtube.com/watch?v=6pQgbEEFPq0">
+    <Image class="mb-0" src={harryAndSallyIllHaveShesHaving} alt="Restaurant scene from 'When Harry Met Sally'"/>
+  </a>
   <figcaption class="text-center">
     Estelle Reiner (film director Rob Reiner's mother) as nearby customer in<br/>the <a href="https://youtu.be/6pQgbEEFPq0?si=wr50daNc_G0l8RWB">restaurant scene from 'When Harry Met Sally'</a>.
   </figcaption>
@@ -58,6 +70,7 @@ Noooo... just kidding! Since by now I am a senior software developer, I felt mor
 
 Why? Because the chapter perfectly articulates something every software developer experiences sooner or later when building software in a professional context: **a considerable part of our time and energy goes into troubleshooting issues/bugs, finding their root cause and implementing fixes or workarounds for them rather than actually writing code for new features**.
 
+## A Game of Shadows and Invisible Bytes
 As a personal example, in one of my previous projects, I implemented a CSV file import feature in a Java-based web application using an external open-source library to handle CSV files. After the feature was implemented, during the QA phase several bugs were found. Great! I fixed them, and eventually we deployed the feature to the LIVE environment. Soon after that, bug reports started coming in from customers that the import was failing. Additionally, there was no clear error message indicating what the problem was. 
 
 I looked at [the file](/assets/files/people.csv) in the terminal:
@@ -90,6 +103,8 @@ Unfortunately, I could not change the library since it was used extensively in o
 
 I share this story not because it's extraordinary — quite the opposite, it's completely ordinary. Every developer has plenty of similar stories. **Tiny bugs or issues mushroom and end up eating hours or days, and above all, a ton of your mental energy.**
 
+## Software Developer's Daily Reality Bytes
+
 What I love about Thompson's chapter is how he captures similar stories told by well-known developers themselves and at a much larger scale than an enterprise-garden-variety CSV importer. 
 
 What follows are excerpts from that chapter interspersed with songs and movie references that came to my mind while reading the book.
@@ -103,9 +118,11 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _**It’s a boundless, nigh masochistic ability to endure brutal, grinding frustration.**_
 
 <figure>
-  <Image src={sysyphus} alt="Andrew Bird: Sysyphus"/>
+    <a href="https://www.youtube.com/watch?v=zug1B8DSkWw">
+        <Image class="mb-0" src={sysyphus} alt="Andrew Bird: Sysyphus"/>
+    </a>
   <figcaption class="text-center">
-    From <a href="https://youtu.be/zug1B8DSkWw?si=6tXIE5yXrJWSYeFy">Andrew Bird: Sysyphus</a>.
+      [Sisyphus](https://en.wikipedia.org/wiki/Sisyphus), the greek king punished for outsmarting the goods and cheating death... twice! [Andrew Bird's song](https://www.youtube.com/watch?v=zug1B8DSkWw), _"is about being addicted to your own suffering and the moral consequences of letting the rock roll."_
   </figcaption>
 </figure>
 
@@ -146,16 +163,21 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _Nearly every coder who works on big, complex software will tell you a version of this. **The dictates of working with ultraprecise machines, so brutally intolerant of error, can wind up rubbing off on the coder.**_
 
 <figure>
-  <Image src={hal9000} alt="HAL 9000 in '2001: Space Odyssey'"/>
+  <a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">
+    <Image class="mb-0" src={hal9000} alt="HAL 9000 in '2001: Space Odyssey'"/>
+  </a>
     <figcaption class="text-center">
     <a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">I'm sorry, Dave. I'm afraid I can't do that.</a> <br/> HAL 9000 to Dr. David Bowman in <a href="https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey">"2001: Space Odyssey" (1968)</a>.
   </figcaption>
 </figure>
 
+## Sharing an Office with a Toxic Colleague
 > _**Why can coders be so snippy?** [Jeff Atwood](https://blog.codinghorror.com/) asks, rhetorically. He thinks it’s **because working with computers all day long is like being forced to share an office with a toxic, abusive colleague**. “If you go to work and everyone around you is an asshole, you’re going to become like that,” Atwood says. **“And the computer is the ultimate asshole. It will fail completely and spectacularly if you make the tiniest errors.** ‘I forgot a semicolon.’ Well guess what, your spaceship is a complete ball of fire because you forgot a fucking semicolon.” (He’s not speaking metaphorically here: In one of the most famous bugs in history, <a href="https://www.nasa.gov/history/60-years-ago-mariner-1-launch-attempt-to-venus/">NASA was forced to blow up its Mariner 1 spacecraft only minutes after launch</a> when it became clear that a bug was causing it to veer off course and possibly crash in a populated area. The bug itself was caused by a single incorrect character.)_
 
 <figure>
-  <Image src={nasaComputerProgrammers} alt="NASA's Mariner Missions: programmers at work"/>
+  <a href="https://www.youtube.com/watch?v=ARJ8cAGm6JE">
+    <Image class="mb-0" src={nasaComputerProgrammers} alt="NASA's Mariner Missions: programmers at work"/>
+  </a>
   <figcaption class="text-center">
     Computer programmers at work at NASA.
     Source: <a href="https://youtu.be/Qjx3u9_FZHo?si=8pse3qU3DrGS6O2e&t=2160">"NASA's Mariner Missions"</a>.
@@ -171,15 +193,19 @@ What follows are excerpts from that chapter interspersed with songs and movie re
 > _**You are now Sherlock Holmes in his moment of cerebral triumph**, patiently tracing back the evidence and uncovering the murderer, illuminating the crime scene using nothing but the arc light of your incandescent mind._
 
 <figure>
-  <Image src={sherlockHolmesDoYouNeedMeToElaborate} alt="Sherlock Holmes: now, do you need me to elaborate... or can we just crack on?"/>
+  <a href="https://www.youtube.com/watch?v=qy6Kh5dkTeo">
+    <Image class="mb-0" src={sherlockHolmesDoYouNeedMeToElaborate} alt="Sherlock Holmes: now, do you need me to elaborate... or can we just crack on?"/>
+  </a>
   <figcaption class="text-center">
     "Now, do you need me to elaborate... or can we just crack on?". <br/>Scene from <a href="https://youtu.be/qy6Kh5dkTeo?si=fiGU19EoOskrLJ-b">"Sherlock Holmes: Game of Shadows (2011)"</a>.
   </figcaption>
 </figure>
 
+## The Ultimate Tool vs. The Ultimate Asshole
+
 In the past couple of years, having used AI and especially LLMs more and more for my day-to-day work has helped a lot when dealing with the kind of development issues and bugs I described above. So I cannot help but wonder: will the new generation of AI-native coders develop the same kind of tolerance for frustration, or will AI smooth out the daily development work so much that they will no longer need to be so... pedantic.
 
-<strong>Is the computer the ultimate asshole? I don't think so.</strong> A computer is just a tool. Maybe even the ultimate tool and with the introduction of AI, this tool is evolving from a very complex but deterministic to a mindbogglingly complex but non-deterministic one. 
+<strong>Is the computer the ultimate asshole? I don't think so.</strong> A computer is just a tool. Maybe even the ultimate tool and with the introduction of AI, this tool is evolving from a very complex but deterministic to a mindbogglingly complex non-deterministic one.
 
 In any case, as Scott McCloud's says in his book/comic <a href="https://en.wikipedia.org/wiki/Understanding_Comics">"Understanding Comics"</a>: we humans see ourselves in everything and assign behaviors where none exist.
 
@@ -228,4 +254,4 @@ So it is up to each and every one of us, especially while enduring constant frus
 
 Even if we decide to interpret the computer's behavior as that of "the ultimate asshole," <strong>the only behavior we’re truly responsible for is our own</strong>. Being a nerd and being an asshole are not the same thing, and we shouldn’t use one as an excuse for the other.
 
-*<small>This article was created by me. Claude and Gemini were used to proofread and provide initial feedback.</small>*
+*<small>This article was initially drafted by me. Claude and Gemini were used to proofread, provide feedback and improvement suggestions. Humans were also involved in reviewing it. Thanks!</small>*
