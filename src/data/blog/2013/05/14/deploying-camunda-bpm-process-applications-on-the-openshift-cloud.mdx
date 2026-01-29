@@ -17,9 +17,12 @@ description:
   How-to on deploying an **existing application** to camunda BPM running on JBoss EAP 6.x on OpenShift and a **a proposal** on how to manage the further development of the application and keep pushing new releases out to OpenShift.
 ---
 
+import { Image } from 'astro:assets';
+import cloudAtDusk from '@/assets/images/blog/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/IMG_4231.jpg';
+import theJobAnnouncementOpenshift from '@/assets/images/blog/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/thejobannouncement-rafacm-openshift.png';
+
 <figure>
-  <img src="/assets/images/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/IMG_4231.jpg" alt="Cloud at dusk over the skyline of Alicante, Spain."
-  />
+  <Image src={cloudAtDusk} alt="Cloud at dusk over the skyline of Alicante, Spain." />
     <figcaption class="text-center">
        Cloud at dusk over the skyline of Alicante, Spain. Photo by <a href="http://rafael.cordones.me">Rafael Cordones</a>.
   </figcaption>
@@ -37,7 +40,7 @@ The two main requirements I have are:
 1. keep the OpenShift deployment environment aspect orthogonal to the rest of my application codebase, i.e. I want to be in a position to keep deploying my app to my internally managed deployment environment or I might even want to have several OpenShift deployment environments (test, staging, production).
 2. whenever a new camunda BPM release is supported by the camunda BPM OpenShift quickstart, I would like to be able to easily upgrade
 
-In my humble opinion, the easiest way of doing fulfill these requirements, is to have a dedicated branch called "openshift" on which all the code/configuration related to camunda BPM on <strong>a given OpenShift deployment environment</strong> is kept</strong>.
+In my humble opinion, the easiest way of doing fulfill these requirements, is to have a dedicated branch called "openshift" on which all the code/configuration related to camunda BPM on <strong>a given OpenShift deployment environment</strong> is kept.
 
 We will follow the steps using <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> as an example. Please note that you will need to create a JBoss EAP 6.x application type on OpenShift and get its corresponding Git deployment repository.
 
@@ -59,7 +62,7 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 ```
 
 This is the purpose of each of those remotes is:
-* upstream: the canonical repository containing <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> project code</span>
+* upstream: the canonical repository containing <a href="https://github.com/plexiti/the-job-announcement">The Job Announcement</a> project code
 * origin: my personal fork of the project on which I do my development work which I later push to 'upstream'
 * quickstart: the repository containing a JBoss EAP 6.x distributions with the camunda BPM engine already configured (check article "<a href="http://rafael.cordones.me/2013/05/03/a-camunda-bpm-quickstart-for-jboss-eap-6-0-on-openshift/">A camunda BPM Quickstart for JBoss EAP 6.0 on OpenShift?</a>" for background)
 * opeshift: the OpenShift application deploymnet Git deployment repository to which we will push our application's code
@@ -171,8 +174,7 @@ rafa@trane: ~/dev/vc/the-job-announcement$
 After OpenShift has built your application from source and deployed it, your application should be ready to rock at the OpenShift's provided URL:
 
 <figure>
-  <img src="/assets/images/deploying-camunda-bpm-process-applications-on-the-openshift-cloud/thejobannouncement-rafacm-openshift.png" alt="The Job Announcement running on OpenShift"
-  />
+  <Image src={theJobAnnouncementOpenshift} alt="The Job Announcement running on OpenShift" />
     <figcaption class="text-center">
        The Job Announcement running on OpenShift.
   </figcaption>

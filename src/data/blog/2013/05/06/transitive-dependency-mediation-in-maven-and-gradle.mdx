@@ -15,11 +15,15 @@ tags:
   - maven
   - testing
 description:
-  Troubleshooting a dependency resolution issue on Maven and comparison with Graddle. 
+  Troubleshooting a dependency resolution issue on Maven and comparison with Graddle.
 ---
 
+import { Image } from 'astro:assets';
+import nighthawks from '@/assets/images/blog/transitive-dependency-mediation-in-maven-and-gradle/Nighthawks_by_Edward_Hopper_1942.jpg';
+import aFewGoodMen from '@/assets/images/blog/transitive-dependency-mediation-in-maven-and-gradle/a-few-good-men-you-cant-handle-the-truth.jpg';
+
 <figure>
-  <img src="/assets/images/transitive-dependency-mediation-in-maven-and-gradle/Nighthawks_by_Edward_Hopper_1942.jpg" alt="Nighthawks by Edward Hopper. 1942."/>
+  <Image src={nighthawks} alt="Nighthawks by Edward Hopper. 1942."/>
     <figcaption class="text-center">
     Nighthawks by Edward Hopper. 1942. <br/>
     Source <a href="https://en.wikipedia.org/wiki/Nighthawks_(Hopper)">Wikipedia</a>, <a href="http://www.googleartproject.com/collection/the-art-institute-of-chicago/artwork/nighthawks-edward-hopper/449258/">Google Art Project</a> and <a href="https://www.khanacademy.org/humanities/art-1010/american-art-to-wwii/social-realism/v/edward-hopper-nighthawks-1942">Khan Academy</a>.
@@ -129,7 +133,7 @@ Even using a dependency version range as indicated <a href="http://books.sonatyp
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>[4.9]</version>
-</dependency>    
+</dependency>
 ```
 gives exactly the same results.
 
@@ -207,7 +211,7 @@ Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict re
 ## Can I <em>handle</em> the Maven truth?
 
 <figure>
-  <img src="/assets/images/transitive-dependency-mediation-in-maven-and-gradle/a-few-good-men-you-cant-handle-the-truth.jpg" alt="Scene from 'A Few Good Men' movie"/>
+  <Image src={aFewGoodMen} alt="Scene from 'A Few Good Men' movie"/>
     <figcaption class="text-center">
     <a href="https://www.youtube.com/watch?v=9FnO3igOkOk">"You can't handle the truth!"</a><br/>
     Scene from <a href="https://en.wikipedia.org/wiki/A_Few_Good_Men">"A Few Good Men" (1992)</a>.
@@ -229,8 +233,8 @@ Wow! That was neat! Note the <strong>two</strong> lines dealing with conflict re
 > [pauses]
 >
 > Maven: Son, we live in a world full of software projects that have dependencies, and those dependencies have to be resolved. Who's gonna do it? You, manually? You, Gradle? I have a greater responsibility than you can possibly fathom. You weep for your unresolved dependency and you curse Maven. You have that luxury. You have the luxury of not knowing what I know, that resolving that dependency my way, while tragic, probably saved projects. And my existence, while grotesque and incomprehensible to you, saves projects! You don't want the truth, because deep down in IT basements you don't talk about at release parties. You <em>want</em> me on your project. You <em>need</em> me on your project. We use words like `<dependecy>`, `<version>`, `<scope>`. We use these words as the backbone of a life spent building software. You use them as a punchline. I have neither the CPU cycles nor the disk space to explain myself to someone who develops and releases software under the blanket of the default configuration that I provide, and then questions the manner in which I provide it! I would rather you just said "thank you", and went on your way. Otherwise, I suggest you pick up a browser, and start manually downloading and managing all those dependencies. Either way, I don't give a damn what you think you are entitled to!
-> 
-> ― From <a href="https://www.youtube.com/watch?v=9FnO3igOkOk">"A Few Good Build Tools"</a></blockquote>
+>
+> ― From <a href="https://www.youtube.com/watch?v=9FnO3igOkOk">"A Few Good Build Tools"</a>
 >
 ## Postscript
 

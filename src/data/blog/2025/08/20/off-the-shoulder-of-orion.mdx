@@ -18,8 +18,11 @@ description:
   I've seen things you people wouldn't believe
 ---
 
+import { Image } from 'astro:assets';
+import orion from '@/assets/images/blog/photoblog/off-the-shoulder-of-orion.jpg';
+
 <figure>
-  <img src="/assets/images/photoblog/off-the-shoulder-of-orion.jpg" alt="Orion on a warm summer night"/>
+  <Image src={orion} alt="Orion on a warm summer night" />
     <figcaption class="text-center">
     Orion on a warm summer night. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
   </figcaption>

@@ -17,8 +17,11 @@ description:
   Into the Primitive
 ---
 
+import { Image } from 'astro:assets';
+import lion from '@/assets/images/blog/photoblog/call-of-the-wild.jpg';
+
 <figure>
-  <img src="/assets/images/photoblog/call-of-the-wild.jpg" alt="Lion on Schemerlbrücke in Vienna."/>
+  <Image src={lion} alt="Lion on Schemerlbrücke in Vienna." />
     <figcaption class="text-center">
     Lion on <a href="https://www.geschichtewiki.wien.gv.at/Schemerlbr%C3%BCcke">Schemerlbrücke</a> in Vienna. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
   </figcaption>

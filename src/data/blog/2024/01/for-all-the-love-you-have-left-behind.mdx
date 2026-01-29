@@ -15,8 +15,11 @@ description:
   Where the sun isn’t only sinking fast
 ---
 
+import { Image } from 'astro:assets';
+import shotFromTrain from '@/assets/images/blog/photoblog/for-all-the-love-you-have-left-behind.jpg';
+
 <figure>
-  <img src="/assets/images/photoblog/for-all-the-love-you-have-left-behind.jpg" alt="Shot take from a train on the way to Vienna"/>
+  <Image src={shotFromTrain} alt="Shot take from a train on the way to Vienna" />
     <figcaption class="text-center">
     Shot taken from a train on the way to Vienna. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
   </figcaption>

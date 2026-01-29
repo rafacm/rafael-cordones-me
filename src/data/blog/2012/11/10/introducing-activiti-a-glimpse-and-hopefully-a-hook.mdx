@@ -14,8 +14,12 @@ description:
   Slides for the talk I gave at the Vienna DevFest 2012.
 ---
 
+import { Image } from 'astro:assets';
+import engineStructure from '@/assets/images/blog/introducing-activiti-a-glimpse-and-hopefully-a-hook/engine-structure.jpg';
+import slides from '@/assets/images/blog/introducing-activiti-a-glimpse-and-hopefully-a-hook/slides.png';
+
 <figure>
-  <img src="/assets/images/introducing-activiti-a-glimpse-and-hopefully-a-hook/engine-structure.jpg" alt="Io Eclipse Shadow on Jupiter from Juno"/>
+  <Image src={engineStructure} alt="Io Eclipse Shadow on Jupiter from Juno"/>
     <figcaption class="text-center">
     Charles Babbage's blueprint for the Analytical Engine. Source <a href="https://computerhistory.org/blog/the-analytical-engine-28-plans-and-counting/">Computer History Museum</a>.
   </figcaption>
@@ -24,7 +28,7 @@ description:
 These are the slides of the talk I gave at the Vienna DevFest 2012:
 
 <figure>
-  <img src="/assets/images/introducing-activiti-a-glimpse-and-hopefully-a-hook/slides.png" alt="Slides"/>
+  <Image src={slides} alt="Slides"/>
     <figcaption class="text-center">
     Slides available at SpeakerDeck <a href="https://speakerdeck.com/rafacm/introducing-activiti-a-glimpse-and-hopefully-a-hook">here</a> and in PDF with active hyperlinks <a href="https://files.speakerdeck.com/presentations/67af96c090750130a9c8529790d16483/introducing-activiti-devfest-vienna-2012.pdf">here</a>.
   </figcaption>

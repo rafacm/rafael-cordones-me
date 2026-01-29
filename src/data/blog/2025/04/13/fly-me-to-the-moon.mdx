@@ -15,8 +15,11 @@ description:
   Now, this man, here [Count Basie] is gonna take me by the hand and he gonna lead me down the right path to righteousness, and all that other modern Jazz...
 ---
 
+import { Image } from 'astro:assets';
+import planeAndMoon from '@/assets/images/blog/photoblog/fly-me-to-the-moon.jpg';
+
 <figure>
-  <img src="/assets/images/photoblog/fly-me-to-the-moon.jpg" alt="A plane in the sky and the moon"/>
+  <Image src={planeAndMoon} alt="A plane in the sky and the moon" />
     <figcaption class="text-center">
     A plane in the sky and the moon. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
   </figcaption>
