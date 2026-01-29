@@ -6,6 +6,7 @@ import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
+import PhotoblogGrid from "@/components/PhotoblogGrid.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
@@ -86,13 +87,8 @@ const photoblogPosts = sortedPosts.filter(({ data }) =>
         <>
           {recentPosts.length > 0 && <Hr />}
           <section id="photoblog" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">Photoblog</h2>
-            <ul>
-              {photoblogPosts.map(
-                (data, index) =>
-                  index < SITE.postPerIndex && <Card variant="h3" {...data} />
-              )}
-            </ul>
+            <h2 class="mb-6 text-2xl font-semibold tracking-wide">Photoblog</h2>
+            <PhotoblogGrid posts={photoblogPosts.slice(0, SITE.postPerIndex)} />
             <div class="my-8 text-center">
               <LinkButton href="/tags/photoblog/">
                 All Posts
