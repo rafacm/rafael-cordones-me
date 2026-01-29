@@ -10,5 +10,13 @@ const { posts } = Astro.props;
 ---
 
 <div class="grid grid-cols-2 gap-0.5 sm:grid-cols-3">
-  {posts.map(post => <PhotoblogCard {...post} />)}
+  {posts.map((post, index) => {
+    const isLast = index === posts.length - 1;
+    const hideOnMobile = isLast && posts.length % 2 !== 0;
+    return (
+      <div class:list={[{ "hidden sm:block": hideOnMobile }]}>
+        <PhotoblogCard {...post} />
+      </div>
+    );
+  })}
 </div>
