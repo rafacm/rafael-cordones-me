@@ -1,0 +1,45 @@
+---
+author: Rafael Cordones
+pubDatetime: 2024-02-05T12:00:00Z
+modDatetime: 2024-02-05T12:00:00Z
+title: I am from Barcelona
+slug: i-am-from-barcelona
+location: Platja de la Barceloneta, Barcelona
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - music
+description:
+    La mer... Qu’on voit danser... Le long des golfes clairs...
+ogImage: "@/assets/images/blog/photoblog/i-am-from-barcelona-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/i-am-from-barcelona-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/i-am-from-barcelona-2.jpg';
+import photo3 from '@/assets/images/blog/photoblog/i-am-from-barcelona-3.jpg';
+
+<figure>
+    <Image src={photo1} alt="Shot taken from Platja de la Barceloneta, Barcelona" />
+    <Image src={photo2} alt="Shot taken from Platja de la Barceloneta, Barcelona" />
+    <Image src={photo3} alt="Shot taken from Platja de la Barceloneta, Barcelona" />
+    <figcaption class="text-center">
+        Shots taken from Platja de la Barceloneta, Barcelona. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+> I'm gonna sing this song with all of my friends\
+> And we're I'm from Barcelona\
+> Love is a feeling that we don't understand\
+> But we're gonna give it to ya\
+>
+> We'll aim for the stars\
+> We'll aim for your heart when the night comes\
+> And we'll bring you love\
+> You'll be one of us when the night comes
+>
+> — “I’m from Barcelona” by We’re from Barcelona
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6gobLJ63a1TNrSrU53tSj5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
