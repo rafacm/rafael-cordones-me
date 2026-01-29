@@ -67,7 +67,7 @@ const photoblogPosts = sortedPosts.filter(({ data }) =>
         <>
           <section id="photoblog" class="pt-12 pb-6">
             <h2 class="mb-6 text-2xl font-semibold tracking-wide">Photoblog</h2>
-            <PhotoblogGrid posts={photoblogPosts.slice(0, SITE.postPerIndex)} />
+            <PhotoblogGrid posts={photoblogPosts.slice(0, SITE.photoblogPostsPerIndex)} />
             <div class="my-8 text-center">
               <LinkButton href="/tags/photoblog/">
                 All Posts
