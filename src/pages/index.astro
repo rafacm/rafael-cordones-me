@@ -57,6 +57,24 @@ const photoblogPosts = sortedPosts.filter(({ data }) =>
               ))}
             </ul>
           </section>
+          {(photoblogPosts.length > 0 || recentPosts.length > 0) && <Hr />}
+        </>
+      )
+    }
+
+    {
+      photoblogPosts.length > 0 && (
+        <>
+          <section id="photoblog" class="pt-12 pb-6">
+            <h2 class="mb-6 text-2xl font-semibold tracking-wide">Photoblog</h2>
+            <PhotoblogGrid posts={photoblogPosts.slice(0, SITE.postPerIndex)} />
+            <div class="my-8 text-center">
+              <LinkButton href="/tags/photoblog/">
+                All Posts
+                <IconArrowRight class="inline-block rtl:-rotate-180" />
+              </LinkButton>
+            </div>
+          </section>
           {recentPosts.length > 0 && <Hr />}
         </>
       )
@@ -79,24 +97,6 @@ const photoblogPosts = sortedPosts.filter(({ data }) =>
             </LinkButton>
           </div>
         </section>
-      )
-    }
-
-    {
-      photoblogPosts.length > 0 && (
-        <>
-          {recentPosts.length > 0 && <Hr />}
-          <section id="photoblog" class="pt-12 pb-6">
-            <h2 class="mb-6 text-2xl font-semibold tracking-wide">Photoblog</h2>
-            <PhotoblogGrid posts={photoblogPosts.slice(0, SITE.postPerIndex)} />
-            <div class="my-8 text-center">
-              <LinkButton href="/tags/photoblog/">
-                All Posts
-                <IconArrowRight class="inline-block rtl:-rotate-180" />
-              </LinkButton>
-            </div>
-          </section>
-        </>
       )
     }
   </main>
