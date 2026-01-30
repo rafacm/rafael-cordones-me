@@ -8,7 +8,7 @@ export const SITE = {
   lightAndDarkMode: true,
   postPerIndex: 5,
   photoblogPostsPerIndex: 9,
-  postPerPage: 10,
+  postPerPage: 12,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
   showBackButton: true, // show back button in post detail
