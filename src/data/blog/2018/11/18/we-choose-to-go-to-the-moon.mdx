@@ -1,0 +1,46 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-11-18T12:00:00Z
+modDatetime: 2018-11-18T12:00:00Z
+title: We choose to go to the moon
+slug: we-choose-to-go-to-the-moon
+location: Science Museum, London, UK
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - music
+description:
+    Shot taken at Science Museum, London, UK
+ogImage: "@/assets/images/blog/photoblog/we-choose-to-go-to-the-moon-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/we-choose-to-go-to-the-moon-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/we-choose-to-go-to-the-moon-2.jpg';
+import photo3 from '@/assets/images/blog/photoblog/we-choose-to-go-to-the-moon-3.jpg';
+import johnFKennedy from '@/assets/images/blog/photoblog/john-f-kennedy-rice-speech.jpg';
+
+<figure>
+    <Image src={photo1} alt="Shot taken at Science Museum, London, UK" />
+    <Image src={photo2} alt="Shot taken at Science Museum, London, UK" />
+    <Image src={photo3} alt="Shot taken at Science Museum, London, UK" />
+    <figcaption class="text-center">
+        Shots taken at Science Museum, London, UK. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+> We choose to go to the Moon in this decade and do the other things,\
+> not because they are easy, but because they are hard.”
+>
+> — John F. Kennedy
+
+<figure>
+    <a href="https://youtu.be/aA1LOz9liag?si=ttY_ukdjQ13SJk7q">
+        <Image class="mb-0" src={johnFKennedy} alt="President John F. Kennedy's Moon Speech at Rice University"/>
+    </a>
+    <figcaption class="text-center">
+        President John F. Kennedy's <a href="https://spacecenter.org/this-day-in-history-jfk-delivers-iconic-we-choose-to-go-to-the-moon-speech/">Moon Speech at Rice University</a>.
+    </figcaption>
+</figure>
