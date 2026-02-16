@@ -47,6 +47,10 @@
       @apply mx-auto border border-border;
     }
 
+    .gallery-wrapper img {
+      @apply border-0;
+    }
+
     figcaption {
       @apply opacity-75;
     }

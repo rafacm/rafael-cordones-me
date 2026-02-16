@@ -55,6 +55,12 @@ Shiki with custom transformers supporting:
 - Dark/light mode via CSS variables (toggle in `public/toggle-theme.js`)
 - Global styles in `src/styles/global.css`
 
+## Documentation Standards
+
+- Store feature docs in `/docs/features/`
+- Use format: `feature-name.md`
+- Include: purpose, usage, configuration, examples
+
 ## CI/CD
 
 GitHub Actions runs on PRs: lint → format check → build. All three must pass.

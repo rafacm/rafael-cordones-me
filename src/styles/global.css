@@ -48,7 +48,7 @@ html[data-theme="dark"] {
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  section,
+  section:not(.pswp *),
   footer {
     @apply mx-auto max-w-app px-4;
   }
@@ -60,6 +60,12 @@ html[data-theme="dark"] {
 
 .active-nav {
   @apply underline decoration-wavy decoration-2 underline-offset-4;
+}
+
+/* Override Tailwind preflight max-width:100% on img so PhotoSwipe
+   lightbox images can render at their full calculated size. */
+.pswp img {
+  max-width: none;
 }
 
 /* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
