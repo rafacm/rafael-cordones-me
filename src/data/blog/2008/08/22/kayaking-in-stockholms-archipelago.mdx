@@ -1,0 +1,61 @@
+---
+author: Rafael Cordones
+pubDatetime: 2008-08-22T12:00:00Z
+modDatetime: 2008-08-22T12:00:00Z
+title: Kayaking in Stockholm’s Archipelago
+slug: kayaking-in-stockholms-archipelago
+location: Stockholm, Sweden
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - travel
+  - Stockholm
+  - Sweden
+description:
+    Exploring Stockholm's archipelago by kayak with Swedish music recommendations
+ogImage: "@/assets/images/blog/kayaking-in-stockholms-archipelago/img_8311.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import sunset from '@/assets/images/blog/kayaking-in-stockholms-archipelago/img_8311.jpg';
+
+export const photos = Object.values(
+    import.meta.glob('@/assets/images/blog/kayaking-in-stockholms-archipelago/*.jpg', { eager: true, import: 'default' })
+);
+
+
+<figure>
+    <Image src={sunset} alt="Sunset from Storön." />
+    <figcaption class="text-center">
+        Sunset from <a href="https://www.google.at/maps/place/Storon/@59.2114226,18.8393281,55317m/data=!3m1!1e3!4m5!3m4!1s0x46f57785fe747d5b:0x29e597f8202ecb20!8m2!3d59.2624483!4d18.7214525">Storön</a>. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+
+I lived for about three years in Stockholm, and thus friends who did not take their chance to visit me while I was living there, ask me every now and then which places should they visit when visiting Stockholm. I always end up wrapping a short list of places with a short description in an e-mail. I always end the e-mail saying that to really really visit Stockholm, you have to go at least twice: once in summer and once in winter!
+
+When visiting Stockholm in summer, a place definitely not to miss is the Stockholm's archipelago! I had the luxury of visiting this August and had the luck of enjoying good weather. If there's a reason why Stockholm is called "Beauty on water", when you are out in the archipelago, you understand that reason even more.
+
+[Vaxholmsbolaget](http://www.waxholmsbolaget.com/) and [Strömma Kanalbolaget](http://www.stromma.nu/) will take you to the main islands in the archipelago.
+
+If you take [the ferry to Helsinki](http://www.vikingline.fi/), you will also be able to get a great tour through the archipelago.
+
+But given that you are in Sweden, a country with [*Allemansrätt*](http://en.wikipedia.org/wiki/Freedom_to_roam#Sweden), the best way to enjoy the archipelago is to rent a kayak and make your own way through the myriad islands. Hop on and off and to enjoy the amazing scandinavian sunsets.
+
+## Top 5 Songs for a visit to Stockholm's Archipelago
+
+1. [Bo Kaspers Orkester](http://www.bokaspers.com/)'s "[Semester](http://www.youtube.com/v/iI0VEeGbvMk).
+2. [Marie Fredriksson](http://en.wikipedia.org/wiki/Marie_Fredriksson)'s (internationally, of Roxette fame) "[Äntligen](http://www.youtube.com/watch?v=w67-lbGtM4E)".
+3. [Monica Zetterlund](http://en.wikipedia.org/wiki/Monica_Zetterlund)'s delicate rendering of [Bill Evans](http://en.wikipedia.org/wiki/Bill_Evans)' classic "Waltz for Debby": "[Monicas Vals](http://www.youtube.com/watch?v=8tp-nbchmHU)".
+4. [Lisa Ekdahl](http://lisaekdahl.com/)'s "[Vem Vet](http://www.youtube.com/watch?v=42JOswXMm64)".
+5. This last one is for the way back, on the plane. Start playing it just after the flight pilot says "Please, fasten your seat-belts!"... "[The Final Countdown](http://www.youtube.com/watch?v=9jK-NcRmVcw)" by [Europe](http://en.wikipedia.org/wiki/Europe_(band)).
+
+<hr/>
+
+<Gallery images={photos} />
+
+
