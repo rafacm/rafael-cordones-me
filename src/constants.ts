@@ -8,6 +8,7 @@ import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
 import IconPresentation from "@/assets/icons/IconPresentation.svg";
+import IconBluesky from "@/assets/icons/IconBluesky.svg";
 import { SITE } from "@/config";
 
 interface Social {
@@ -41,7 +42,13 @@ export const SOCIALS: Social[] = [
     href: "https://speakerdeck.com/rafacm/",
     linkTitle: `${SITE.title} on SpeakerDeck`,
     icon: IconPresentation,
-  }
+  },
+  {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/rafael-cordones.bsky.social",
+    linkTitle: `${SITE.title} on Bluesky`,
+    icon: IconBluesky,
+  },
 ] as const;
 
 export const SHARE_LINKS: Social[] = [
