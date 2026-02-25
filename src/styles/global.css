@@ -62,6 +62,10 @@ html[data-theme="dark"] {
   @apply underline decoration-wavy decoration-2 underline-offset-4;
 }
 
+@utility inline-link {
+  @apply underline decoration-dashed underline-offset-4 hover:text-accent focus-visible:no-underline;
+}
+
 /* Override Tailwind preflight max-width:100% on img so PhotoSwipe
    lightbox images can render at their full calculated size. */
 .pswp img {
