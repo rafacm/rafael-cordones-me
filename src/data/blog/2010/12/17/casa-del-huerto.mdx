@@ -1,0 +1,42 @@
+---
+author: Rafael Cordones
+pubDatetime: 2010-12-17T12:00:00Z
+modDatetime: 2010-12-17T12:00:00Z
+title: Casa del Huerto
+slug: casa-del-huerto
+location: Casa del Huerto, La Alquería, Jumilla, Murcia, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - Spain
+description:
+    December at Casa del Huerto.
+ogImage: "@/assets/images/blog/casa-del-huerto/img_0360.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import imageCard from '@/assets/images/blog/casa-del-huerto/img_0360.jpg';
+
+export const photos = Object.values(
+    import.meta.glob('@/assets/images/blog/casa-del-huerto/*.jpg', { eager: true, import: 'default' })
+);
+
+
+<figure>
+    <Image src={imageCard} alt="Casa del Huerto" />
+    <figcaption class="text-center">
+        Casa del Huerto. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+<hr/>
+
+<Gallery images={photos} />
+
+<hr/>
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4zwSHxzHHLv6pPCwj1QrxD?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
