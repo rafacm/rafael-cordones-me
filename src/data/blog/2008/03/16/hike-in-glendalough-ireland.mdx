@@ -1,0 +1,43 @@
+---
+author: Rafael Cordones
+pubDatetime: 2008-03-16T12:00:00Z
+modDatetime: 2008-03-16T12:00:00Z
+title: Hike in Glendalough, Ireland
+slug: hike-in-glendalough-ireland
+location: Glendalough, Ireland
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+  - travel
+  - Glendalough
+  - Dublin
+  - Ireland
+description:
+    Exploring Glendalough'S landscapes.
+ogImage: "@/assets/images/blog/hike-in-glendalough-ireland/img_2561.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import imageCard from '@/assets/images/blog/hike-in-glendalough-ireland/img_2561.jpg';
+
+export const photos = Object.values(
+import.meta.glob('@/assets/images/blog/hike-in-glendalough-ireland/*.jpg', { eager: true, import: 'default' })
+);
+
+
+<figure>
+    <Image src={imageCard} alt="Rocks in Glendalough, Ireland." />
+    <figcaption class="text-center">
+        Rocks in [Glendalough, Ireland](https://maps.app.goo.gl/nVKPCvzD1rXhrdae6). Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+<hr/>
+
+<Gallery images={photos} />
+
+
