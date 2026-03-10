@@ -44,7 +44,7 @@ Last December, I found dot-matrix printouts of a program I wrote back in 1985 to
 Back in December I visited [my mom](https://www.carmen-marcos.art/) in Spain, and besides going out walks with her and enjoying the amazing sunsets, I also took some time to go through some old boxes. In one of the boxes I happened to find a folder labeled "INFORMÁTICA" ("computing" in Spanish) containing several papers and printouts and much to my surprise, I found one of the first computer programs I remember writing!
 
 <figure>
-    <Image src={programAllVersions} alt="Three versions of the program"/>
+    <Image src={programAllVersions} alt="Three versions of a BASIC program printed on perforated dot-matrix paper, showing 1980s computer artifacts."/>
     <figcaption class="text-center">
         Printouts of the three versions of the program in <a href="https://www.youtube.com/watch?v=inhZC75_mdU">perforated dot matrix printing paper</a>.
     </figcaption>
@@ -67,7 +67,7 @@ To this day, I still remember the feeling when I found out about subroutines... 
 My first computer was a gift from my mom. Thanks [mom](https://www.carmen-marcos.art/)! It was a Hit-Bit Sony HB-75P MSX computer, and it had 64 KB of RAM which was very short of the 640 KBs Bill Gates [supposedly said](https://www.computerworld.com/article/1563853/the-640k-quote-won-t-go-away-but-did-gates-really-say-it.html) ought to be enough for anybody.
 
 <figure>
-  <Image src={hitBitSony} alt="Sony HB-75P"/>
+  <Image src={hitBitSony} alt="A vintage Sony Hit-Bit HB-75P MSX computer, the author's first machine from 1984."/>
     <figcaption class="text-center">
     A MSX Hit-Bit Sony HB-75P. Image source: <a href="https://www.homecomputermuseum.nl/en/collectie/sony/sony-hb-75p-2/">HomeComputer Museum</a>.
   </figcaption>
@@ -235,15 +235,17 @@ This is basically the textbook definition of [spaghetti code](https://en.wikiped
 
 Back then there were **no named functions** with names conveying some meaning about what the function did. Only line numbers existed to identify code locations. Which meant you'd have to go to the corresponding line, read and understand the actual code to find out what the code was doing. Imagine trying to fix a bug where pressing "G" shows Austria instead of France. You'd have to trace through dozens of line numbers, mentally keeping track of where each GOTO sends you. Now imagine the program getting 10x larger... or maybe don't. Your head may explode!
 
-Today we are used to easily define methods/functions and call them by name:
+Today, we just don't jump to a line number, we use **functions** to create "mini-programs" with clear boundaries.
+We use **parameters** to define what information a function needs, and we pass **arguments** when we actually run it:
 ```python
 def display_country_information(country_name, capital, currency, language):
-    """Print country details to the screen."""
+    # country_name, capital, currency, language are the parameters of this function
     print(f"Country: {country_name}")
     print(f"Capital: {capital}")
     # ... and so on
 
 ...
+# 'Austria', 'Vienna', 'EUR', 'German' are the arguments we pass to the display_country_information function
 display_country_information('Austria', 'Vienna', 'EUR', 'German')
 ```
 
@@ -251,7 +253,7 @@ display_country_information('Austria', 'Vienna', 'EUR', 'German')
 
 All variables used in the program "live" in the same "place"... in the same **namespace**, i.e. they are **global variables**. "Namespace" is a technical word for 'shared place where variables live'.  This means that changing a variable in one part of the program can affect the behavior of some other unrelated part of the program.
 
- In my BASIC code, I used `N$` for country name, `C$` for capital, and `G` for a color value. If I accidentally reused G somewhere else in the program for, say, a loop counter, the flag would suddenly render in the wrong color—and good luck figuring out why!
+ In my BASIC code, I used `N$` for country name, `C$` for capital, and `G` for a color value. If I accidentally reused G somewhere else in the program for, say, a loop counter, the flag would suddenly render in the wrong color... and good luck figuring out why!
 
 Using global variables causes what in technical lingo is called "shared mutable state" and as a program grows in size and new developers are added to the project, "shared mutable state" is also the name of one of the stops in the software developer's Elevator to Hell:
 
@@ -264,7 +266,7 @@ Using global variables causes what in technical lingo is called "shared mutable 
     </figcaption>
 </figure>
 
-Today we are used to easily define variables inside methods/functions:
+Today we are used to define variables inside functions so that they are "visible" within that secific function:
 ```python
 def display_country_information(country_name, capital, currency, language):
     user_input = input("Press Enter to continue...")  # This variable only exists here
@@ -425,7 +427,7 @@ The film's soundtrack introduced the world to [Huey Lewis and The News](https://
 
 Funny how time shifts our [frame of reference](https://youtu.be/bJMYoj4hHqU?si=BHrGlowPjRep1BSG). In 1985, "the '50s" meant the 1950s. Today, "the '50s" conjures 2050, a future where, if current trends hold, AI agents might have rendered programming (and many other professions) as we know it today unrecognizable. Maybe in 24 years, if I am still here, I will look at a Git repository with my code from today and wonder why ever typed instructions character by character. Why did I even **think** about functions and variables at all.
 
-If could take a time machine today, powered by a fusion reactor fed from [my local `node_modules` directory](https://www.reddit.com/r/ProgrammerHumor/comments/6s0wov/heaviest_objects_in_the_universe/) and go back in time to 1985, meet my own younger self painstakingly typing BASIC code on my Hit Bit Sony, grab him and travel to the future... to both our futures... to 2050. Would we find out that code is no longer needed? That the code we are so used to, has turned into the machine code or the assembler no one ever looks into today anymore.
+If could take a time machine today, powered by a fusion reactor fed from [my local `node_modules` directory](https://www.reddit.com/r/ProgrammerHumor/comments/6s0wov/heaviest_objects_in_the_universe/) and go back in time to 1985, meet my younger self painstakingly typing BASIC code on my Hit Bit Sony, grab him and travel to the future... to both our futures that is... to 2050. Would we [had will have found](https://youtu.be/7z6kVb-oP3s?si=AJbQhACsg3L1Br2F) out that code is no longer needed? That the code we are so used to, has turned into the machine code or the assembler no one ever looks into today anymore.
 
 **Code? Where we're going we don't need code?**
 
