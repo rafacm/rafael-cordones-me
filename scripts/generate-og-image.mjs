@@ -8,7 +8,7 @@ const ROOT = path.resolve(__dirname, "..");
 const PHOTOBLOG_DIR = path.join(ROOT, "src/assets/images/blog/photoblog");
 
 // Configuration
-const TILE_SIZE = 300;
+const TILE_SIZE = 200;
 const GAP = 40;
 const COLS = 4;
 const ROWS = 4;
