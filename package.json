@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "generate:og": "node scripts/generate-og-image.mjs"
+    "generate:og": "node scripts/generate-og-image.mjs",
+    "generate:favicon": "node scripts/generate-favicon.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
