@@ -9,13 +9,13 @@ const PHOTOBLOG_DIR = path.join(ROOT, "src/assets/images/blog/photoblog");
 
 // Configuration
 const TILE_SIZE = 300;
-const GAP = 24;
+const GAP = 40;
 const COLS = 4;
 const ROWS = 4;
 const TILE_COUNT = COLS * ROWS;
 const ROTATION_DEG = -25;
 const BG_COLOR = { r: 255, g: 255, b: 255, alpha: 1 };
-const SHADOW_COLOR = { r: 0, g: 0, b: 0, alpha: 0.35 };
+const SHADOW_COLOR = { r: 180, g: 180, b: 180, alpha: 255 };
 const SHADOW_OFFSET = 8;
 const SHADOW_BLUR = 12;
 const FINAL_WIDTH = 1200;
@@ -51,7 +51,7 @@ async function createTileShadow() {
       width: TILE_SIZE,
       height: TILE_SIZE,
       channels: 4,
-      background: { r: 0, g: 0, b: 0, alpha: 255 },
+      background: SHADOW_COLOR,
     },
   })
     .blur(SHADOW_BLUR)
