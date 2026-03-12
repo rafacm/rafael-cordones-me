@@ -10,20 +10,22 @@ const PHOTOBLOG_DIR = path.join(ROOT, "src/assets/images/blog/photoblog");
 // Configuration
 const TILE_SIZE = 200;
 const GAP = 40;
-const COLS = 4;
-const ROWS = 4;
+const COLS = 6;
+const ROWS = 6;
 const TILE_COUNT = COLS * ROWS;
 const ROTATION_DEG = -25;
 const BG_COLOR = { r: 255, g: 255, b: 255, alpha: 1 };
-const SHADOW_COLOR = { r: 180, g: 180, b: 180, alpha: 255 };
 const SHADOW_OFFSET = 8;
-const SHADOW_BLUR = 12;
+const SHADOW_BLUR = 14;
 const FINAL_WIDTH = 1200;
 const FINAL_HEIGHT = 630;
 const OUTPUT = path.join(ROOT, "public", "astropaper-og.jpg");
 
-/** Pick the newest TILE_COUNT images from the photoblog directory by mtime. */
-function pickNewestPhotos() {
+/**
+ * Pick images from the photoblog directory sorted by newest mtime.
+ * Cycles through images if more tiles are needed than available photos.
+ */
+function pickPhotos() {
   const files = fs
     .readdirSync(PHOTOBLOG_DIR)
     .filter(f => /\.(jpe?g|png|webp)$/i.test(f))
@@ -32,26 +34,30 @@ function pickNewestPhotos() {
       mtime: fs.statSync(path.join(PHOTOBLOG_DIR, f)).mtimeMs,
     }))
     .sort((a, b) => b.mtime - a.mtime)
-    .slice(0, TILE_COUNT)
     .map(f => f.name);
 
-  if (files.length < TILE_COUNT) {
-    throw new Error(
-      `Need ${TILE_COUNT} images but only found ${files.length} in ${PHOTOBLOG_DIR}`
-    );
+  if (files.length === 0) {
+    throw new Error(`No images found in ${PHOTOBLOG_DIR}`);
   }
-  return files;
+
+  // Cycle through images if we need more than available
+  const result = [];
+  for (let i = 0; i < TILE_COUNT; i++) {
+    result.push(files[i % files.length]);
+  }
+  return result;
 }
 
-/** Create a soft drop-shadow image for a single tile. */
+/** Create a gradient drop-shadow image for a single tile. */
 async function createTileShadow() {
-  // Solid dark rectangle slightly offset, then blurred
+  // Semi-transparent grey rectangle, blurred to create a natural gradient
+  // that fades from grey at the center to transparent at the edges
   const shadow = await sharp({
     create: {
       width: TILE_SIZE,
       height: TILE_SIZE,
       channels: 4,
-      background: SHADOW_COLOR,
+      background: { r: 160, g: 160, b: 160, alpha: 180 },
     },
   })
     .blur(SHADOW_BLUR)
@@ -62,8 +68,10 @@ async function createTileShadow() {
 }
 
 async function main() {
-  const photos = pickNewestPhotos();
-  console.log(`Generating OG image from ${photos.length} newest photos...`);
+  const photos = pickPhotos();
+  console.log(
+    `Generating OG image with ${COLS}x${ROWS} grid (${TILE_COUNT} tiles)...`
+  );
 
   // 1. Resize each photo to a square tile
   const tiles = await Promise.all(
@@ -90,12 +98,12 @@ async function main() {
     const x = col * (TILE_SIZE + GAP);
     const y = row * (TILE_SIZE + GAP);
 
-    // Shadow (offset and semi-transparent)
+    // Shadow (semi-transparent, composited with alpha blending)
     compositeOps.push({
       input: shadowBuf,
       left: x + SHADOW_OFFSET,
       top: y + SHADOW_OFFSET,
-      blend: "multiply",
+      blend: "over",
     });
     // Photo tile
     compositeOps.push({
@@ -118,7 +126,7 @@ async function main() {
     .toBuffer();
 
   // 4. Place grid on oversized canvas for rotation headroom
-  const canvasSize = 2800;
+  const canvasSize = 3200;
   const gridMeta = await sharp(gridBuffer).metadata();
   const offsetX = Math.round((canvasSize - gridMeta.width) / 2);
   const offsetY = Math.round((canvasSize - gridMeta.height) / 2);
