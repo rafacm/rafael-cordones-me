@@ -16,8 +16,8 @@ const TILE_COUNT = COLS * ROWS;
 const ROTATION_DEG = -25;
 const BG_COLOR = { r: 255, g: 255, b: 255, alpha: 1 };
 const BORDER_RADIUS = 16;
-const SHADOW_OFFSET = 8;
-const SHADOW_BLUR = 14;
+const SHADOW_OFFSET = 12;
+const SHADOW_BLUR = 30;
 const FINAL_WIDTH = 1200;
 const FINAL_HEIGHT = 630;
 const OUTPUT = path.join(ROOT, "public", "astropaper-og.jpg");
@@ -76,7 +76,7 @@ async function createTileShadow() {
       width: TILE_SIZE,
       height: TILE_SIZE,
       channels: 4,
-      background: { r: 160, g: 160, b: 160, alpha: 180 },
+      background: { r: 200, g: 200, b: 200, alpha: 120 },
     },
   })
     .composite([
