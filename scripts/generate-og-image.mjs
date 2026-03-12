@@ -1,4 +1,5 @@
 import sharp from "sharp";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,66 +9,106 @@ const PHOTOBLOG_DIR = path.join(ROOT, "src/assets/images/blog/photoblog");
 
 // Configuration
 const TILE_SIZE = 300;
-const GAP = 6;
+const GAP = 24;
 const COLS = 4;
 const ROWS = 4;
+const TILE_COUNT = COLS * ROWS;
 const ROTATION_DEG = -25;
-const BG_COLOR = { r: 30, g: 41, b: 59, alpha: 1 }; // #1e293b
+const BG_COLOR = { r: 255, g: 255, b: 255, alpha: 1 };
+const SHADOW_COLOR = { r: 0, g: 0, b: 0, alpha: 0.35 };
+const SHADOW_OFFSET = 8;
+const SHADOW_BLUR = 12;
 const FINAL_WIDTH = 1200;
 const FINAL_HEIGHT = 630;
 const OUTPUT = path.join(ROOT, "public", "astropaper-og.jpg");
 
-// Curated photo selection for visual variety
-const PHOTOS = [
-  "autumn-leaves.jpg",
-  "blue-danube.jpg",
-  "call-of-the-wild.jpg",
-  "dont-let-the-sun-go-down-on-me.jpg",
-  "fields-of-gold.jpg",
-  "fly-me-to-the-moon.jpg",
-  "for-all-the-love-you-have-left-behind.jpg",
-  "ground-control-to-major-tom.jpg",
-  "i-am-from-barcelona-1.jpg",
-  "la-mer.jpg",
-  "let-the-river-run.jpg",
-  "moonlight-drive.jpg",
-  "off-the-shoulder-of-orion.jpg",
-  "sunrise-sunrise.jpg",
-  "the-fractal-geometry-of-trees.jpg",
-  "we-choose-to-go-to-the-moon-1.jpg",
-];
+/** Pick the newest TILE_COUNT images from the photoblog directory by mtime. */
+function pickNewestPhotos() {
+  const files = fs
+    .readdirSync(PHOTOBLOG_DIR)
+    .filter(f => /\.(jpe?g|png|webp)$/i.test(f))
+    .map(f => ({
+      name: f,
+      mtime: fs.statSync(path.join(PHOTOBLOG_DIR, f)).mtimeMs,
+    }))
+    .sort((a, b) => b.mtime - a.mtime)
+    .slice(0, TILE_COUNT)
+    .map(f => f.name);
+
+  if (files.length < TILE_COUNT) {
+    throw new Error(
+      `Need ${TILE_COUNT} images but only found ${files.length} in ${PHOTOBLOG_DIR}`
+    );
+  }
+  return files;
+}
+
+/** Create a soft drop-shadow image for a single tile. */
+async function createTileShadow() {
+  // Solid dark rectangle slightly offset, then blurred
+  const shadow = await sharp({
+    create: {
+      width: TILE_SIZE,
+      height: TILE_SIZE,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 255 },
+    },
+  })
+    .blur(SHADOW_BLUR)
+    .png()
+    .toBuffer();
+
+  return shadow;
+}
 
 async function main() {
-  console.log("Generating default OG image...");
+  const photos = pickNewestPhotos();
+  console.log(`Generating OG image from ${photos.length} newest photos...`);
 
   // 1. Resize each photo to a square tile
   const tiles = await Promise.all(
-    PHOTOS.map(async photo => {
+    photos.map(async photo => {
       const filePath = path.join(PHOTOBLOG_DIR, photo);
       return sharp(filePath)
         .resize(TILE_SIZE, TILE_SIZE, { fit: "cover", position: "centre" })
+        .png()
         .toBuffer();
     })
   );
 
-  // 2. Compose tiles into a grid
+  // 2. Create shadow template
+  const shadowBuf = await createTileShadow();
+
+  // 3. Compose tiles with shadows into a grid
   const gridWidth = COLS * TILE_SIZE + (COLS - 1) * GAP;
   const gridHeight = ROWS * TILE_SIZE + (ROWS - 1) * GAP;
 
-  const compositeOps = tiles.map((tile, i) => {
+  const compositeOps = [];
+  for (let i = 0; i < tiles.length; i++) {
     const col = i % COLS;
     const row = Math.floor(i / COLS);
-    return {
-      input: tile,
-      left: col * (TILE_SIZE + GAP),
-      top: row * (TILE_SIZE + GAP),
-    };
-  });
+    const x = col * (TILE_SIZE + GAP);
+    const y = row * (TILE_SIZE + GAP);
+
+    // Shadow (offset and semi-transparent)
+    compositeOps.push({
+      input: shadowBuf,
+      left: x + SHADOW_OFFSET,
+      top: y + SHADOW_OFFSET,
+      blend: "multiply",
+    });
+    // Photo tile
+    compositeOps.push({
+      input: tiles[i],
+      left: x,
+      top: y,
+    });
+  }
 
   const gridBuffer = await sharp({
     create: {
-      width: gridWidth,
-      height: gridHeight,
+      width: gridWidth + SHADOW_OFFSET + SHADOW_BLUR * 2,
+      height: gridHeight + SHADOW_OFFSET + SHADOW_BLUR * 2,
       channels: 4,
       background: BG_COLOR,
     },
@@ -76,10 +117,11 @@ async function main() {
     .png()
     .toBuffer();
 
-  // 3. Place grid on oversized canvas for rotation headroom
-  const canvasSize = 2400;
-  const offsetX = Math.round((canvasSize - gridWidth) / 2);
-  const offsetY = Math.round((canvasSize - gridHeight) / 2);
+  // 4. Place grid on oversized canvas for rotation headroom
+  const canvasSize = 2800;
+  const gridMeta = await sharp(gridBuffer).metadata();
+  const offsetX = Math.round((canvasSize - gridMeta.width) / 2);
+  const offsetY = Math.round((canvasSize - gridMeta.height) / 2);
 
   const largeCanvas = await sharp({
     create: {
@@ -93,22 +135,28 @@ async function main() {
     .png()
     .toBuffer();
 
-  // 4. Rotate for the 3D tilt effect
+  // 5. Rotate for the 3D tilt effect
   const rotated = await sharp(largeCanvas)
     .rotate(ROTATION_DEG, { background: BG_COLOR })
     .png()
     .toBuffer();
 
-  // 5. Apply affine skew for perspective/3D depth
+  // 6. Apply affine skew for perspective/3D depth
   const skewed = await sharp(rotated)
-    .affine([[1, 0.15], [-0.1, 1]], {
-      background: BG_COLOR,
-      interpolator: sharp.interpolators.bicubic,
-    })
+    .affine(
+      [
+        [1, 0.15],
+        [-0.1, 1],
+      ],
+      {
+        background: BG_COLOR,
+        interpolator: sharp.interpolators.bicubic,
+      }
+    )
     .png()
     .toBuffer();
 
-  // 6. Crop to final OG dimensions from center
+  // 7. Crop to final OG dimensions from center
   const meta = await sharp(skewed).metadata();
   const extractLeft = Math.round((meta.width - FINAL_WIDTH) / 2);
   const extractTop = Math.round((meta.height - FINAL_HEIGHT) / 2);
