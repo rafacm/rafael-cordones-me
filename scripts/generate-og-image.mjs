@@ -15,6 +15,7 @@ const ROWS = 6;
 const TILE_COUNT = COLS * ROWS;
 const ROTATION_DEG = -25;
 const BG_COLOR = { r: 255, g: 255, b: 255, alpha: 1 };
+const BORDER_RADIUS = 16;
 const SHADOW_OFFSET = 8;
 const SHADOW_BLUR = 14;
 const FINAL_WIDTH = 1200;
@@ -48,10 +49,28 @@ function pickPhotos() {
   return result;
 }
 
-/** Create a gradient drop-shadow image for a single tile. */
+/** SVG rounded-rectangle mask for clipping tiles and shadows. */
+function roundedRectMask(w, h, r) {
+  return Buffer.from(
+    `<svg width="${w}" height="${h}"><rect x="0" y="0" width="${w}" height="${h}" rx="${r}" ry="${r}" fill="white"/></svg>`
+  );
+}
+
+/** Apply rounded corners to a tile buffer. */
+async function applyRoundedCorners(buf) {
+  return sharp(buf)
+    .composite([
+      {
+        input: roundedRectMask(TILE_SIZE, TILE_SIZE, BORDER_RADIUS),
+        blend: "dest-in",
+      },
+    ])
+    .png()
+    .toBuffer();
+}
+
+/** Create a gradient drop-shadow image with rounded corners. */
 async function createTileShadow() {
-  // Semi-transparent grey rectangle, blurred to create a natural gradient
-  // that fades from grey at the center to transparent at the edges
   const shadow = await sharp({
     create: {
       width: TILE_SIZE,
@@ -60,6 +79,12 @@ async function createTileShadow() {
       background: { r: 160, g: 160, b: 160, alpha: 180 },
     },
   })
+    .composite([
+      {
+        input: roundedRectMask(TILE_SIZE, TILE_SIZE, BORDER_RADIUS),
+        blend: "dest-in",
+      },
+    ])
     .blur(SHADOW_BLUR)
     .png()
     .toBuffer();
@@ -73,14 +98,15 @@ async function main() {
     `Generating OG image with ${COLS}x${ROWS} grid (${TILE_COUNT} tiles)...`
   );
 
-  // 1. Resize each photo to a square tile
+  // 1. Resize each photo to a square tile with rounded corners
   const tiles = await Promise.all(
     photos.map(async photo => {
       const filePath = path.join(PHOTOBLOG_DIR, photo);
-      return sharp(filePath)
+      const resized = await sharp(filePath)
         .resize(TILE_SIZE, TILE_SIZE, { fit: "cover", position: "centre" })
         .png()
         .toBuffer();
+      return applyRoundedCorners(resized);
     })
   );
 
