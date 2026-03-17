@@ -16,7 +16,7 @@ tags:
   - LLMs
 
 description:
-  Code reviewing one of my first programs written in BASIC.
+    Revisiting a BASIC program I wrote in 1985 on my Sony MSX. What did 'good code' look like 40 years ago and what will today's code look like in 2065?
 ogImage: "@/assets/images/blog/back-to-the-future-of-programming-with-basic/2025-12-06-sunset-at-la-alqueria.jpg"
 ---
 
@@ -38,7 +38,7 @@ import backToTheFutureRoads from '@/assets/images/blog/back-to-the-future-of-pro
   </figcaption>
 </figure>
 
-Last December, I found dot-matrix printouts of a program I wrote back in 1985 to teach myself BASIC on a Sony MSX. That same year "Back to the Future" hit theaters. Looking at that code now feels like reading an arcane language. But I wasn't writing bad code, I was writing code the way it was written back then. Which makes me wonder: in this age of agentic AI we are starting now, what am I doing today that will look equally primitive in another 40 years? Or to quote Huey Lewis from the movie's soundtrack: *"Tell me, doctor, where are we going this time?"*
+I recently found dot-matrix printouts of a program I wrote back in 1985 to teach myself BASIC on a Sony MSX. That same year "Back to the Future" hit theaters. Looking at that code now feels like reading an arcane language. But I wasn't writing bad code, I was writing code the way it was written back then. Which makes me wonder: in this age of agentic AI we are starting now, what am I doing today that will look equally primitive in another 40 years? Or to quote Huey Lewis from the movie's soundtrack: *"Tell me, doctor, where are we going this time?"*
 <hr/>
 
 Back in December I visited [my mom](https://www.carmen-marcos.art/) in Spain, and besides going out walks with her and enjoying the amazing sunsets, I also took some time to go through some old boxes. In one of the boxes I happened to find a folder labeled "INFORMÁTICA" ("computing" in Spanish) containing several papers and printouts and much to my surprise, I found one of the first computer programs I remember writing!
@@ -50,7 +50,7 @@ Back in December I visited [my mom](https://www.carmen-marcos.art/) in Spain, an
     </figcaption>
 </figure>
 
-Reading that code made my feel like Indiana Jones in [Raiders of the Lost Ark](https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark) in the map room scene... minus the great looks and with significantly more gray hair than Harrison Ford had back then!
+Reading that code made me feel like Indiana Jones in [Raiders of the Lost Ark](https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark) in the map room scene... minus the great looks and with significantly more gray hair than Harrison Ford had back then!
 
 <figure>
     <a href="https://youtu.be/gFDM7JGHGYo?si=W5rTFDCoR-cvIt-S">
@@ -75,9 +75,11 @@ My first computer was a gift from my mom. Thanks [mom](https://www.carmen-marcos
 
 The Sony Hit Bit HB-75 came out in 1984, so I probably wrote this program around 1985. That's 40 years ago!
 
-I actually found three versions of the program. I took some pictures of the third version and with the help of [Claude](https://claude.ai/) I got the text of the program in no time, which is amazing come think of it!
+I actually found three versions of the program. I took some pictures of the third version and with the help of [Claude](https://claude.ai/) I got the text of the program in no time, which is amazing come to think of it!
 
 ## Code Review
+
+Let me walk you through the code, and the four issues that jump out when I read it today with my modern eyes.
 
 This is the start of the program where I show the main menu for the user to choose which continent:
 ```vb
@@ -216,7 +218,7 @@ And finally, this one waits for user input after displaying the country informat
 Thanks to [WebMSX](https://webmsx.org/) I was able to get the code running again!
 
 <figure>
-  <Image src={countriesFrance} alt="Europe > Francia"/>
+  <Image src={countriesFrance} alt="Screenshot of the BASIC program running in WebMSX, showing the French flag and country information"/>
 </figure>
 
 You can even run the program yourself on your browser with MSXPen [here](https://msxpen.com/codes/-Og6EIJiKNXoAByT1Rhb)!
@@ -231,9 +233,9 @@ Reviewing the code from today's point of view, several issues jump at me.
 
 In the code I use `IF` with a condition and then I use `GOTO` and `GOSUB` to jump to a different part of the program. If I used `GOSUB` I then had the option of using `RETURN` to go "back" but if I had used `GOTO` I need to explicitly use another `GOTO` instruction to go to another part of the program.
 
-This is basically the textbook definition of [spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code). Code that is convoluted, hard to understand and therefore, hard to maintain. But that was the way personal computers were programmed in those days, close to the machine.
+This is basically the textbook definition of [spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code). Code that is convoluted, hard to understand and therefore, hard to maintain. But that was the way personal computers were programmed in those days, [close to the machine](https://www.mcdbooks.com/books/close-to-the-machine-25th-anniversary-edition).
 
-Back then there were **no named functions** with names conveying some meaning about what the function did. Only line numbers existed to identify code locations. Which meant you'd have to go to the corresponding line, read and understand the actual code to find out what the code was doing. Imagine trying to fix a bug where pressing "G" shows Austria instead of France. You'd have to trace through dozens of line numbers, mentally keeping track of where each GOTO sends you. Now imagine the program getting 10x larger... or maybe don't. Your head may explode!
+Back then there were **no named functions** with names conveying some meaning about what the function did. Only line numbers existed to identify code locations. Which meant you'd have to manually hunt down the corresponding line, read and understand the actual code to find out what the code was doing. Imagine trying to fix a bug where pressing "G" shows Austria instead of France. You'd have to trace through dozens of line numbers, mentally keeping track of where each GOTO sends you. Now imagine the program getting 10x larger... or maybe don't. Your head may explode!
 
 Today, we just don't jump to a line number, we use **functions** to create "mini-programs" with clear boundaries.
 We use **parameters** to define what information a function needs, and we pass **arguments** when we actually run it:
@@ -255,7 +257,9 @@ All variables used in the program "live" in the same "place"... in the same **na
 
  In my BASIC code, I used `N$` for country name, `C$` for capital, and `G` for a color value. If I accidentally reused G somewhere else in the program for, say, a loop counter, the flag would suddenly render in the wrong color... and good luck figuring out why!
 
-Using global variables causes what in technical lingo is called "shared mutable state" and as a program grows in size and new developers are added to the project, "shared mutable state" is also the name of one of the stops in the software developer's Elevator to Hell:
+Using global variables causes what in technical lingo is called "shared mutable state" and as a program grows in size and new developers are added to the project global variables make understanding the code and adding changes exponentially more difficult.
+
+In the movie 'Deconstructing Harry (1997)', Woody Allen's character takes an elevator to Hell with several stops in between. For programmers, 'Shared Mutable State' would fit right in as on of the stop names:
 
 <figure>
     <a href="https://youtu.be/9PBwts6k4aw?si=V3ZW1sVisnJR-P20">
@@ -380,20 +384,20 @@ Looking at these issues above, I could dismiss them as the quirks of an obsolete
 
 Which makes me wonder: what constraints am I working within today that I don't even notice? What will look obviously wrong about 2026-era programming when viewed forty years from now?
 
-These past weeks, I've been using Claude Code to write code for me, describing what I want in plain English, asking it to provide a plan and reviewing what it generates. Sitting here in 2026, looking at my own BASIC code from 1985, I can't help but ask: which concepts do I take for granted today that will seem as arcane as `GOTO 20600` today?
+These past weeks, I've been using Claude Code to write code for me. Me describing what I want in plain English, Claude proposing a plan, iterating back and forth and reviewing what it generates. It already feels like a different kind of programming. Sitting here in 2026, looking at my own BASIC code from 1985, I can't help but ask: which concepts do I take for granted today that will seem as arcane as `GOTO 20600` today?
 
 This is exactly the topic [Bret Victor](https://worrydream.com/) touches in his 2013 talk, ["The Future of Programming"](https://www.youtube.com/watch?v=8pTEmbeENF4) which he delivers, brilliantly, as if he were presenting it back in 1973... using [transparencies](https://en.wikipedia.org/wiki/Transparency_(projection)) and a simulated [overhead projector](https://en.wikipedia.org/wiki/Overhead_projector)!
 
 <figure>
     <a href="https://www.youtube.com/watch?v=8pTEmbeENF4">
-        <Image class="mb-0" src={bretVictor} alt="Bret Victor The Future of Programming"/>
+        <Image class="mb-0" src={bretVictor} alt="Bret Victor presenting 'The Future of Programming' in 2013, using a simulated overhead projector and transparencies"/>
     </a>
     <figcaption class="text-center">
         Bret Victor's talk "The Future of Programming" ([YouTube](https://www.youtube.com/watch?v=8pTEmbeENF4)).
     </figcaption>
 </figure>
 
-Some of the things he says in that talk that tie up with :
+Some of the things he says in that talk that tie up with this article:
 
 > Technology changes quickly, people's minds change slowly. So it's easy to adopt new technologies.
 > It can be hard to adopt new ways of thinking.
@@ -429,7 +433,9 @@ Funny how time shifts our [frame of reference](https://youtu.be/bJMYoj4hHqU?si=B
 
 If could take a time machine today, powered by a fusion reactor fed from [my local `node_modules` directory](https://www.reddit.com/r/ProgrammerHumor/comments/6s0wov/heaviest_objects_in_the_universe/) and go back in time to 1985, meet my younger self painstakingly typing BASIC code on my Hit Bit Sony, grab him and travel to the future... to both our futures that is... to 2050. Would we [had will have found](https://youtu.be/7z6kVb-oP3s?si=AJbQhACsg3L1Br2F) out that code is no longer needed? That the code we are so used to, has turned into the machine code or the assembler no one ever looks into today anymore.
 
-**Code? Where we're going we don't need code?**
+**Code? Where we're going we don't need code.**
+
+**Or do we?**
 
 <figure>
     <a href="https://www.youtube.com/watch?v=Fr5o3z2t6xI">
