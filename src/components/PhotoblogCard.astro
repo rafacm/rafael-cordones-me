@@ -24,7 +24,7 @@ const imageSrc = typeof ogImage === "string" ? ogImage : ogImage;
       <Image
         src={imageSrc}
         alt={title}
-        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        class="h-full w-full object-cover aspect-square transition-transform duration-300 group-hover:scale-105"
         widths={[320, 640]}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       />
@@ -32,7 +32,7 @@ const imageSrc = typeof ogImage === "string" ? ogImage : ogImage;
       <img
         src={imageSrc}
         alt={title}
-        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        class="h-full w-full object-cover aspect-square transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
     ) : (
