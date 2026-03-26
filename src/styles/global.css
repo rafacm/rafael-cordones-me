@@ -1,6 +1,86 @@
 @import "tailwindcss";
 @import "./typography.css";
 
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/Bariol-Thin.woff2") format("woff2"),
+    url("/assets/fonts/bariol/Bariol-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/BariolThin-Italic.woff2") format("woff2"),
+    url("/assets/fonts/bariol/BariolThin-Italic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/Bariol-Light.woff2") format("woff2"),
+    url("/assets/fonts/bariol/Bariol-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/BariolLight-Italic.woff2") format("woff2"),
+    url("/assets/fonts/bariol/BariolLight-Italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/Bariol-Regular.woff2") format("woff2"),
+    url("/assets/fonts/bariol/Bariol-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/BariolRegular-Italic.woff2") format("woff2"),
+    url("/assets/fonts/bariol/BariolRegular-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/Bariol-Bold.woff2") format("woff2"),
+    url("/assets/fonts/bariol/Bariol-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src:
+    url("/assets/fonts/bariol/BariolBold-Italic.woff2") format("woff2"),
+    url("/assets/fonts/bariol/BariolBold-Italic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root,
@@ -26,6 +106,7 @@ html[data-theme="dark"] {
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --font-sans: "Bariol", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -35,10 +116,11 @@ html[data-theme="dark"] {
     scrollbar-color: var(--color-muted) transparent;
   }
   html {
+    font-size: 18px;
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background font-sans text-foreground selection:bg-accent/75 selection:text-background;
   }
   a,
   button {
