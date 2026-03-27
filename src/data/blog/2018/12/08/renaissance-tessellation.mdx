@@ -1,0 +1,33 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-12-08T18:09:36Z
+modDatetime: 2018-12-08T18:09:36Z
+title: "Renaissance tessellation"
+slug: renaissance-tessellation
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Renaissance tessellation"
+ogImage: "@/assets/images/blog/renaissance-tessellation/renaissance-tessellation-1.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import heroImage from '@/assets/images/blog/renaissance-tessellation/renaissance-tessellation-1.jpg';
+
+export const photos = Object.values(
+    import.meta.glob('@/assets/images/blog/renaissance-tessellation/*.jpg', { eager: true, import: 'default' })
+);
+
+<figure>
+    <Image src={heroImage} alt="Renaissance tessellation" />
+    <figcaption class="text-center">
+        Renaissance tessellation. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+<Gallery images={photos} />
