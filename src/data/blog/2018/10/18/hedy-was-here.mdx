@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-10-18T16:25:34Z
+modDatetime: 2018-10-18T16:25:34Z
+title: "Hedy was here"
+slug: hedy-was-here
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Hedy was here"
+ogImage: "@/assets/images/blog/photoblog/hedy-was-here.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/hedy-was-here.jpg';
+
+<figure>
+  <Image src={image} alt="Hedy was here" />
+    <figcaption class="text-center">
+        Hedy was here. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
