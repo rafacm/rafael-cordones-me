@@ -1,0 +1,27 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-12-24T17:15:44Z
+modDatetime: 2018-12-24T17:15:44Z
+title: "Silent Night falls over Jumilla"
+slug: silent-night-jumilla
+location: Jumilla, Murcia, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Silent Night falls over Jumilla"
+ogImage: "@/assets/images/blog/photoblog/silent-night-jumilla-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/silent-night-jumilla-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/silent-night-jumilla-2.jpg';
+
+<figure>
+    <Image src={photo1} alt="Silent Night falls over Jumilla" />
+    <Image src={photo2} alt="Silent Night falls over Jumilla" />
+    <figcaption class="text-center">
+        Silent Night falls over Jumilla, Murcia. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
