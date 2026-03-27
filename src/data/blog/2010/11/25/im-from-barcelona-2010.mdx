@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2010-11-25T19:34:25Z
+modDatetime: 2010-11-25T19:34:25Z
+title: "I'm from Barcelona"
+slug: im-from-barcelona-2010
+location: Barcelona, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Barcelona, November 2010"
+ogImage: "@/assets/images/blog/photoblog/im-from-barcelona-2010.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/im-from-barcelona-2010.jpg';
+
+<figure>
+  <Image src={image} alt="Barcelona, November 2010" />
+    <figcaption class="text-center">
+        Barcelona, November 2010. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
