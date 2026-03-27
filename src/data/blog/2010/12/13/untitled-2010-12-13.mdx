@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2010-12-13T17:03:12Z
+modDatetime: 2010-12-13T17:03:12Z
+title: "Untitled (December 2010)"
+slug: untitled-2010-12-13
+location: Barcelona, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Untitled (December 2010)"
+ogImage: "@/assets/images/blog/photoblog/untitled-2010-12-13.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/untitled-2010-12-13.jpg';
+
+<figure>
+  <Image src={image} alt="Untitled (December 2010)" />
+    <figcaption class="text-center">
+        December 2010. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
