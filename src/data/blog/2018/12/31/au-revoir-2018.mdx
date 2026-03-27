@@ -1,0 +1,29 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-12-31T21:44:53Z
+modDatetime: 2018-12-31T21:44:53Z
+title: "Au revoir 2018!"
+slug: au-revoir-2018
+location: Jumilla, Murcia, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Au revoir 2018!"
+ogImage: "@/assets/images/blog/photoblog/au-revoir-2018-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/au-revoir-2018-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/au-revoir-2018-2.jpg';
+import photo3 from '@/assets/images/blog/photoblog/au-revoir-2018-3.jpg';
+
+<figure>
+    <Image src={photo1} alt="Au revoir 2018!" />
+    <Image src={photo2} alt="Au revoir 2018!" />
+    <Image src={photo3} alt="Au revoir 2018!" />
+    <figcaption class="text-center">
+        Au revoir 2018!. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
