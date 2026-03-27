@@ -1,0 +1,33 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-10-18T12:37:57Z
+modDatetime: 2018-10-18T12:37:57Z
+title: "Water Lilies"
+slug: water-lilies
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Water Lilies: front-stage and backstage"
+ogImage: "@/assets/images/blog/water-lilies/water-lilies-1.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import heroImage from '@/assets/images/blog/water-lilies/water-lilies-1.jpg';
+
+export const photos = Object.values(
+    import.meta.glob('@/assets/images/blog/water-lilies/*.jpg', { eager: true, import: 'default' })
+);
+
+<figure>
+    <Image src={heroImage} alt="Water Lilies: front-stage and backstage" />
+    <figcaption class="text-center">
+        Water Lilies: front-stage and backstage. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+<Gallery images={photos} />
