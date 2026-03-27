@@ -1,0 +1,33 @@
+---
+author: Rafael Cordones
+pubDatetime: 2019-03-17T14:52:53Z
+modDatetime: 2019-03-17T14:52:53Z
+title: "Going back to your roots"
+slug: going-back-to-your-roots
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Going back to your roots"
+ogImage: "@/assets/images/blog/going-back-to-your-roots/going-back-to-your-roots-1.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import heroImage from '@/assets/images/blog/going-back-to-your-roots/going-back-to-your-roots-1.jpg';
+
+export const photos = Object.values(
+    import.meta.glob('@/assets/images/blog/going-back-to-your-roots/*.jpg', { eager: true, import: 'default' })
+);
+
+<figure>
+    <Image src={heroImage} alt="Going back to your roots" />
+    <figcaption class="text-center">
+        Going back to your roots. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+<Gallery images={photos} />
