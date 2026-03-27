@@ -1,0 +1,33 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-10-21T14:16:56Z
+modDatetime: 2018-10-21T14:16:56Z
+title: "At an oyster reef off the coast of Vienna"
+slug: oyster-reef-vienna
+location: Fossilienwelt, Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "At an oyster reef off the coast of Vienna 16.5 million years ago"
+ogImage: "@/assets/images/blog/oyster-reef-vienna/oyster-reef-vienna-1.jpg"
+---
+
+import Gallery from '@/components/Gallery.astro';
+import { Image } from 'astro:assets';
+
+import heroImage from '@/assets/images/blog/oyster-reef-vienna/oyster-reef-vienna-1.jpg';
+
+export const photos = Object.values(
+    import.meta.glob('@/assets/images/blog/oyster-reef-vienna/*.jpg', { eager: true, import: 'default' })
+);
+
+<figure>
+    <Image src={heroImage} alt="At an oyster reef off the coast of Vienna 16.5 million years ago" />
+    <figcaption class="text-center">
+        At an oyster reef off the coast of Vienna 16.5 million years ago at Fossilienwelt. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
+
+<Gallery images={photos} />
