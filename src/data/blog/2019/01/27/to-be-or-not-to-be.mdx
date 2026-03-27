@@ -1,0 +1,27 @@
+---
+author: Rafael Cordones
+pubDatetime: 2019-01-27T14:37:54Z
+modDatetime: 2019-01-27T14:37:54Z
+title: "To be or not to be"
+slug: to-be-or-not-to-be
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "To be or not to be"
+ogImage: "@/assets/images/blog/photoblog/to-be-or-not-to-be-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/to-be-or-not-to-be-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/to-be-or-not-to-be-2.jpg';
+
+<figure>
+    <Image src={photo1} alt="To be or not to be" />
+    <Image src={photo2} alt="To be or not to be" />
+    <figcaption class="text-center">
+        To be or not to be. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
