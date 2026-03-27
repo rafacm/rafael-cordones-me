@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2011-11-12T15:18:49Z
+modDatetime: 2011-11-12T15:18:49Z
+title: "Sonnenuntergang am Wienerwald"
+slug: sonnenuntergang-am-wienerwald
+location: Wienerwald, Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Sonnenuntergang am Wienerwald"
+ogImage: "@/assets/images/blog/photoblog/sonnenuntergang-am-wienerwald.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/sonnenuntergang-am-wienerwald.jpg';
+
+<figure>
+  <Image src={image} alt="Sonnenuntergang am Wienerwald" />
+    <figcaption class="text-center">
+        Sonnenuntergang am Wienerwald. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
