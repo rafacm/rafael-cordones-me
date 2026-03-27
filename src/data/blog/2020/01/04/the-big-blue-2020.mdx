@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2020-01-04T12:06:50Z
+modDatetime: 2020-01-04T12:06:50Z
+title: "The Big Blue"
+slug: the-big-blue-2020
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "The Big Blue"
+ogImage: "@/assets/images/blog/photoblog/the-big-blue-2020.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/the-big-blue-2020.jpg';
+
+<figure>
+  <Image src={image} alt="The Big Blue" />
+    <figcaption class="text-center">
+        The Big Blue. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
