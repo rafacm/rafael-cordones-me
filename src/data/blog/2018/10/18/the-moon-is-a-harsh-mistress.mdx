@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-10-18T17:17:17Z
+modDatetime: 2018-10-18T17:17:17Z
+title: "The Moon is a harsh mistress"
+slug: the-moon-is-a-harsh-mistress
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "The Moon is a harsh mistress"
+ogImage: "@/assets/images/blog/photoblog/the-moon-is-a-harsh-mistress.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/the-moon-is-a-harsh-mistress.jpg';
+
+<figure>
+  <Image src={image} alt="The Moon is a harsh mistress" />
+    <figcaption class="text-center">
+        The Moon is a harsh mistress. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
