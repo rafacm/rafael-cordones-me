@@ -18,11 +18,12 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
   return tags.flatMap(({ tag, tagName }) => {
     const tagPosts = getPostsByTag(posts, tag);
+    const isPhotoblog = tag === "photoblog" || tag === "photography";
 
     return paginate(tagPosts, {
       params: { tag },
       props: { tagName },
-      pageSize: SITE.postPerPage,
+      pageSize: isPhotoblog ? SITE.photoblogPostsPerPage : SITE.postPerPage,
     });
   });
 }
