@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2019-01-01T18:26:17Z
+modDatetime: 2019-01-01T18:26:17Z
+title: "Hello 2019!"
+slug: hello-2019
+location: Jumilla, Murcia, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Hello 2019!"
+ogImage: "@/assets/images/blog/photoblog/hello-2019.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/hello-2019.jpg';
+
+<figure>
+  <Image src={image} alt="Hello 2019!" />
+    <figcaption class="text-center">
+        Hello 2019!. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
