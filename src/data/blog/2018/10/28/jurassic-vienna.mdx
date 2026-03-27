@@ -1,0 +1,29 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-10-28T10:51:22Z
+modDatetime: 2018-10-28T10:51:22Z
+title: "Jurassic Vienna"
+slug: jurassic-vienna
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Jurassic Vienna"
+ogImage: "@/assets/images/blog/photoblog/jurassic-vienna-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/jurassic-vienna-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/jurassic-vienna-2.jpg';
+import photo3 from '@/assets/images/blog/photoblog/jurassic-vienna-3.jpg';
+
+<figure>
+    <Image src={photo1} alt="Jurassic Vienna" />
+    <Image src={photo2} alt="Jurassic Vienna" />
+    <Image src={photo3} alt="Jurassic Vienna" />
+    <figcaption class="text-center">
+        Jurassic Vienna. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
