@@ -1,0 +1,31 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-11-11T11:36:17Z
+modDatetime: 2018-11-11T11:36:17Z
+title: "Why so serioussss?"
+slug: why-so-serious
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Why so serioussss?"
+ogImage: "@/assets/images/blog/photoblog/why-so-serious-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/why-so-serious-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/why-so-serious-2.jpg';
+import photo3 from '@/assets/images/blog/photoblog/why-so-serious-3.jpg';
+import photo4 from '@/assets/images/blog/photoblog/why-so-serious-4.jpg';
+
+<figure>
+    <Image src={photo1} alt="Why so serioussss?" />
+    <Image src={photo2} alt="Why so serioussss?" />
+    <Image src={photo3} alt="Why so serioussss?" />
+    <Image src={photo4} alt="Why so serioussss?" />
+    <figcaption class="text-center">
+        Why so serioussss?. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
