@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2011-11-13T14:03:30Z
+modDatetime: 2011-11-13T14:03:30Z
+title: "Sonntagswanderung"
+slug: sonntagswanderung
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Sonntagswanderung"
+ogImage: "@/assets/images/blog/photoblog/sonntagswanderung.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/sonntagswanderung.jpg';
+
+<figure>
+  <Image src={image} alt="Sonntagswanderung" />
+    <figcaption class="text-center">
+        Sonntagswanderung. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
