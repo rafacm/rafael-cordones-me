@@ -1,0 +1,27 @@
+---
+author: Rafael Cordones
+pubDatetime: 2019-08-17T07:04:21Z
+modDatetime: 2019-08-17T07:04:21Z
+title: "The big blue"
+slug: the-big-blue
+location: Barcelona, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "The big blue"
+ogImage: "@/assets/images/blog/photoblog/the-big-blue-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/the-big-blue-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/the-big-blue-2.jpg';
+
+<figure>
+    <Image src={photo1} alt="The big blue" />
+    <Image src={photo2} alt="The big blue" />
+    <figcaption class="text-center">
+        The big blue. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
