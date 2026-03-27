@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-12-23T13:19:14Z
+modDatetime: 2018-12-23T13:19:14Z
+title: "Crimson sunset"
+slug: crimson-sunset
+location: Jumilla, Murcia, Spain
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Crimson sunset"
+ogImage: "@/assets/images/blog/photoblog/crimson-sunset.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/crimson-sunset.jpg';
+
+<figure>
+  <Image src={image} alt="Crimson sunset" />
+    <figcaption class="text-center">
+        Crimson sunset. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
