@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-10-26T16:12:26Z
+modDatetime: 2018-10-26T16:12:26Z
+title: "Blue Danube"
+slug: blue-danube-2018
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Blue Danube"
+ogImage: "@/assets/images/blog/photoblog/blue-danube-2018.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/blue-danube-2018.jpg';
+
+<figure>
+  <Image src={image} alt="Blue Danube" />
+    <figcaption class="text-center">
+        Blue Danube. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
