@@ -1,0 +1,27 @@
+---
+author: Rafael Cordones
+pubDatetime: 2018-11-30T06:40:24Z
+modDatetime: 2018-11-30T06:40:24Z
+title: "Birds of a feather freeze together"
+slug: birds-of-a-feather
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Birds of a feather freeze together"
+ogImage: "@/assets/images/blog/photoblog/birds-of-a-feather-1.jpg"
+---
+
+import { Image } from 'astro:assets';
+import photo1 from '@/assets/images/blog/photoblog/birds-of-a-feather-1.jpg';
+import photo2 from '@/assets/images/blog/photoblog/birds-of-a-feather-2.jpg';
+
+<figure>
+    <Image src={photo1} alt="Birds of a feather freeze together" />
+    <Image src={photo2} alt="Birds of a feather freeze together" />
+    <figcaption class="text-center">
+        Birds of a feather freeze together. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+    </figcaption>
+</figure>
