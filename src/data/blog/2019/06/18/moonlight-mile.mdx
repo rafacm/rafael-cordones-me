@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2019-06-18T21:02:17Z
+modDatetime: 2019-06-18T21:02:17Z
+title: "Moonlight Mile"
+slug: moonlight-mile
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "Moonlight Mile"
+ogImage: "@/assets/images/blog/photoblog/moonlight-mile.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/moonlight-mile.jpg';
+
+<figure>
+  <Image src={image} alt="Moonlight Mile" />
+    <figcaption class="text-center">
+        Moonlight Mile. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
