@@ -1,0 +1,25 @@
+---
+author: Rafael Cordones
+pubDatetime: 2019-08-10T03:16:15Z
+modDatetime: 2019-08-10T03:16:15Z
+title: "All my bags are packed"
+slug: all-my-bags-are-packed
+location: Vienna, Austria
+featured: false
+draft: false
+tags:
+  - photoblog
+  - photography
+description: "All my bags are packed"
+ogImage: "@/assets/images/blog/photoblog/all-my-bags-are-packed.jpg"
+---
+
+import { Image } from 'astro:assets';
+import image from '@/assets/images/blog/photoblog/all-my-bags-are-packed.jpg';
+
+<figure>
+  <Image src={image} alt="All my bags are packed" />
+    <figcaption class="text-center">
+        All my bags are packed. Photo by <a href="https://rafael.cordones.me">Rafael Cordones</a>.
+  </figcaption>
+</figure>
