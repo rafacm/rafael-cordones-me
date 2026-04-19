@@ -63,4 +63,4 @@ Shiki with custom transformers supporting:
 
 ## CI/CD
 
-GitHub Actions runs on PRs: lint → format check → build. All three must pass.
+Netlify builds and deploys the site. Each PR gets a deploy preview.
