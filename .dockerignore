@@ -1,8 +1,18 @@
-# Ignore Astro files
-*.astro
+# Build context excludes — keep the image build fast and reproducible.
+# NOTE: do NOT ignore *.astro here; those are the site's source components
+# and must reach the build stage.
 
-# Ignore node_modules directory
-node_modules/
+.git
+.github
+node_modules
+dist
+.astro
 
-# Ignore build output
-dist/
+# Local env / editor / OS noise
+.env
+.env.*
+.DS_Store
+*.log
+
+# Docs and CI that don't affect the build
+docs
