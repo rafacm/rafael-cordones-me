@@ -11,8 +11,6 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
-import netlify from "@astrojs/netlify";
-
 import remarkGfm from "remark-gfm";
 
 import mdx from "@astrojs/mdx";
@@ -74,6 +72,4 @@ export default defineConfig({
   experimental: {
     preserveScriptOrder: true,
   },
-
-  adapter: netlify(),
 });
