@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rafael-cordones-me
+  namespace: rafael-cordones-me
+  labels:
+    app.kubernetes.io/name: rafael-cordones-me
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: rafael-cordones-me
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

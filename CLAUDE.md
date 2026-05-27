@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal blog built with Astro using the AstroPaper theme. The site is deployed on Netlify.
+Personal blog built with Astro using the AstroPaper theme. Production runs on the Hetzner Talos cluster, deployed via Argo CD from the manifests in `k8s/`.
 
 ## Common Commands
 
@@ -63,4 +63,4 @@ Shiki with custom transformers supporting:
 
 ## CI/CD
 
-Netlify builds and deploys the site. Each PR gets a deploy preview.
+`.github/workflows/deploy.yml` builds the container image and pushes it to `ghcr.io/rafacm/rafael-cordones-me` on every push to `main`, then bumps the `live-sha-<sha>` tag in `k8s/deployment.yaml`. Argo CD (running in the Hetzner cluster, auto-syncs every 60s) reconciles the manifests under `k8s/` into the `rafael-cordones-me` namespace.
