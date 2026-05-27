@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rafael-cordones-me
+  namespace: rafael-cordones-me
+  labels:
+    app.kubernetes.io/name: rafael-cordones-me
+  annotations:
+    # cert-manager issues + renews the TLS cert via the LE prod
+    # ClusterIssuer (DNS-01, Hetzner webhook). ExternalDNS picks up
+    # the host from the rule below and creates the A record in the
+    # cloudlab.casadelhuerto.net zone.
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: rafael-cordones-me.cloudlab.casadelhuerto.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rafael-cordones-me
+                port:
+                  name: http
+  tls:
+    - hosts:
+        - rafael-cordones-me.cloudlab.casadelhuerto.net
+      secretName: rafael-cordones-me-tls
