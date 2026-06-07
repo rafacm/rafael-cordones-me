@@ -1,11 +1,17 @@
-# Builds and publishes the site's container image to GHCR.
+# Builds and publishes the site's container image to GHCR, then (on main)
+# bumps the image tag in this repo's own k8s/ manifests so Argo CD rolls
+# it out.
 #
-# This workflow only builds and pushes images. Deployment to the
-# Kubernetes cluster is handled by GitOps (ArgoCD) in the separate
-# cluster-config repository, which tracks the tags produced here:
-#   main  -> live-sha-<sha>  + live   (namespace: live)
-#   stage -> stage-sha-<sha> + stage  (namespace: stage)
+# Per-trigger tags produced by the image job:
+#   main  -> live-sha-<sha>  + live
+#   stage -> stage-sha-<sha> + stage
 #   PR    -> pr-<n>-sha-<sha> + pr-<n> (manual deploy only)
+#
+# The GitOps loop closes here: on push to main the bump-k8s-deployment-image job
+# rewrites k8s/deployment.yaml to the new live-sha-<sha> tag and pushes
+# it back; Argo CD (auto-syncs every 60s) reconciles it into the cluster.
+# Namespaces and other deploy-time choices live in the k8s/ manifests,
+# not in this workflow. See rafacm/infra#22 for the GitOps design.
 #
 # Action pinning policy
 # ---------------------
@@ -118,3 +124,49 @@ jobs:
           cache-to: type=gha,mode=min
           provenance: true
           sbom: true
+
+  # Closes the GitOps loop: rewrite k8s/deployment.yaml to the freshly
+  # pushed live-sha-<sha> tag and push it back to main. Argo CD then sees
+  # a real manifest diff and rolls out. Only runs for pushes to main.
+  bump-k8s-deployment-image:
+    needs: image
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to push the bump commit
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        # GITHUB_TOKEN is fine while main is unprotected, and its pushes
+        # deliberately do NOT trigger another workflow run — so the loop is
+        # broken even without [skip ci]. When branch protection lands on
+        # main, swap this for a fine-grained PAT (Contents: write, added as
+        # a bypass actor): token: ${{ secrets.BUMP_PAT }}
+
+      - name: Install yq
+        run: sudo snap install yq
+
+      - name: Compute the new tag
+        id: tag
+        # Matches the image job's `type=sha,format=long,prefix=live-sha-`.
+        run: echo "tag=live-sha-${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Rewrite k8s/deployment.yaml
+        run: |
+          yq -i '
+            (.spec.template.spec.containers[]
+              | select(.name == "rafael-cordones-me")
+              | .image
+            ) = "${{ env.IMAGE }}:${{ steps.tag.outputs.tag }}"
+          ' k8s/deployment.yaml
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- k8s/deployment.yaml; then
+            echo "No change to commit"; exit 0
+          fi
+          git add k8s/deployment.yaml
+          git commit -m "ci: bump rafael-cordones-me image to ${{ steps.tag.outputs.tag }} [skip ci]"
+          git push origin HEAD:main
