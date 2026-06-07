@@ -26,9 +26,6 @@ spec:
       labels:
         app.kubernetes.io/name: rafael-cordones-me
     spec:
-      # Drop this block if the GHCR package is made public.
-      imagePullSecrets:
-        - name: ghcr-pull
       securityContext:
         runAsNonRoot: true
         runAsUser: 101
