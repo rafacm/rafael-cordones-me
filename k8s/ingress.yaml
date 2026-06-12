@@ -7,9 +7,12 @@ metadata:
     app.kubernetes.io/name: rafael-cordones-me
   annotations:
     # cert-manager issues + renews the TLS cert via the LE prod
-    # ClusterIssuer (DNS-01, Hetzner webhook). ExternalDNS picks up
-    # the host from the rule below and creates the A record in the
-    # cloudlab.casadelhuerto.net zone.
+    # ClusterIssuer (DNS-01, Hetzner webhook), covering both hosts below
+    # as SANs on a single cert. ExternalDNS creates the A record for the
+    # cloudlab.casadelhuerto.net host (its domainFilter); the
+    # rafael.cordones.me host is outside that filter, so its A record is
+    # managed by Terraform in the infra repo (envs/dns/cordones.me.tf) and
+    # ExternalDNS leaves it alone.
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
@@ -24,7 +27,18 @@ spec:
                 name: rafael-cordones-me
                 port:
                   name: http
+    - host: rafael.cordones.me
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rafael-cordones-me
+                port:
+                  name: http
   tls:
     - hosts:
         - rafael-cordones-me.cloudlab.casadelhuerto.net
+        - rafael.cordones.me
       secretName: rafael-cordones-me-tls
