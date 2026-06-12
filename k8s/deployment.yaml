@@ -35,7 +35,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: rafael-cordones-me
-          image: ghcr.io/rafacm/rafael-cordones-me:live-sha-1524a7416f7258ee2092b42e89f295250a52c45b
+          image: ghcr.io/rafacm/rafael-cordones-me:live-sha-4563598f963a9ab1397e0d201ce0cceeac640558
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
