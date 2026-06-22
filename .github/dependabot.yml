@@ -1,0 +1,41 @@
+# Keeps dependencies current so SHA pins and base images don't silently
+# drift (see #18, and the Node 20 deprecation #16 that drift caused).
+#
+# Dependabot understands the SHA-pinning policy in deploy.yml: it bumps
+# the action's commit SHA AND the trailing `# vX.Y.Z` comment together,
+# so pins stay immutable and readable without manual sweeps.
+#
+# Grouping keeps the PR volume low — one PR per ecosystem per week
+# instead of one per dependency.
+version: 2
+updates:
+  # Pinned third-party actions in .github/workflows/.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
+
+  # Astro and the rest of the site's npm dependencies.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      # Patch/minor across the tree in one PR; majors get their own PR
+      # so breaking changes are reviewed in isolation.
+      npm-minor-patch:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  # node:*-alpine (build) and nginxinc/nginx-unprivileged (runtime) in
+  # the Dockerfile.
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      docker:
+        patterns: ["*"]
